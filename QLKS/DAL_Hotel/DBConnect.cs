@@ -23,7 +23,7 @@ namespace DAL_Hotel
 
         private DBConnect() { }
 
-        private string connectionSTR = "Data Source=.\\SQLEXPRESS;Initial Catalog=QLKS;Integrated Security=True";
+        private string connectionSTR = "Data Source=.;Initial Catalog=QLKS;Integrated Security=True";
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
