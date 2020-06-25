@@ -8,12 +8,22 @@ using System.Data;
 
 namespace DAL_Hotel
 {
-
-
     public class DBConnect
     {
         //protected SqlConnection con = new SqlConnection(@"Data Source=./SQLEXPRESS;Initial Catalog=QLKS;Integrated Security=True");
-        private string connectionSTR = "@Data Source=./SQLEXPRESS;Initial Catalog=QLKS;Integrated Security=True";
+        private static DBConnect instance; 
+
+        public static DBConnect Instance
+        {
+            get { if (Instance1 == null) Instance1 = new DBConnect(); return DBConnect.instance; }
+            private set { DBConnect.instance = value; }
+        }
+
+        public static DBConnect Instance1 { get => instance; set => instance = value; }
+
+        private DBConnect() { }
+
+        private string connectionSTR = "Data Source=.\\SQLEXPRESS;Initial Catalog=QLKS;Integrated Security=True";
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
