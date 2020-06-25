@@ -24,7 +24,7 @@ namespace QLKS
 
         private void btnDangKi_Click(object sender, EventArgs e)
         {
-            DTO_DangKi dk = new DTO_DangKi( null,null,txtName.Text, txtPhonenumber.Text, txtEmail.Text, null);
+            DTO_DangKi dk = new DTO_DangKi(null, null,txtName.Text, txtPhonenumber.Text, txtEmail.Text, null);
 
             if (busDK.themDangKi(dk))
             {

@@ -12,6 +12,7 @@ namespace QLKS
 {
     public partial class GUI_Homepage : Form
     {
+        frmDanhMucPhong dmPhong = new frmDanhMucPhong();
         public GUI_Homepage()
         {
             InitializeComponent();
@@ -22,19 +23,19 @@ namespace QLKS
         {
 
         }
-        frmDanhMucPhong danhmucphong = new frmDanhMucPhong();
-        frmLapHoaDon laphoadon = new frmLapHoaDon();
+        //frmDanhMucPhong danhmucphong = new frmDanhMucPhong();
+        //frmLapHoaDon laphoadon = new frmLapHoaDon();
         private void GUI_Homepage_Load(object sender, EventArgs e)
         {
 
-            pnlContent.Controls.Add(laphoadon);
+           // pnlContent.Controls.Add(laphoadon);
 
-            pnlContent.Controls.Add(danhmucphong);
+            pnlContent.Controls.Add(dmPhong);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            danhmucphong.BringToFront();
+            dmPhong.BringToFront();
             //danhmucphong.Dock = DockStyle.Fill;
         }
 

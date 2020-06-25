@@ -13,18 +13,21 @@ namespace DTO_Hotel
         private int _PHONG_MALOAIPHONG;
         private string _PHONG_TENPHONG;
         private string _PHONG_GHICHU;
-
+        private int _PHONG_CONTRONG;
         public int PHONG_ID { get => _PHONG_ID; set => _PHONG_ID = value; }
         public int PHONG_MALOAIPHONG { get => _PHONG_MALOAIPHONG; set => _PHONG_MALOAIPHONG = value; }
         public string PHONG_TENPHONG { get => _PHONG_TENPHONG; set => _PHONG_TENPHONG = value; }
         public string PHONG_GHICHU { get => _PHONG_GHICHU; set => _PHONG_GHICHU = value; }
         public int PHONG_MAPHONG { get => _PHONG_MAPHONG; set => _PHONG_MAPHONG = value; }
+        public int PHONG_CONTRONG { get => _PHONG_CONTRONG; set => _PHONG_CONTRONG = value; }
 
-        public DTO_Phong(int maloaiphong, string tenphong, string ghichu)
+        public DTO_Phong(int maloaiphong, string tenphong, string ghichu, int maphong, int controng)
         {
             PHONG_MALOAIPHONG = maloaiphong;
             PHONG_TENPHONG = tenphong;
             PHONG_GHICHU = ghichu;
+            PHONG_MAPHONG = maphong;
+            PHONG_CONTRONG = controng;
         } 
     }
 }
