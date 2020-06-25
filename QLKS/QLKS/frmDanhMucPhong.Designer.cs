@@ -164,7 +164,7 @@
             // 
             // giaPhong
             // 
-            this.giaPhong.Location = new System.Drawing.Point(135, 190);
+            this.giaPhong.Location = new System.Drawing.Point(135, 196);
             this.giaPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.giaPhong.Name = "giaPhong";
             this.giaPhong.Size = new System.Drawing.Size(207, 22);
@@ -193,7 +193,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(632, 190);
+            this.button4.Location = new System.Drawing.Point(723, 190);
             this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(67, 28);
@@ -203,13 +203,14 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(723, 190);
+            this.button5.Location = new System.Drawing.Point(632, 190);
             this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(67, 28);
             this.button5.TabIndex = 11;
             this.button5.Text = "Sửa";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // maLoaiPhong
             // 
@@ -222,7 +223,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 121);
+            this.label2.Location = new System.Drawing.Point(22, 123);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(107, 17);
             this.label2.TabIndex = 14;
@@ -231,7 +232,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 163);
+            this.label3.Location = new System.Drawing.Point(22, 161);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(101, 17);
             this.label3.TabIndex = 15;
@@ -240,7 +241,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(22, 193);
+            this.label4.Location = new System.Drawing.Point(22, 199);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(57, 17);
             this.label4.TabIndex = 16;

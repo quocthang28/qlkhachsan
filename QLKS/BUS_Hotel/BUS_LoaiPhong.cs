@@ -23,6 +23,10 @@ namespace BUS_Hotel
             return dalLoaiPhong.themLoaiPhong(lp);
         }
 
+        public bool suaLoaiPhong(string tenlp, int dongia, string ghichu, string malp)
+        {
+            return dalLoaiPhong.suaLoaiPhong(tenlp, dongia, ghichu, malp);
+        }
         public List<DTO_LoaiPhong> showLoaiPhong()
         {
             return dalLoaiPhong.showLoaiPhong();

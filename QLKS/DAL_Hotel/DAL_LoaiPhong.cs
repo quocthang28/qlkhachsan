@@ -37,5 +37,12 @@ namespace DAL_Hotel
             int result = DBConnect.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
+
+        public bool suaLoaiPhong(string tenlp, int dongia, string ghichu, string malp)
+        {
+            string query = string.Format("UPDATE dbo.LOAIPHONG SET TENLOAIPHONG = N'{0}', DONGIA = {1}, GHICHU = N'{2}' WHERE MALOAIPHONG = N'{3}'", tenlp, dongia, ghichu, malp);
+            int result = DBConnect.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
     }
 }
