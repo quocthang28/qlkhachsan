@@ -12,7 +12,7 @@ namespace DAL_Hotel
 
     public class DBConnect
     {
-        protected SqlConnection con = new SqlConnection(@"Data Source=./SQLEXPRESS;Initial Catalog=QLKS;Integrated Security=True");
+        protected SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-B182N8G\MSSQLSERVER01;Initial Catalog=QLKS;Integrated Security=True");
        
     }
 }

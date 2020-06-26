@@ -6,21 +6,21 @@ using System.Threading.Tasks;
 
 namespace DTO_Hotel
 {
-    class DTO_ChiTietPhieuThuePhong
+    public class DTO_ChiTietPhieuThuePhong
     {
         private int _CHITIETPHIEUTHUEPHONG_MACHITIETPHIEUTHUE;
-        private int _CHITIETPHIEUTHUEPHONG_MAPHIEUTHUE;
-        private int _CHITIETPHIEUTHUEPHONG_MAKHACHHANG;
+        private string _CHITIETPHIEUTHUEPHONG_MAPHIEUTHUE;
+        private string _CHITIETPHIEUTHUEPHONG_MAKHACHHANG;
 
         public int CHITIETPHIEUTHUEPHONG_MACHITIETPHIEUTHUE { get => _CHITIETPHIEUTHUEPHONG_MACHITIETPHIEUTHUE; set => _CHITIETPHIEUTHUEPHONG_MACHITIETPHIEUTHUE = value; }
-        public int CHITIETPHIEUTHUEPHONG_MAPHIEUTHUE { get => _CHITIETPHIEUTHUEPHONG_MAPHIEUTHUE; set => _CHITIETPHIEUTHUEPHONG_MAPHIEUTHUE = value; }
-        public int CHITIETPHIEUTHUEPHONG_MAKHACHHANG { get => _CHITIETPHIEUTHUEPHONG_MAKHACHHANG; set => _CHITIETPHIEUTHUEPHONG_MAKHACHHANG = value; }
+        public string CHITIETPHIEUTHUEPHONG_MAPHIEUTHUE { get => _CHITIETPHIEUTHUEPHONG_MAPHIEUTHUE; set => _CHITIETPHIEUTHUEPHONG_MAPHIEUTHUE = value; }
+        public string CHITIETPHIEUTHUEPHONG_MAKHACHHANG { get => _CHITIETPHIEUTHUEPHONG_MAKHACHHANG; set => _CHITIETPHIEUTHUEPHONG_MAKHACHHANG = value; }
 
-        public DTO_ChiTietPhieuThuePhong(int machitietphieuthue, int maphieuthue, int makhachhang)
+        public DTO_ChiTietPhieuThuePhong( string maphieuthue, string makhachhang)
         {
-            CHITIETPHIEUTHUEPHONG_MACHITIETPHIEUTHUE = machitietphieuthue;
-            CHITIETPHIEUTHUEPHONG_MAPHIEUTHUE = maphieuthue;
-            CHITIETPHIEUTHUEPHONG_MAKHACHHANG = makhachhang;
+          
+            this.CHITIETPHIEUTHUEPHONG_MAPHIEUTHUE = maphieuthue;
+            this.CHITIETPHIEUTHUEPHONG_MAKHACHHANG = makhachhang;
         }
     }
 }

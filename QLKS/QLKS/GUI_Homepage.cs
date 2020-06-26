@@ -24,12 +24,18 @@ namespace QLKS
         }
         frmDanhMucPhong danhmucphong = new frmDanhMucPhong();
         frmLapHoaDon laphoadon = new frmLapHoaDon();
+        frmLapPhieuThue lapphieuthue = new frmLapPhieuThue();
+        frmThayDoiPhuThu thaydoiphuthu = new frmThayDoiPhuThu();
         private void GUI_Homepage_Load(object sender, EventArgs e)
         {
 
             pnlContent.Controls.Add(laphoadon);
 
             pnlContent.Controls.Add(danhmucphong);
+
+            pnlContent.Controls.Add(lapphieuthue);
+
+            pnlContent.Controls.Add(thaydoiphuthu);
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -38,5 +44,14 @@ namespace QLKS
             //danhmucphong.Dock = DockStyle.Fill;
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            lapphieuthue.BringToFront();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            thaydoiphuthu.BringToFront();
+        }
     }
 }

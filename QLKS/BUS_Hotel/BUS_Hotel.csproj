@@ -89,7 +89,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS_ChiTietPhieuThue.cs" />
     <Compile Include="BUS_DangKi.cs" />
+    <Compile Include="BUS_KhachHang.cs" />
+    <Compile Include="BUS_LapPhieuThue.cs" />
+    <Compile Include="BUS_PhuThu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
