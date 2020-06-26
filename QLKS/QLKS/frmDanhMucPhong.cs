@@ -23,11 +23,7 @@ namespace QLKS
 
         bool validateData()
         {
-            if (String.IsNullOrEmpty(tenLoaiPhong.Text) || String.IsNullOrEmpty(maLoaiPhong.Text) || String.IsNullOrEmpty(giaLoaiPhong.Text) || String.IsNullOrEmpty(ghiChuLoaiPhong.Text))
-            {
-                return false;
-            }
-            return true;
+            return (String.IsNullOrEmpty(tenLoaiPhong.Text) || String.IsNullOrEmpty(maLoaiPhong.Text) || String.IsNullOrEmpty(giaLoaiPhong.Text) || String.IsNullOrEmpty(ghiChuLoaiPhong.Text));
         }
 
         public void showLoaiPhong()
@@ -41,7 +37,7 @@ namespace QLKS
 
         private void button3_Click(object sender, EventArgs e) //insert
         {
-            if (!validateData())
+            if (validateData())
             {
                 MessageBox.Show("Nhập đầy đủ thông tin!");
             }
@@ -70,7 +66,7 @@ namespace QLKS
         private void button5_Click(object sender, EventArgs e)
         {
 
-            if (!validateData())
+            if (validateData())
             {
                 MessageBox.Show("Nhập đầy đủ thông tin!");
             }
