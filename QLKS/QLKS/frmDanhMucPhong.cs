@@ -37,7 +37,6 @@ namespace QLKS
             dataGridView1.Columns["LOAIPHONG_TENLOAIPHONG"].HeaderText = "Tên loại phòng";
             dataGridView1.Columns["LOAIPHONG_DONGIA"].HeaderText = "Đơn giá";
             dataGridView1.Columns["LOAIPHONG_GHICHU"].HeaderText = "Ghi chú";
-
         }
 
         private void button3_Click(object sender, EventArgs e) //insert
@@ -70,7 +69,7 @@ namespace QLKS
         }
         private void button5_Click(object sender, EventArgs e)
         {
-            
+
             if (!validateData())
             {
                 MessageBox.Show("Nhập đầy đủ thông tin!");
@@ -89,15 +88,6 @@ namespace QLKS
                 showLoaiPhong();
             }
         }
-
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            tenPhong.Text = dataGridView1.Rows[e.RowIndex].Cells["LOAIPHONG_TENLOAIPHONG"].Value.ToString();
-            maLoaiPhong.Text = dataGridView1.Rows[e.RowIndex].Cells["LOAIPHONG_MALOAIPHONG"].Value.ToString();
-            giaPhong.Text = dataGridView1.Rows[e.RowIndex].Cells["LOAIPHONG_DONGIA"].Value.ToString();
-            ghiChuPhong.Text = dataGridView1.Rows[e.RowIndex].Cells["LOAIPHONG_GHICHU"].Value.ToString();
-        }
-
        
     }
 }

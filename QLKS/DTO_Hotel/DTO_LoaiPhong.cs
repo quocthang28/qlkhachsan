@@ -27,10 +27,6 @@ namespace DTO_Hotel
         }
         public DTO_LoaiPhong(DataRow row)
         {
-            //LOAIPHONG_MALOAIPHONG = row["Mã loại phòng"].ToString();
-            //LOAIPHONG_TENLOAIPHONG = row["Tên loại phòng"].ToString();
-            //LOAIPHONG_DONGIA = Int32.Parse(row["Đơn giá"].ToString());
-            //LOAIPHONG_GHICHU = row["Ghi chú"].ToString();
             LOAIPHONG_MALOAIPHONG = row["MALOAIPHONG"].ToString();
             LOAIPHONG_TENLOAIPHONG = row["TENLOAIPHONG"].ToString();
             LOAIPHONG_DONGIA = Int32.Parse(row["DONGIA"].ToString());
