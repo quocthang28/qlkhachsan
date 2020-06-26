@@ -36,9 +36,9 @@
             this.button7 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.tenPhong = new System.Windows.Forms.TextBox();
-            this.giaPhong = new System.Windows.Forms.TextBox();
-            this.ghiChuPhong = new System.Windows.Forms.TextBox();
+            this.tenLoaiPhong = new System.Windows.Forms.TextBox();
+            this.giaLoaiPhong = new System.Windows.Forms.TextBox();
+            this.ghiChuLoaiPhong = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -154,31 +154,31 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Lập danh mục phòng";
             // 
-            // tenPhong
+            // tenLoaiPhong
             // 
-            this.tenPhong.Location = new System.Drawing.Point(135, 118);
-            this.tenPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tenPhong.Name = "tenPhong";
-            this.tenPhong.Size = new System.Drawing.Size(207, 22);
-            this.tenPhong.TabIndex = 4;
+            this.tenLoaiPhong.Location = new System.Drawing.Point(135, 118);
+            this.tenLoaiPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tenLoaiPhong.Name = "tenLoaiPhong";
+            this.tenLoaiPhong.Size = new System.Drawing.Size(207, 22);
+            this.tenLoaiPhong.TabIndex = 4;
             // 
-            // giaPhong
+            // giaLoaiPhong
             // 
-            this.giaPhong.Location = new System.Drawing.Point(135, 196);
-            this.giaPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.giaPhong.Name = "giaPhong";
-            this.giaPhong.Size = new System.Drawing.Size(207, 22);
-            this.giaPhong.TabIndex = 5;
+            this.giaLoaiPhong.Location = new System.Drawing.Point(135, 196);
+            this.giaLoaiPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.giaLoaiPhong.Name = "giaLoaiPhong";
+            this.giaLoaiPhong.Size = new System.Drawing.Size(207, 22);
+            this.giaLoaiPhong.TabIndex = 5;
             // 
-            // ghiChuPhong
+            // ghiChuLoaiPhong
             // 
-            this.ghiChuPhong.Location = new System.Drawing.Point(549, 118);
-            this.ghiChuPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ghiChuPhong.Multiline = true;
-            this.ghiChuPhong.Name = "ghiChuPhong";
-            this.ghiChuPhong.Size = new System.Drawing.Size(241, 62);
-            this.ghiChuPhong.TabIndex = 8;
-            this.ghiChuPhong.Text = "Ghi chú";
+            this.ghiChuLoaiPhong.Location = new System.Drawing.Point(549, 118);
+            this.ghiChuLoaiPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ghiChuLoaiPhong.Multiline = true;
+            this.ghiChuLoaiPhong.Name = "ghiChuLoaiPhong";
+            this.ghiChuLoaiPhong.Size = new System.Drawing.Size(241, 62);
+            this.ghiChuLoaiPhong.TabIndex = 8;
+            this.ghiChuLoaiPhong.Text = "Ghi chú";
             // 
             // button3
             // 
@@ -259,9 +259,9 @@
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.ghiChuPhong);
-            this.Controls.Add(this.giaPhong);
-            this.Controls.Add(this.tenPhong);
+            this.Controls.Add(this.ghiChuLoaiPhong);
+            this.Controls.Add(this.giaLoaiPhong);
+            this.Controls.Add(this.tenLoaiPhong);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.button1);
@@ -285,9 +285,9 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox tenPhong;
-        private System.Windows.Forms.TextBox giaPhong;
-        private System.Windows.Forms.TextBox ghiChuPhong;
+        private System.Windows.Forms.TextBox tenLoaiPhong;
+        private System.Windows.Forms.TextBox giaLoaiPhong;
+        private System.Windows.Forms.TextBox ghiChuLoaiPhong;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;

@@ -23,7 +23,7 @@ namespace QLKS
 
         bool validateData()
         {
-            if (String.IsNullOrEmpty(tenPhong.Text) || String.IsNullOrEmpty(maLoaiPhong.Text) || String.IsNullOrEmpty(giaPhong.Text) || String.IsNullOrEmpty(ghiChuPhong.Text))
+            if (String.IsNullOrEmpty(tenLoaiPhong.Text) || String.IsNullOrEmpty(maLoaiPhong.Text) || String.IsNullOrEmpty(giaLoaiPhong.Text) || String.IsNullOrEmpty(ghiChuLoaiPhong.Text))
             {
                 return false;
             }
@@ -53,11 +53,11 @@ namespace QLKS
                 }
                 else
                 {
-                    DTO_LoaiPhong loaiphong = new DTO_LoaiPhong(maLoaiPhong.Text, tenPhong.Text, Int32.Parse(giaPhong.Text), ghiChuPhong.Text);
+                    DTO_LoaiPhong loaiphong = new DTO_LoaiPhong(maLoaiPhong.Text, tenLoaiPhong.Text, Int32.Parse(giaLoaiPhong.Text), ghiChuLoaiPhong.Text);
                     if (busLoaiPhong.themLoaiPhong(loaiphong))
                     {
                         MessageBox.Show("Thêm loại phòng thành công!");
-                        maLoaiPhong.Text = giaPhong.Text = ghiChuPhong.Text = tenPhong.Text = giaPhong.Text = "";
+                        maLoaiPhong.Text = giaLoaiPhong.Text = ghiChuLoaiPhong.Text = tenLoaiPhong.Text = giaLoaiPhong.Text = "";
                     }
                     else
                     {
@@ -76,7 +76,7 @@ namespace QLKS
             }
             else
             {
-                if (busLoaiPhong.suaLoaiPhong(tenPhong.Text, Int32.Parse(giaPhong.Text), ghiChuPhong.Text, maLoaiPhong.Text))
+                if (busLoaiPhong.suaLoaiPhong(tenLoaiPhong.Text, Int32.Parse(giaLoaiPhong.Text), ghiChuLoaiPhong.Text, maLoaiPhong.Text))
                 {
                     MessageBox.Show("Sửa loại phòng thành công!");
 
