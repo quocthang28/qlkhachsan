@@ -12,7 +12,6 @@ namespace DAL_Hotel
     {
         public List<DTO_LoaiPhong> showLoaiPhong()
         {
-            //string query = "SELECT MALOAIPHONG AS " + "'Mã Loại Phòng', " + "TENLOAIPHONG AS " + "'Tên loại phòng', " + "DONGIA AS " +"'Đơn giá', " + "GHICHU AS " + "'Ghi chú'" + " FROM dbo.LOAIPHONG";
             string query = "SELECT * FROM dbo.LOAIPHONG";
             List<DTO_LoaiPhong> list = new List<DTO_LoaiPhong>();
             DataTable dt = DBConnect.Instance.ExecuteQuery(query);
@@ -22,11 +21,17 @@ namespace DAL_Hotel
                 list.Add(loaiPhong);
             }
             return list;
-        }
-        
-        public bool checkMALOAIPHONG(string maloaiphong)
+        }       
+        public bool checkMaLoaiPhong(string maloaiphong)
         {
             string query = "SELECT * FROM dbo.LOAIPHONG WHERE MALOAIPHONG = " + "'" + maloaiphong + "'";
+            DataTable result = DBConnect.Instance.ExecuteQuery(query);
+            return result.Rows.Count == 0;
+        }
+
+        public bool checkPhongByMALOAIPHONG(string maloaiphong)
+        {
+            string query = string.Format("SELECT * FROM dbo.PHONG WHERE MALOAIPHONG = N'{0}'", maloaiphong);
             DataTable result = DBConnect.Instance.ExecuteQuery(query);
             return result.Rows.Count == 0;
         }
@@ -41,6 +46,13 @@ namespace DAL_Hotel
         public bool suaLoaiPhong(string tenlp, int dongia, string ghichu, string malp)
         {
             string query = string.Format("UPDATE dbo.LOAIPHONG SET TENLOAIPHONG = N'{0}', DONGIA = {1}, GHICHU = N'{2}' WHERE MALOAIPHONG = N'{3}'", tenlp, dongia, ghichu, malp);
+            int result = DBConnect.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+
+        public bool xoaLoaiPhong(string malp)
+        {
+            string query = string.Format("DELETE FROM dbo.LoaiPhong WHERE MALOAIPHONG = N'{0}'", malp);
             int result = DBConnect.Instance.ExecuteNonQuery(query);
             return result > 0;
         }

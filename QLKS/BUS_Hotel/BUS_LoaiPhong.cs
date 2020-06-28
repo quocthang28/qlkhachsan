@@ -15,7 +15,12 @@ namespace BUS_Hotel
 
         public bool checkMaLoaiPhong(string maloaiphong)
         {
-            return dalLoaiPhong.checkMALOAIPHONG(maloaiphong);
+            return dalLoaiPhong.checkMaLoaiPhong(maloaiphong);
+        }
+
+        public bool checkPhongByMALOAIPHONG(string maloaiphong)
+        {
+            return dalLoaiPhong.checkPhongByMALOAIPHONG(maloaiphong);
         }
 
         public bool themLoaiPhong(DTO_LoaiPhong lp)
@@ -27,11 +32,14 @@ namespace BUS_Hotel
         {
             return dalLoaiPhong.suaLoaiPhong(tenlp, dongia, ghichu, malp);
         }
+
+        public bool xoaLoaiPhong(string malp)
+        {
+            return dalLoaiPhong.xoaLoaiPhong(malp);
+        }
         public List<DTO_LoaiPhong> showLoaiPhong()
         {
             return dalLoaiPhong.showLoaiPhong();
         }
-
-
     }
 }

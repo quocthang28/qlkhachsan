@@ -131,18 +131,21 @@
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 226);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 246);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dataGridView1.RowHeadersWidth = 25;
+            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(871, 334);
             this.dataGridView1.TabIndex = 12;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // label1
             // 
@@ -160,7 +163,7 @@
             this.tenLoaiPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tenLoaiPhong.Name = "tenLoaiPhong";
             this.tenLoaiPhong.Size = new System.Drawing.Size(207, 22);
-            this.tenLoaiPhong.TabIndex = 4;
+            this.tenLoaiPhong.TabIndex = 1;
             // 
             // giaLoaiPhong
             // 
@@ -168,7 +171,7 @@
             this.giaLoaiPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.giaLoaiPhong.Name = "giaLoaiPhong";
             this.giaLoaiPhong.Size = new System.Drawing.Size(207, 22);
-            this.giaLoaiPhong.TabIndex = 5;
+            this.giaLoaiPhong.TabIndex = 3;
             // 
             // ghiChuLoaiPhong
             // 
@@ -177,7 +180,7 @@
             this.ghiChuLoaiPhong.Multiline = true;
             this.ghiChuLoaiPhong.Name = "ghiChuLoaiPhong";
             this.ghiChuLoaiPhong.Size = new System.Drawing.Size(241, 62);
-            this.ghiChuLoaiPhong.TabIndex = 8;
+            this.ghiChuLoaiPhong.TabIndex = 4;
             this.ghiChuLoaiPhong.Text = "Ghi chú";
             // 
             // button3
@@ -186,7 +189,7 @@
             this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(64, 28);
-            this.button3.TabIndex = 9;
+            this.button3.TabIndex = 5;
             this.button3.Text = "Thêm";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -197,9 +200,10 @@
             this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(67, 28);
-            this.button4.TabIndex = 10;
+            this.button4.TabIndex = 7;
             this.button4.Text = "Xoá";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -207,7 +211,7 @@
             this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(67, 28);
-            this.button5.TabIndex = 11;
+            this.button5.TabIndex = 6;
             this.button5.Text = "Sửa";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
@@ -218,7 +222,7 @@
             this.maLoaiPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.maLoaiPhong.Name = "maLoaiPhong";
             this.maLoaiPhong.Size = new System.Drawing.Size(207, 22);
-            this.maLoaiPhong.TabIndex = 13;
+            this.maLoaiPhong.TabIndex = 2;
             // 
             // label2
             // 
@@ -267,7 +271,7 @@
             this.Controls.Add(this.button1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmDanhMucPhong";
-            this.Size = new System.Drawing.Size(871, 560);
+            this.Size = new System.Drawing.Size(871, 580);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
