@@ -13,28 +13,33 @@ namespace DAL_Hotel
 {
     public class DAL_ChiTietPhieuThue: DBConnect
     {
-        public string loadmctpt(int a, int b)
+
+        //Load mã chi tiết phiếu thuê phòng
+        public string loadMaChiTietPhieuThue(int a, int b)
         {
             con.Open();
-            string mpt = "select MACHITIETPHIEUTHUE FROM CHITIETPHIEUTHUEPHONG WHERE MAPHIEUTHUE='" + a + "' AND MAKHACHHANG ='" + b + "'";
-            SqlCommand cmd = new SqlCommand(mpt, con);
+            //string mpt = "select MACHITIETPHIEUTHUE FROM CHITIETPHIEUTHUEPHONG WHERE MAPHIEUTHUE='" + a + "' AND MAKHACHHANG ='" + b + "'";
+            //SqlCommand cmd = new SqlCommand(mpt, con);
+            SqlCommand cmd = new SqlCommand("uspLoadmctpt", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@MAPHIEUTHUE", a);
+            cmd.Parameters.AddWithValue("@MAKHACHHANG", b);
             int t = (int)cmd.ExecuteScalar();
             con.Close();
             return Convert.ToString(t);
 
         }
+
+        //Lập chi tiết phiếu thuê
         public bool lapctphieuthue(DTO_ChiTietPhieuThuePhong ctpt)
         {
 
             try
             {
-                con.Open();
 
-                string SQL = string.Format("INSERT INTO CHITIETPHIEUTHUEPHONG(MAPHIEUTHUE,MAKHACHHANG) VALUES('{0}','{1}')", ctpt.CHITIETPHIEUTHUEPHONG_MAPHIEUTHUE, ctpt.CHITIETPHIEUTHUEPHONG_MAKHACHHANG);
-                SqlCommand cmd = new SqlCommand(SQL, con);
-
-                if (cmd.ExecuteNonQuery() > 0)
-                    return true;
+                int result = DBConnect.Instance.ExecuteNonQuery("exec uspLapctPhieuThue @MAPHIEUTHUE , @MAKHACHHANG", new object[] { ctpt.CHITIETPHIEUTHUEPHONG_MAPHIEUTHUE, ctpt.CHITIETPHIEUTHUEPHONG_MAKHACHHANG });
+                return result > 0;
+                
             }
             catch (Exception e)
             {
@@ -42,22 +47,20 @@ namespace DAL_Hotel
             }
             finally
             {
-                con.Close();
+               
             }
             return false;
         }
+
+        //Xóa chi tiết phiếu thuê
         public bool xoactphieuthue(int a)
         {
 
             try
             {
-                con.Open();
-
-                string SQL = string.Format("DELETE FROM CHITIETPHIEUTHUEPHONG WHERE MACHITIETPHIEUTHUE = {0}", a);
-                SqlCommand cmd = new SqlCommand(SQL, con);
-
-                if (cmd.ExecuteNonQuery() > 0)
-                    return true;
+                int result = DBConnect.Instance.ExecuteNonQuery("exec uspXoactPhieuThue @MACHITIETPHIEUTHUE", new object[] { a });
+                return result > 0;
+                
             }
             catch (Exception e)
             {

@@ -16,18 +16,15 @@ namespace BUS_Hotel
         {
             return dalHotel.getPhieuthue();
         }
-        public DataTable Hienthi(string sql)
-        {
-            return dalHotel.loadData(sql);
-        }
+    
         public bool lapPhieuThue(DTO_PhieuThuePhong pt)
         {
             return dalHotel.lapPhieuThue(pt);
         }
         
-        public string loadmpt(string a , int b)
+        public string loadMaPhieuThue(string a , int b)
         {
-            return dalHotel.loadmpt(a,b);
+            return dalHotel.loadMaPhieuThue(a,b);
         }
         public bool suaPhieuThue(DTO_PhieuThuePhong pt)
         {

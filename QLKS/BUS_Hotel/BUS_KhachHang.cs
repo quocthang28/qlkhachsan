@@ -16,9 +16,9 @@ namespace BUS_Hotel
         {
             return dalHotel.themKhachHang(kh);
         }
-        public string loadmkh(string a)
+        public string loadMaKhachHang(string a)
         {
-            return dalHotel.loadmkh(a);
+            return dalHotel.loadMaKhachHang(a);
         }
         public bool suaKhachHang(DTO_KhachHang kh)
         {

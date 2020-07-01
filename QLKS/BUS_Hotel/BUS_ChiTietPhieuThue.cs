@@ -16,9 +16,9 @@ namespace BUS_Hotel
         {
             return dalHotel.lapctphieuthue(ctpt);
         }
-        public string loadmctpt(int a, int b)
+        public string loadMaChiTietPhieuThue(int a, int b)
         {
-            return dalHotel.loadmctpt(a, b);
+            return dalHotel.loadMaChiTietPhieuThue(a, b);
         }
         public bool xoactphieuthue(int a)
         {

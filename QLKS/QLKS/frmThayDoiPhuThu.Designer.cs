@@ -220,7 +220,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Name = "frmThayDoiPhuThu";
-            this.Size = new System.Drawing.Size(871, 560);
+            this.Size = new System.Drawing.Size(994, 560);
             this.Load += new System.EventHandler(this.frmThayDoiPhuThu_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
