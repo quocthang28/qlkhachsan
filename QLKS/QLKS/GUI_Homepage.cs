@@ -13,6 +13,7 @@ namespace QLKS
     public partial class GUI_Homepage : Form
     {
         frmDanhMucPhong dmPhong = new frmDanhMucPhong();
+        frmPhong phong = new frmPhong();
         public GUI_Homepage()
         {
             InitializeComponent();
@@ -23,14 +24,13 @@ namespace QLKS
         {
 
         }
-        //frmDanhMucPhong danhmucphong = new frmDanhMucPhong();
-        //frmLapHoaDon laphoadon = new frmLapHoaDon();
+
         private void GUI_Homepage_Load(object sender, EventArgs e)
         {
 
-           // pnlContent.Controls.Add(laphoadon);
-
+            // pnlContent.Controls.Add(laphoadon);
             pnlContent.Controls.Add(dmPhong);
+            pnlContent.Controls.Add(phong);
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -39,5 +39,9 @@ namespace QLKS
             //danhmucphong.Dock = DockStyle.Fill;
         }
 
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+            phong.BringToFront();
+        }
     }
 }

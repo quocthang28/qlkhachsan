@@ -52,3 +52,4 @@ C:\Users\Thang\Documents\GitHub\qlkhachsan\QLKS\QLKS\obj\Debug\GUI_Hotel.csproj.
 C:\Users\Thang\Documents\GitHub\qlkhachsan\QLKS\QLKS\obj\Debug\GUI_Hotel.csproj.CopyComplete
 C:\Users\Thang\Documents\GitHub\qlkhachsan\QLKS\QLKS\obj\Debug\QLKS.exe
 C:\Users\Thang\Documents\GitHub\qlkhachsan\QLKS\QLKS\obj\Debug\QLKS.pdb
+C:\Users\Thang\Documents\GitHub\qlkhachsan\QLKS\QLKS\obj\Debug\QLKS.frmPhong.resources

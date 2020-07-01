@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GUI_Homepage));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -42,10 +43,12 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.pnlContent = new System.Windows.Forms.Panel();
+            this.frmPhong1 = new QLKS.frmPhong();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnlContent.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -62,6 +65,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.panel3.Controls.Add(this.button7);
             this.panel3.Controls.Add(this.button6);
             this.panel3.Controls.Add(this.button3);
             this.panel3.Controls.Add(this.button5);
@@ -76,13 +80,30 @@
             this.panel3.Size = new System.Drawing.Size(354, 560);
             this.panel3.TabIndex = 1;
             // 
+            // button7
+            // 
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.ForeColor = System.Drawing.Color.White;
+            this.button7.Location = new System.Drawing.Point(0, 113);
+            this.button7.Margin = new System.Windows.Forms.Padding(134, 125, 134, 125);
+            this.button7.Name = "button7";
+            this.button7.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.button7.Size = new System.Drawing.Size(400, 50);
+            this.button7.TabIndex = 6;
+            this.button7.Text = "Danh Sách Phòng";
+            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click_1);
+            // 
             // button6
             // 
             this.button6.FlatAppearance.BorderSize = 0;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(0, 213);
+            this.button6.Location = new System.Drawing.Point(0, 265);
             this.button6.Margin = new System.Windows.Forms.Padding(134, 125, 134, 125);
             this.button6.Name = "button6";
             this.button6.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
@@ -98,7 +119,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(0, 263);
+            this.button3.Location = new System.Drawing.Point(0, 318);
             this.button3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button3.Name = "button3";
             this.button3.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
@@ -114,7 +135,7 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(0, 163);
+            this.button5.Location = new System.Drawing.Point(0, 210);
             this.button5.Margin = new System.Windows.Forms.Padding(134, 125, 134, 125);
             this.button5.Name = "button5";
             this.button5.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
@@ -147,7 +168,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(0, 113);
+            this.button2.Location = new System.Drawing.Point(0, 158);
             this.button2.Margin = new System.Windows.Forms.Padding(134, 125, 134, 125);
             this.button2.Name = "button2";
             this.button2.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
@@ -202,11 +223,20 @@
             // 
             // pnlContent
             // 
+            this.pnlContent.Controls.Add(this.frmPhong1);
             this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContent.Location = new System.Drawing.Point(354, 0);
             this.pnlContent.Name = "pnlContent";
             this.pnlContent.Size = new System.Drawing.Size(978, 710);
             this.pnlContent.TabIndex = 1;
+            // 
+            // frmPhong1
+            // 
+            this.frmPhong1.Location = new System.Drawing.Point(0, 11);
+            this.frmPhong1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.frmPhong1.Name = "frmPhong1";
+            this.frmPhong1.Size = new System.Drawing.Size(975, 699);
+            this.frmPhong1.TabIndex = 0;
             // 
             // GUI_Homepage
             // 
@@ -226,6 +256,7 @@
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.pnlContent.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -244,6 +275,8 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel pnlContent;
+        private frmPhong frmPhong1;
+        private System.Windows.Forms.Button button7;
     }
 }
 

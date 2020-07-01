@@ -33,11 +33,11 @@ namespace QLKS
 
         public void showLoaiPhong()
         {
-            dataGridView1.DataSource = busLoaiPhong.showLoaiPhong();
-            dataGridView1.Columns["LOAIPHONG_MALOAIPHONG"].HeaderText = "Mã loại phòng";
-            dataGridView1.Columns["LOAIPHONG_TENLOAIPHONG"].HeaderText = "Tên loại phòng";
-            dataGridView1.Columns["LOAIPHONG_DONGIA"].HeaderText = "Đơn giá";
-            dataGridView1.Columns["LOAIPHONG_GHICHU"].HeaderText = "Ghi chú";
+            dgvLoaiPhong.DataSource = busLoaiPhong.getLoaiPhongList();
+            dgvLoaiPhong.Columns["LOAIPHONG_MALOAIPHONG"].HeaderText = "Mã loại phòng";
+            dgvLoaiPhong.Columns["LOAIPHONG_TENLOAIPHONG"].HeaderText = "Tên loại phòng";
+            dgvLoaiPhong.Columns["LOAIPHONG_DONGIA"].HeaderText = "Đơn giá";
+            dgvLoaiPhong.Columns["LOAIPHONG_GHICHU"].HeaderText = "Ghi chú";
         }
 
         private void button3_Click(object sender, EventArgs e) //insert
@@ -68,7 +68,7 @@ namespace QLKS
                 }
             }
         }
-        private void button5_Click(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e) //edit
         {
 
             if (validateData())
@@ -88,15 +88,8 @@ namespace QLKS
                 }
             }
         }
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            tenLoaiPhong.Text = dataGridView1.Rows[e.RowIndex].Cells["LOAIPHONG_TENLOAIPHONG"].Value.ToString();
-            maLoaiPhong.Text = dataGridView1.Rows[e.RowIndex].Cells["LOAIPHONG_MALOAIPHONG"].Value.ToString();
-            giaLoaiPhong.Text = dataGridView1.Rows[e.RowIndex].Cells["LOAIPHONG_DONGIA"].Value.ToString();
-            ghiChuLoaiPhong.Text = dataGridView1.Rows[e.RowIndex].Cells["LOAIPHONG_GHICHU"].Value.ToString();
-        }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e) //delete
         {
             if (validateData())
             {
@@ -123,6 +116,18 @@ namespace QLKS
             {
                 MessageBox.Show("Xóa thất bại vì còn phòng thuộc loại phòng này"); //fix later
             }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                tenLoaiPhong.Text = dgvLoaiPhong.Rows[e.RowIndex].Cells["LOAIPHONG_TENLOAIPHONG"].Value.ToString();
+                maLoaiPhong.Text = dgvLoaiPhong.Rows[e.RowIndex].Cells["LOAIPHONG_MALOAIPHONG"].Value.ToString();
+                giaLoaiPhong.Text = dgvLoaiPhong.Rows[e.RowIndex].Cells["LOAIPHONG_DONGIA"].Value.ToString();
+                ghiChuLoaiPhong.Text = dgvLoaiPhong.Rows[e.RowIndex].Cells["LOAIPHONG_GHICHU"].Value.ToString();
+            }
+            catch (Exception) { }
         }
     }
 }

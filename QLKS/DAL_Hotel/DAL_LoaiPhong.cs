@@ -10,7 +10,7 @@ namespace DAL_Hotel
 {
     public class DAL_LoaiPhong
     {
-        public List<DTO_LoaiPhong> showLoaiPhong()
+        public List<DTO_LoaiPhong> getLoaiPhongList()
         {
             string query = "SELECT * FROM dbo.LOAIPHONG";
             List<DTO_LoaiPhong> list = new List<DTO_LoaiPhong>();
@@ -21,7 +21,9 @@ namespace DAL_Hotel
                 list.Add(loaiPhong);
             }
             return list;
-        }       
+        }
+
+
         public bool checkMaLoaiPhong(string maloaiphong)
         {
             string query = "SELECT * FROM dbo.LOAIPHONG WHERE MALOAIPHONG = " + "'" + maloaiphong + "'";

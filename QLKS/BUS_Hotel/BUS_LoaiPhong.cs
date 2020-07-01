@@ -37,9 +37,9 @@ namespace BUS_Hotel
         {
             return dalLoaiPhong.xoaLoaiPhong(malp);
         }
-        public List<DTO_LoaiPhong> showLoaiPhong()
+        public List<DTO_LoaiPhong> getLoaiPhongList()
         {
-            return dalLoaiPhong.showLoaiPhong();
+            return dalLoaiPhong.getLoaiPhongList();
         }
     }
 }

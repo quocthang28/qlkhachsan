@@ -91,6 +91,7 @@
   <ItemGroup>
     <Compile Include="DAL_DangKi.cs" />
     <Compile Include="DAL_LoaiPhong.cs" />
+    <Compile Include="DAL_Phong.cs" />
     <Compile Include="DBConnect.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
