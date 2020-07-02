@@ -41,6 +41,8 @@
             this.flpPhong = new System.Windows.Forms.FlowLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
             this.donGia = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.maPhong = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -114,6 +116,7 @@
             this.button2.TabIndex = 8;
             this.button2.Text = "Xóa";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -123,6 +126,7 @@
             this.button3.TabIndex = 9;
             this.button3.Text = "Sửa";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // ghiChuPhong
             // 
@@ -159,9 +163,28 @@
             this.donGia.Size = new System.Drawing.Size(0, 17);
             this.donGia.TabIndex = 13;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(316, 115);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(75, 17);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Mã phòng:";
+            // 
+            // maPhong
+            // 
+            this.maPhong.AutoSize = true;
+            this.maPhong.Location = new System.Drawing.Point(393, 115);
+            this.maPhong.Name = "maPhong";
+            this.maPhong.Size = new System.Drawing.Size(0, 17);
+            this.maPhong.TabIndex = 15;
+            // 
             // frmPhong
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.Controls.Add(this.maPhong);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.donGia);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.flpPhong);
@@ -198,5 +221,7 @@
         private System.Windows.Forms.FlowLayoutPanel flpPhong;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label donGia;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label maPhong;
     }
 }

@@ -114,7 +114,7 @@ namespace QLKS
             }
             else
             {
-                MessageBox.Show("Xóa thất bại vì còn phòng thuộc loại phòng này"); //fix later
+                MessageBox.Show("Xóa thất bại vì còn phòng thuộc loại phòng này");
             }
         }
 

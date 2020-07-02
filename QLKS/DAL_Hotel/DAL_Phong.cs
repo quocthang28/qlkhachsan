@@ -30,11 +30,32 @@ namespace DAL_Hotel
             return result > 0;
         }
 
+        public bool suaPhong(DTO_Phong phong, string map)
+        {
+            string query = string.Format("UPDATE dbo.PHONG SET TENPHONG = N'{0}', GHICHU = N'{1}' WHERE MAPHONG = '{2}'", phong.PHONG_TENPHONG, phong.PHONG_GHICHU, map);
+            int result = DBConnect.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+
+        public bool xoaPhong(DTO_Phong phong, string map)
+        {
+            string query = string.Format("DELETE FROM dbo.PHONG WHERE MAPHONG = N'{0}'", map);
+            int result = DBConnect.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+
         public bool checkTrungTenPhong(string tenphong)
         {
             string query = string.Format("SELECT * FROM dbo.Phong WHERE TENPHONG = N'{0}'", tenphong);
             DataTable result = DBConnect.Instance.ExecuteQuery(query);
             return result.Rows.Count == 0;
+        }
+
+        public bool checkTinhTrangPhong(string idPhong)
+        {
+            string query = string.Format("SELECT * FROM dbo.Phong WHERE MAPHONG = {0} AND TINHTRANG = 1", idPhong);
+            DataTable result = DBConnect.Instance.ExecuteQuery(query);
+            return result.Rows.Count > 0;
         }
     }
 }

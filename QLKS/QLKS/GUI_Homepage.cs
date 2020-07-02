@@ -42,6 +42,7 @@ namespace QLKS
         private void button7_Click_1(object sender, EventArgs e)
         {
             phong.BringToFront();
+            phong.showLoaiPhongList();
         }
     }
 }

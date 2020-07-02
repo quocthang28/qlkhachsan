@@ -21,9 +21,24 @@ namespace BUS_Hotel
             return dalPhong.addPhong(phong);
         }
 
+        public bool suaPhong(DTO_Phong phong, string map)
+        {
+            return dalPhong.suaPhong(phong, map);
+        }
+
+        public bool xoaPhong(DTO_Phong phong, string map)
+        {
+            return dalPhong.xoaPhong(phong, map);
+        }
+
         public bool checkTrungTenPhong(string tenphong)
         {
             return dalPhong.checkTrungTenPhong(tenphong);
+        }
+        
+        public bool checkTinhTrangPhong(string idPhong)
+        {
+            return dalPhong.checkTinhTrangPhong(idPhong);
         }
     }
 }

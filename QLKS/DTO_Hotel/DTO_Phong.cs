@@ -32,6 +32,7 @@ namespace DTO_Hotel
 
         public DTO_Phong(DataRow row)
         {
+            PHONG_ID = Int32.Parse(row["MAPHONG"].ToString());
             PHONG_MALOAIPHONG = row["MALOAIPHONG"].ToString();
             PHONG_TENPHONG = row["TENPHONG"].ToString();
             PHONG_GHICHU = row["GHICHU"].ToString();
