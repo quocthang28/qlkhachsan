@@ -105,12 +105,6 @@ namespace QLKS
             ghiChu = gc;
         }
 
-        public bool checkTrungTenPhong(string tenphong)
-        {
-            return busPhong.checkTrungTenPhong(tenphong);
-        }
-
-
         private void loaiPhong_SelectedIndexChanged(object sender, EventArgs e)
         {
             showPhong(false);
