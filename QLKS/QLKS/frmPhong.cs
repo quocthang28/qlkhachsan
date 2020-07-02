@@ -16,6 +16,7 @@ namespace QLKS
 {
     public partial class frmPhong : UserControl
     {
+        private string ghiChu; //ghi chu phong
         BUS_Phong busPhong = new BUS_Phong();
         BUS_LoaiPhong busLoaiPhong = new BUS_LoaiPhong();
         public frmPhong()
@@ -84,6 +85,7 @@ namespace QLKS
             {
                 DTO_Phong firstPhong = phongList.First();
                 tenPhong.Text = firstPhong.PHONG_TENPHONG;
+                ghiChu = firstPhong.PHONG_GHICHU;
                 ghiChuPhong.Text = firstPhong.PHONG_GHICHU;
                 maPhong.Text = firstPhong.PHONG_ID.ToString();
             }
@@ -100,6 +102,7 @@ namespace QLKS
             ghiChuPhong.Text = gc;
             maPhong.Text = id.ToString();
             // show thong tin phong, thong tin khach
+            ghiChu = gc;
         }
 
         public bool checkTrungTenPhong(string tenphong)
@@ -150,7 +153,7 @@ namespace QLKS
             }
             else
             {
-                if (!busPhong.checkTrungTenPhong(tenPhong.Text))
+                if (!busPhong.checkTrungTenPhong(tenPhong.Text) && (ghiChuPhong.Text == ghiChu))
                 {
                     System.Windows.Forms.MessageBox.Show("Tên phòng đã tồn tại!");
                 }
