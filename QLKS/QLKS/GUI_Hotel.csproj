@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,11 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmThayDoiPhuThu.cs">
+    <Compile Include="frmPhong.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="frmThayDoiPhuThu.Designer.cs">
-      <DependentUpon>frmThayDoiPhuThu.cs</DependentUpon>
+    <Compile Include="frmPhong.Designer.cs">
+      <DependentUpon>frmPhong.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI_Homepage.cs">
       <SubType>Form</SubType>
@@ -102,8 +103,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmThayDoiPhuThu.resx">
-      <DependentUpon>frmThayDoiPhuThu.cs</DependentUpon>
+    <EmbeddedResource Include="frmPhong.resx">
+      <DependentUpon>frmPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_Homepage.resx">
       <DependentUpon>GUI_Homepage.cs</DependentUpon>
@@ -138,9 +139,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="..\.editorconfig">
-      <Link>.editorconfig</Link>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
