@@ -10,32 +10,32 @@ using MySql.Data.MySqlClient;
 
 namespace DAL_Hotel
 {
-    public class DAL_DangKi : DBConnect
+    public class DAL_DangKi
     {
         
         public bool themDangKi(DTO_DangKi dk)
         {
-            try
-            {
-                con.Open();
-                SqlCommand cmd = new SqlCommand("THEM", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add(new SqlParameter("@TV_NAME", dk.DANGKI_NAME));
-                cmd.Parameters.Add(new SqlParameter("@TV_PHONE", dk.DANGKI_PHONENUMBER));
-                cmd.Parameters.Add(new SqlParameter("@TV_EMAIL", dk.DANGKI_EMAIL));
+            //try
+            //{
+            //    con.Open();
+            //    SqlCommand cmd = new SqlCommand("THEM", con);
+            //    cmd.CommandType = CommandType.StoredProcedure;
+            //    cmd.Parameters.Add(new SqlParameter("@TV_NAME", dk.DANGKI_NAME));
+            //    cmd.Parameters.Add(new SqlParameter("@TV_PHONE", dk.DANGKI_PHONENUMBER));
+            //    cmd.Parameters.Add(new SqlParameter("@TV_EMAIL", dk.DANGKI_EMAIL));
 
-                if (cmd.ExecuteNonQuery() > 0)
-                    return true;
-            }
-            catch (Exception e)
-            {
+            //    if (cmd.ExecuteNonQuery() > 0)
+            //        return true;
+            //}
+            //catch (Exception e)
+            //{
 
-            }
-            finally
-            {
-                con.Close();
-            }
-            return false;
+            //}
+            //finally
+            //{
+            //    con.Close();
+            //}
+            //return false;
 
             //con2.Open();
             //string query = "INSERT INTO USER(USERNAME,PASSWORD) VALUES(@USERNAME,@PASSWORD)";
@@ -66,7 +66,7 @@ namespace DAL_Hotel
             //}
             //return false;
 
-
+            return false;
         }
         public bool DangNhap(DTO_DangKi dn)
         {
