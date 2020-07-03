@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +22,13 @@ namespace DTO_Hotel
             PHIEUTHUEPHONG_MAPHIEUTHUE = maphieuthue;
             PHIEUTHUEPHONG_NGAYLAPPHIEU = ngaylapphieu;
             PHIEUTHUEPHONG_MAPHONG = maphong;
+        }
+
+        public DTO_PhieuThuePhong(DataRow row)
+        {
+            PHIEUTHUEPHONG_MAPHIEUTHUE = (int)row["MAPHIEUTHUE"];
+            PHIEUTHUEPHONG_NGAYLAPPHIEU = (DateTime)row["NGAYLAPPHIEU"];
+            PHIEUTHUEPHONG_MAPHONG = (int)(row["MAPHONG"]);
         }
     }
 }

@@ -12,11 +12,10 @@ namespace QLKS
 {
     public partial class GUI_Homepage : Form
     {
-        frmDanhMucPhong dmPhong = new frmDanhMucPhong();
+        frmLapHoaDon phieuHoaDon = new frmLapHoaDon();
         public GUI_Homepage()
         {
             InitializeComponent();
-            //this.WindowState = FormWindowState.Maximized;
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -30,14 +29,17 @@ namespace QLKS
 
            // pnlContent.Controls.Add(laphoadon);
 
-            pnlContent.Controls.Add(dmPhong);
+            pnlContent.Controls.Add(phieuHoaDon);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            dmPhong.BringToFront();
             //danhmucphong.Dock = DockStyle.Fill;
         }
 
+        private void button5_Click(object sender, EventArgs e)
+        {
+            phieuHoaDon.BringToFront();
+        }
     }
 }

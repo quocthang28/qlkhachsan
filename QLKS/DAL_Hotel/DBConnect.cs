@@ -10,7 +10,9 @@ namespace DAL_Hotel
 {
     public class DBConnect
     {
-        //protected SqlConnection con = new SqlConnection(@"Data Source=./SQLEXPRESS;Initial Catalog=QLKS;Integrated Security=True");
+        public static string connectionSTR = "Data Source=ADMIN\\SQL;Initial Catalog=QLKS;Integrated Security=True";
+
+        public SqlConnection con = new SqlConnection(connectionSTR);
         private static DBConnect instance; 
 
         public static DBConnect Instance
@@ -21,9 +23,9 @@ namespace DAL_Hotel
 
         public static DBConnect Instance1 { get => instance; set => instance = value; }
 
-        private DBConnect() { }
+        public DBConnect() { }
 
-        private string connectionSTR = "Data Source=.\\SQLEXPRESS;Initial Catalog=QLKS;Integrated Security=True";
+     
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
