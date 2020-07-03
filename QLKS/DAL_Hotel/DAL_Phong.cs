@@ -85,5 +85,18 @@ namespace DAL_Hotel
         }
 
 
+        public List<DTO_Phong> layDanhSachPhongCoNguoi()
+        {
+            string query = string.Format("SELECT * FROM PHONG WHERE TINHTRANGPHONG=1");
+            List<DTO_Phong> list = new List<DTO_Phong>();
+            DataTable dt = DBConnect.Instance.ExecuteQuery(query);
+            foreach (DataRow item in dt.Rows)
+            {
+                DTO_Phong phong = new DTO_Phong(item);
+                list.Add(phong);
+            }
+            return list;
+        }
+
     }
 }

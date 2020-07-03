@@ -15,7 +15,7 @@ namespace QLKS
 {
     public partial class frmLapHoaDon : UserControl
     {
-
+        BUS_KhachHang busKhachHang = new BUS_KhachHang();
         int makh = 0;
         public frmLapHoaDon()
         {
@@ -101,7 +101,7 @@ namespace QLKS
 
         void loadCustomerName()
         {
-            cbTenKhachHang.DataSource = BUS_KhachHang.Instance.layDanhSachTenKhach();
+            cbTenKhachHang.DataSource = busKhachHang.layDanhSachTenKhach();
             cbTenKhachHang.DisplayMember = "TENKHACHHANG";
             cbTenKhachHang.ValueMember = "MAKHACHHANG";
         }
@@ -158,6 +158,7 @@ namespace QLKS
             {
                 BUS_ChiTietHoaDon.Instance.ThemChiTietHoaDon(BUS_HoaDon.Instance.GetMaxIDBill(), maPhong);
                 MessageBox.Show("Thêm thành công");
+                LoadPhong();
             }
             else MessageBox.Show("Thêm không thành công");
         }

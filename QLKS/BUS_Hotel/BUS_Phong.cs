@@ -3,22 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-<<<<<<< HEAD
 using DTO_Hotel;
 using DAL_Hotel;
-=======
 using System.Data;
-using DAL_Hotel;
-using DTO_Hotel;
->>>>>>> master
+
 
 namespace BUS_Hotel
 {
     public class BUS_Phong
     {
-<<<<<<< HEAD
-=======
+        private static BUS_Phong instance;
+
+        public static BUS_Phong Instance
+        {
+            get { if (instance == null) instance = new BUS_Phong(); return BUS_Phong.instance; }
+            private set { BUS_Phong.instance = value; }
+        }
+
         DAL_Phong dalPhong = new DAL_Phong();
+
         public List<DTO_Phong> getPhongList(string tenlp)
         {
             return dalPhong.getPhongList(tenlp);
@@ -49,25 +52,16 @@ namespace BUS_Hotel
             return dalPhong.checkTinhTrangPhong(idPhong);
 
         }
->>>>>>> master
-        private static BUS_Phong instance;
 
-        public static BUS_Phong Instance
-        {
-            get { if (instance == null) instance = new BUS_Phong(); return BUS_Phong.instance; }
-            private set { BUS_Phong.instance = value; }
-        }
-<<<<<<< HEAD
+
         public List<DTO_Phong> layDanhSachPhongCoNguoi()
         {
-            return DAL_Phong.Instance.layDanhSachPhongCoNguoi();
-=======
+            return dalPhong.layDanhSachPhongCoNguoi();
+        }
 
-        
         public List<DTO_Phong> loadDanhSachPhongTheoLoaiPhong(string a)
         {
-            return DAL_Phong.Instance.loadDanhSachPhongTheoLoaiPhong(a);
->>>>>>> master
+            return dalPhong.loadDanhSachPhongTheoLoaiPhong(a);
         }
     }
 }

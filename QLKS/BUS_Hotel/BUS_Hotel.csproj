@@ -89,8 +89,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS_ChiTietHoaDon.cs" />
     <Compile Include="BUS_ChiTietPhieuThue.cs" />
     <Compile Include="BUS_DangKi.cs" />
+    <Compile Include="BUS_HoaDon.cs" />
     <Compile Include="BUS_KhachHang.cs" />
     <Compile Include="BUS_LapPhieuThue.cs" />
     <Compile Include="BUS_LoaiKhachHang.cs" />
