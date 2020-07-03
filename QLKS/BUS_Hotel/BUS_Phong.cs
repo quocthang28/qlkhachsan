@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+<<<<<<< HEAD
+=======
+using System.Data;
+>>>>>>> QUYNHDEPTRAI
 using DAL_Hotel;
 using DTO_Hotel;
 
@@ -10,6 +14,7 @@ namespace BUS_Hotel
 {
     public class BUS_Phong
     {
+<<<<<<< HEAD
         DAL_Phong dalPhong = new DAL_Phong();
         public List<DTO_Phong> getPhongList(string tenlp)
         {
@@ -39,6 +44,20 @@ namespace BUS_Hotel
         public bool checkTinhTrangPhong(string idPhong)
         {
             return dalPhong.checkTinhTrangPhong(idPhong);
+=======
+        private static BUS_Phong instance;
+
+        public static BUS_Phong Instance
+        {
+            get { if (instance == null) instance = new BUS_Phong(); return BUS_Phong.instance; }
+            private set { BUS_Phong.instance = value; }
+        }
+
+        
+        public List<DTO_Phong> loadDanhSachPhongTheoLoaiPhong(int a)
+        {
+            return DAL_Phong.Instance.loadDanhSachPhongTheoLoaiPhong(a);
+>>>>>>> QUYNHDEPTRAI
         }
     }
 }

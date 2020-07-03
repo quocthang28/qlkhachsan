@@ -32,5 +32,11 @@ namespace DTO_Hotel
             LOAIPHONG_DONGIA = Int32.Parse(row["DONGIA"].ToString());
             LOAIPHONG_GHICHU = row["GHICHU"].ToString();
         }
+        public DTO_LoaiPhong(DataRow row)
+        {
+            this.LOAIPHONG_MALOAIPHONG = (int)row["MALOAIPHONG"];
+            this.LOAIPHONG_TENLOAIPHONG = (string)row["TENLOAIPHONG"];
+            this.LOAIPHONG_DONGIA = (int)row["DONGIA"];
+        }
     }
 }
