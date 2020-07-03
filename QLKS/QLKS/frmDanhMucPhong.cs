@@ -38,13 +38,17 @@ namespace QLKS
             dgvLoaiPhong.Columns["LOAIPHONG_TENLOAIPHONG"].HeaderText = "Tên loại phòng";
             dgvLoaiPhong.Columns["LOAIPHONG_DONGIA"].HeaderText = "Đơn giá";
             dgvLoaiPhong.Columns["LOAIPHONG_GHICHU"].HeaderText = "Ghi chú";
-            if (dgvLoaiPhong != null)
+            try
             {
-                maLoaiPhong.Text = dgvLoaiPhong.Rows[0].Cells[0].Value.ToString();
-                tenLoaiPhong.Text = dgvLoaiPhong.Rows[0].Cells[1].Value.ToString();
-                giaLoaiPhong.Text = dgvLoaiPhong.Rows[0].Cells[2].Value.ToString();
-                ghiChuLoaiPhong.Text = dgvLoaiPhong.Rows[0].Cells[3].Value.ToString();
+                if (dgvLoaiPhong != null)
+                {
+                    maLoaiPhong.Text = dgvLoaiPhong.Rows[0].Cells[0].Value.ToString();
+                    tenLoaiPhong.Text = dgvLoaiPhong.Rows[0].Cells[1].Value.ToString();
+                    giaLoaiPhong.Text = dgvLoaiPhong.Rows[0].Cells[2].Value.ToString();
+                    ghiChuLoaiPhong.Text = dgvLoaiPhong.Rows[0].Cells[3].Value.ToString();
+                }
             }
+            catch (Exception) { }
         }
 
         private void button3_Click(object sender, EventArgs e) //insert

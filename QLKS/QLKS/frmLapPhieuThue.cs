@@ -68,7 +68,7 @@ namespace QLKS
 
             //cbP.DataSource = null;
 
-            int id = 0;
+            string id;
             ComboBox cb = sender as ComboBox;
             if (cb.SelectedItem == null)
             {
@@ -111,7 +111,7 @@ namespace QLKS
         private void btnLuu_Click(object sender, EventArgs e)
         {
             
-            DTO_PhieuThuePhong lpt = new DTO_PhieuThuePhong(0, dtNgayLap.Text, Convert.ToInt32(cbP.SelectedValue.ToString()));
+            DTO_PhieuThuePhong lpt = new DTO_PhieuThuePhong(0, dtNgayLap.Text, cbP.SelectedValue.ToString());
             DTO_KhachHang tkh = new DTO_KhachHang(0,Convert.ToInt32( cbK.SelectedValue.ToString()), txtName.Text, txtCMND.Text, txtDiachi.Text, txtPhoneNumber.Text, dtNgaySinh.Text);
             if(busHotel.lapPhieuThue(lpt) && busKh.themKhachHang(tkh))
             {
@@ -143,7 +143,7 @@ namespace QLKS
         private void btnSua_Click(object sender, EventArgs e)
         {
             
-            DTO_PhieuThuePhong spt = new DTO_PhieuThuePhong(t,dtNgayLap.Text, Convert.ToInt32(cbP.SelectedValue.ToString()));
+            DTO_PhieuThuePhong spt = new DTO_PhieuThuePhong(t,dtNgayLap.Text, (cbP.SelectedValue.ToString()));
             t = 0;
             DTO_KhachHang skh = new DTO_KhachHang(d, Convert.ToInt32(cbK.SelectedValue.ToString()), txtName.Text, txtCMND.Text, txtDiachi.Text, txtPhoneNumber.Text, dtNgaySinh.Text);
             d = 0;
