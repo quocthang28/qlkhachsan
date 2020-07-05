@@ -10,16 +10,19 @@ namespace DAL_Hotel
 {
     public class DAL_HoaDon
     {
+        private static DAL_HoaDon instance;
 
-
-        DAL_HoaDon dalPhong = new DAL_HoaDon();
+        public static DAL_HoaDon Instance
+        {
+            get { if (instance == null) instance = new DAL_HoaDon(); return DAL_HoaDon.instance; }
+            private set { DAL_HoaDon.instance = value; }
+        }
 
 
         public bool themHoaDon(int makh) // them hoa don
         {
-            string query = "EXEC USP_InsertBill @makh";
-            int a= DBConnect.Instance.ExecuteNonQuery(query, new object[] { makh });
-            return a > 0;
+                string query = "EXEC USP_InsertBill @makh";
+                return DBConnect.Instance.ExecuteNonQuery(query, new object[] { makh }) > 0;   
         }
 
         public int GetMaxIDBill()    // lay hoa don vua tao
@@ -27,16 +30,22 @@ namespace DAL_Hotel
             return (int)DBConnect.Instance.ExecuteScalar("SELECT MAX(MAHOADON) FROM HOADON");
         }
 
-        public bool UpdateRoomPrice(int mahd)     // cap nhat tri gia hoa don
+        public int getUnCheckIDBillByIDCustomer(int makh)
         {
-            string query = "USP_UpdateBill_RoomPrice @mahd";
-            return DBConnect.Instance.ExecuteNonQuery(query, new object[] { mahd }) > 0;
+            string query = "select MAHOADON from HOADON WHERE TINHTRANGHOADON=0 AND MAKHACHHANG= "+makh;
+            if(DBConnect.Instance.ExecuteScalar(query) ==null )
+            {
+                return -1;
+            }
+            return (int)DBConnect.Instance.ExecuteScalar(query);
         }
 
-        public void ThanhToanHoaDon(int mahd)  //thanh toan hoa don
+
+        public bool ThanhToanHoaDon(int mahd, int trigia)  //thanh toan hoa don
         {
-            string query = "update HOADON set NGAYLAPHOADON = GETDATE()  where MAHOADON= " + mahd;
-            DBConnect.Instance.ExecuteNonQuery(query);
+            string query = "USP_thanhToanHoaDon @mahd , @trigia " ;
+            int a= DBConnect.Instance.ExecuteNonQuery(query, new object[] { mahd, trigia });
+            return a > 0;
         }
 
 

@@ -51,7 +51,7 @@ namespace DAL_Hotel
 
         public bool addPhong(DTO_Phong phong)
         {
-            string query = string.Format("INSERT INTO dbo.Phong (MALOAIPHONG, TENPHONG, GHICHU, TINHTRANG) VALUES (N'{0}', N'{1}', N'{2}', {3})", phong.PHONG_MALOAIPHONG, phong.PHONG_TENPHONG, phong.PHONG_GHICHU, phong.PHONG_TINHTRANG);
+            string query = string.Format("INSERT INTO dbo.Phong (MALOAIPHONG, TENPHONG, GHICHU, TINHTRANG) VALUES (N'{0}', N'{1}', N'{2}', {3})", phong.PHONG_MALOAIPHONG, phong.PHONG_TENPHONG, phong.PHONG_GHICHU, phong.PHONG_CONTRONG);
             int result = DBConnect.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
@@ -87,7 +87,7 @@ namespace DAL_Hotel
 
         public List<DTO_Phong> layDanhSachPhongCoNguoi()
         {
-            string query = string.Format("SELECT * FROM PHONG WHERE TINHTRANGPHONG=1");
+            string query = string.Format("SELECT * FROM PHONG WHERE TINHTRANG = 1");
             List<DTO_Phong> list = new List<DTO_Phong>();
             DataTable dt = DBConnect.Instance.ExecuteQuery(query);
             foreach (DataRow item in dt.Rows)

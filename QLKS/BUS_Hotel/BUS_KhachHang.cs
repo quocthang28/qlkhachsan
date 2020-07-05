@@ -32,23 +32,23 @@ namespace BUS_Hotel
         {
             return DAL_KhachHang.Instance.layDiaChiKhach(makh);
         }
-        //DAL_KhachHang dalHotel = new DAL_KhachHang();
-        //public bool themKhachHang(DTO_KhachHang kh)
-        //{
-        //    return dalHotel.themKhachHang(kh);
-        //}
-        //public string loadMaKhachHang(string a)
-        //{
-        //    return dalHotel.loadMaKhachHang(a);
-        //}
-        //public bool suaKhachHang(DTO_KhachHang kh)
-        //{
-        //    return dalHotel.suaKhachHang(kh);
-        //}
-        //public bool xoaKhachHang(int a)
-        //{
-        //    return dalHotel.xoaKhachHang(a);
-        //}
+        DAL_KhachHang dalHotel = new DAL_KhachHang();
+        public bool themKhachHang(DTO_KhachHang kh)
+        {
+            return dalHotel.themKhachHang(kh);
+        }
+        public string loadMaKhachHang(string a)
+        {
+            return dalHotel.loadMaKhachHang(a);
+        }
+        public bool suaKhachHang(DTO_KhachHang kh)
+        {
+            return dalHotel.suaKhachHang(kh);
+        }
+        public bool xoaKhachHang(int a)
+        {
+            return dalHotel.xoaKhachHang(a);
+        }
     }
 }
 

@@ -15,8 +15,12 @@ namespace QLKS
 {
     public partial class frmLapHoaDon : UserControl
     {
+
+
         BUS_KhachHang busKhachHang = new BUS_KhachHang();
         int makh = 0;
+        int maHoaDon = 0;
+        int maChiTietHoaDon = 0;
         public frmLapHoaDon()
         {
             InitializeComponent();
@@ -102,8 +106,8 @@ namespace QLKS
         void loadCustomerName()
         {
             cbTenKhachHang.DataSource = busKhachHang.layDanhSachTenKhach();
-            cbTenKhachHang.DisplayMember = "TENKHACHHANG";
-            cbTenKhachHang.ValueMember = "MAKHACHHANG";
+            cbTenKhachHang.DisplayMember = "KHACHHANG_TENKHACHHANG";
+            cbTenKhachHang.ValueMember = "KHACHHANG_MAKHACHHANG";
         }
 
         void LoadPhong()
@@ -116,18 +120,19 @@ namespace QLKS
 
         void hienThiHoaDon(int makh)
         {
-            List<DTO_ChiTietHoaDon> listRoom = BUS_ChiTietHoaDon.Instance.layDanhSachChiTietHoaDon(makh);
-            lvBill.Items.Clear();
-            int totalPrice = 0;
-            foreach (DTO_ChiTietHoaDon item in listRoom)
-            {
-                ListViewItem lvItem = new ListViewItem((item.CHITIETHOADON_MAPHONG).ToString());
-                lvItem.SubItems.Add(item.CHITIETHOADON_SONGAY.ToString());
-                lvItem.SubItems.Add(item.CHITIETHOADON_DONGIA.ToString());
-                lvItem.SubItems.Add(item.CHITIETHOADON_THANHTIEN.ToString());
+            DataTable data = BUS_ChiTietHoaDon.Instance.layDanhSachChiTietHoaDon(makh);
 
-                totalPrice += item.CHITIETHOADON_THANHTIEN;
-                lvBill.Items.Add(lvItem);
+            int totalPrice = 0;
+       
+            dgvChiTietHoaDon.DataSource = data;
+
+            for (int i = 0; i < dgvChiTietHoaDon.RowCount;i++)
+            {
+                if (dgvChiTietHoaDon.Rows[i].Cells["THANHTIEN"].Value != null)
+                {
+                    totalPrice += (int)dgvChiTietHoaDon.Rows[i].Cells["THANHTIEN"].Value;
+                }
+                else totalPrice += 0;
             }
             tbTongTien.Text = totalPrice.ToString();
 
@@ -143,29 +148,72 @@ namespace QLKS
             if (cb.SelectedItem == null)
                 return;
             DTO_KhachHang selected = cb.SelectedItem as DTO_KhachHang;
-            makh = selected.maKhachHang;
+            makh = selected.KHACHHANG_MAKHACHHANG;
             hienThiHoaDon(makh);
             tbAddress.Text = BUS_KhachHang.Instance.layDiaChiKhach(makh);
         }
 
 
-
-
         private void btnAddRoom_Click(object sender, EventArgs e)
         {
             int maPhong = (cbRoom.SelectedItem as DTO_Phong).PHONG_MAPHONG;
-            if (BUS_HoaDon.Instance.themHoaDon(makh) == true)
+            if (BUS_HoaDon.Instance.getUnCheckIDBillByIDCustomer(makh) == -1)
             {
-                BUS_ChiTietHoaDon.Instance.ThemChiTietHoaDon(BUS_HoaDon.Instance.GetMaxIDBill(), maPhong);
-                MessageBox.Show("Thêm thành công");
-                LoadPhong();
+                if (BUS_HoaDon.Instance.themHoaDon(makh) == true)
+                {
+                    BUS_ChiTietHoaDon.Instance.ThemChiTietHoaDon(BUS_HoaDon.Instance.GetMaxIDBill(), maPhong);
+                    MessageBox.Show("Thêm thành công");
+                    BUS_ChiTietHoaDon.Instance.updateChiTietHoaDon();
+                    hienThiHoaDon(makh);
+                }
+                else MessageBox.Show("Thêm không thành công");
             }
-            else MessageBox.Show("Thêm không thành công");
+            else
+            {
+                BUS_ChiTietHoaDon.Instance.ThemChiTietHoaDon(BUS_HoaDon.Instance.getUnCheckIDBillByIDCustomer(makh), maPhong);
+                MessageBox.Show("Thêm thành công");
+                BUS_ChiTietHoaDon.Instance.updateChiTietHoaDon();
+                hienThiHoaDon(makh);
+            }
+
+
         }
 
 
         #endregion
 
 
+        private void dgvChiTietHoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvChiTietHoaDon.SelectedCells.Count > 0)
+            {
+                 maChiTietHoaDon = (int)dgvChiTietHoaDon.SelectedCells[0].OwningRow.Cells["MACHITIETHOADON"].Value;
+                 maHoaDon=(int)dgvChiTietHoaDon.SelectedCells[0].OwningRow.Cells["MAHOADON"].Value;
+            }
+        }
+
+        private void btnDelRoom_Click(object sender, EventArgs e)
+        {
+            if(BUS_ChiTietHoaDon.Instance.XoaChiTietHoaDon(maChiTietHoaDon,maHoaDon) == true )
+            {
+                MessageBox.Show("Xoa thanh cong");
+                hienThiHoaDon(makh);
+            }
+            else
+            {
+                MessageBox.Show("Xoa khong thanh cong");
+            }
+        }
+
+
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        {
+            if (BUS_HoaDon.Instance.thanhToanHoaDon(BUS_HoaDon.Instance.getUnCheckIDBillByIDCustomer(makh), Convert.ToInt32(this.tbTongTien.Text)))
+            {
+                MessageBox.Show("Thanh toan thanh cong");
+                hienThiHoaDon(makh);
+            }
+            else MessageBox.Show("Thanh toan khong thanh cong");
+        }
     }
 }

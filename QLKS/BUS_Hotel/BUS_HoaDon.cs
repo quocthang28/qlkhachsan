@@ -29,6 +29,16 @@ namespace BUS_Hotel
             return DAL_HoaDon.Instance.GetMaxIDBill();
         }
 
+        public int getUnCheckIDBillByIDCustomer(int makh)
+        {
+            return DAL_HoaDon.Instance.getUnCheckIDBillByIDCustomer(makh);
+        }
+
+        public bool thanhToanHoaDon(int mahd, int thanhtien)
+        {
+            return DAL_HoaDon.Instance.ThanhToanHoaDon(mahd, thanhtien);
+        }
+
 
     }
 }

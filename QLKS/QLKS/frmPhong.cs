@@ -66,7 +66,7 @@ namespace QLKS
                 btn.Tag = phong;
                 btn.FlatStyle = FlatStyle.Flat;
                 btn.FlatAppearance.BorderSize = 5;
-                if (phong.PHONG_TINHTRANG == 1)
+                if (phong.PHONG_CONTRONG == 1)
                 {
                     tinhTrang = "Có người";
                     btn.FlatAppearance.BorderColor = Color.Red;
@@ -125,7 +125,7 @@ namespace QLKS
                 }
                 else
                 {
-                    DTO_Phong phong = new DTO_Phong(loaiPhong.SelectedValue.ToString(), tenPhong.Text, ghiChuPhong.Text, 0);
+                    DTO_Phong phong = new DTO_Phong(loaiPhong.SelectedValue.ToString(), tenPhong.Text, ghiChuPhong.Text, 0 ,0);
                     if (busPhong.addPhong(phong))
                     {
                         showPhong(true);
@@ -153,7 +153,7 @@ namespace QLKS
                 }
                 else
                 {
-                    DTO_Phong phong = new DTO_Phong(loaiPhong.SelectedValue.ToString(), tenPhong.Text, ghiChuPhong.Text, 0);
+                    DTO_Phong phong = new DTO_Phong(loaiPhong.SelectedValue.ToString(), tenPhong.Text, ghiChuPhong.Text, 0 ,0);
                     if (busPhong.suaPhong(phong, maPhong.Text))
                     {
                         showPhong(true);
@@ -181,7 +181,7 @@ namespace QLKS
                 }
                 else
                 {
-                    DTO_Phong phong = new DTO_Phong(loaiPhong.SelectedValue.ToString(), tenPhong.Text, ghiChuPhong.Text, 0);
+                    DTO_Phong phong = new DTO_Phong(loaiPhong.SelectedValue.ToString(), tenPhong.Text, ghiChuPhong.Text, 0 ,0);
                     if (busPhong.xoaPhong(phong, maPhong.Text))
                     {
                         showPhong(true);

@@ -12,44 +12,44 @@ namespace DTO_Hotel
         private int _KHACHHANG_MAKHACHHANG;
         private int _KHACHHANG_MALOAIKHACHHANG;
         private string _KHACHHANG_TENKHACHHANG;
-        private int _KHACHHANG_CMND;
+        private string _KHACHHANG_CMND;
         private string _KHACHHANG_DIACHI;
-        private DateTime? _KHACHHANG_NGAYSINH;
-        private int _KHACHHANG_SODIENTHOAI;
-        private DataRow item;
-
-        public int maKhachHang { get => _KHACHHANG_MAKHACHHANG; set => _KHACHHANG_MAKHACHHANG = value; }
-        public int maLoaiKhachHang { get => _KHACHHANG_MALOAIKHACHHANG; set => _KHACHHANG_MALOAIKHACHHANG = value; }
-        public string tenKhachHang { get => _KHACHHANG_TENKHACHHANG; set => _KHACHHANG_TENKHACHHANG = value; }
-        public int CMND { get => _KHACHHANG_CMND; set => _KHACHHANG_CMND = value; }
-        public string diaChi { get => _KHACHHANG_DIACHI; set => _KHACHHANG_DIACHI = value; }
-        public DateTime? ngaySinh  { get => _KHACHHANG_NGAYSINH ; set => _KHACHHANG_NGAYSINH = value; }
-        public int SDT { get => _KHACHHANG_SODIENTHOAI; set => _KHACHHANG_SODIENTHOAI = value; }
+        private string _KHACHHANG_NGAYSINH;
+        private string _KHACHHANG_SODIENTHOAI;
 
 
+        public int KHACHHANG_MAKHACHHANG { get => _KHACHHANG_MAKHACHHANG; set => _KHACHHANG_MAKHACHHANG = value; }
+        public int KHACHHANG_MALOAIKHACHHANG { get => _KHACHHANG_MALOAIKHACHHANG; set => _KHACHHANG_MALOAIKHACHHANG = value; }
+        public string KHACHHANG_TENKHACHHANG { get => _KHACHHANG_TENKHACHHANG; set => _KHACHHANG_TENKHACHHANG = value; }
+        public string KHACHHANG_CMND { get => _KHACHHANG_CMND; set => _KHACHHANG_CMND = value; }
+        public string KHACHHANG_DIACHI { get => _KHACHHANG_DIACHI; set => _KHACHHANG_DIACHI = value; }
+        public string KHACHHANG_NGAYSINH { get => _KHACHHANG_NGAYSINH ; set => _KHACHHANG_NGAYSINH = value; }
+        public string KHACHHANG_SODIENTHOAI { get => _KHACHHANG_SODIENTHOAI; set => _KHACHHANG_SODIENTHOAI = value; }
 
 
-        public DTO_KhachHang(int makhachhang, int maloaikhachhang, string tenkhachhang, int cmnd, string diachi,DateTime? ngaysinh, int sdt)
+
+
+        public DTO_KhachHang(int makhachhang, int maloaikhachhang, string tenkhachhang, string cmnd, string diachi,string sdt, string ngaysinh)
         {
-            maKhachHang = makhachhang;
-            maLoaiKhachHang = maloaikhachhang;
-            tenKhachHang = tenkhachhang;
-            CMND = cmnd;
-            diaChi = diachi;
-            ngaySinh = ngaysinh ;
-            SDT = sdt;
+            KHACHHANG_MAKHACHHANG = makhachhang;
+            KHACHHANG_MALOAIKHACHHANG = maloaikhachhang;
+            KHACHHANG_TENKHACHHANG = tenkhachhang;
+            KHACHHANG_CMND = cmnd;
+            KHACHHANG_DIACHI = diachi;
+            KHACHHANG_NGAYSINH = ngaysinh ;
+            KHACHHANG_SODIENTHOAI = sdt;
         }
 
 
         public DTO_KhachHang(DataRow row)
         {
-            maKhachHang = (int)row["MAKHACHHANG"];
-            maLoaiKhachHang = (int)row["MALOAIKHACHHANG"];
-            tenKhachHang = row["TENKHACHHANG"].ToString();
-            CMND = int.Parse(row["CMND"].ToString());
-            diaChi = row["DIACHI"].ToString();
-            SDT = (int)row["SODIENTHOAI"];
-            ngaySinh = DateTime.Parse(row["NGAYSINH"].ToString());
+            KHACHHANG_MAKHACHHANG = (int)row["MAKHACHHANG"];
+            KHACHHANG_MALOAIKHACHHANG = (int)row["MALOAIKHACHHANG"];
+            KHACHHANG_TENKHACHHANG = row["TENKHACHHANG"].ToString();
+            KHACHHANG_CMND = (row["CMND"].ToString().ToString());
+            KHACHHANG_DIACHI = row["DIACHI"].ToString();
+            KHACHHANG_SODIENTHOAI = row["SODIENTHOAI"].ToString();
+            KHACHHANG_NGAYSINH = row["NGAYSINH"].ToString();
         }
     }
 }

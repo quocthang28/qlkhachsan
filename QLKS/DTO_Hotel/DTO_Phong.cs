@@ -15,6 +15,8 @@ namespace DTO_Hotel
         private string _PHONG_TENPHONG;
         private string _PHONG_GHICHU;
         private int _PHONG_CONTRONG;
+
+
         public int PHONG_ID { get => _PHONG_ID; set => _PHONG_ID = value; }
         public string PHONG_MALOAIPHONG { get => _PHONG_MALOAIPHONG; set => _PHONG_MALOAIPHONG = value; }
         public string PHONG_TENPHONG { get => _PHONG_TENPHONG; set => _PHONG_TENPHONG = value; }
