@@ -81,3 +81,4 @@ C:\Users\Admin\Desktop\qlkhachsan\QLKS\QLKS\bin\Debug\DAL_Hotel.pdb
 C:\Users\Admin\Desktop\qlkhachsan\QLKS\QLKS\bin\Debug\DAL_Hotel.dll.config
 C:\Users\Admin\Desktop\qlkhachsan\QLKS\QLKS\obj\Debug\GUI_Hotel.csproj.CopyComplete
 C:\Users\Admin\Desktop\qlkhachsan\QLKS\QLKS\obj\Debug\QLKS.frmThayDoiPhuThu.resources
+C:\Users\Thang\Documents\GitHub\qlkhachsan\QLKS\QLKS\obj\Debug\QLKS.frmThayDoiPhuThu.resources

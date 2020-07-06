@@ -47,7 +47,7 @@ namespace DAL_Hotel
                 if (cmd.ExecuteNonQuery() > 0)
                     return true;
             }
-            catch (Exception e)
+            catch (Exception)
             {
 
             }

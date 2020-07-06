@@ -20,7 +20,7 @@ namespace QLKS
         BUS_LapPhieuThue busHotel = new BUS_LapPhieuThue();
         BUS_KhachHang busKh = new BUS_KhachHang();
         BUS_ChiTietPhieuThue busctpt = new BUS_ChiTietPhieuThue();
-
+        BUS_LoaiPhong busLoaiPhong = new BUS_LoaiPhong();
         public frmLapPhieuThue()
         {
             
@@ -60,6 +60,14 @@ namespace QLKS
             //cbK.DisplayMember = "TENLOAIKHACHHANG";
             //cbK.ValueMember = "MALOAIKHACHHANG";
             //cbK.DataSource = dt2;
+        }
+
+        public void showLoaiPhongList() //to combobox
+        {
+            List<DTO_LoaiPhong> loaiPhongList = busLoaiPhong.getLoaiPhongList();
+            cbLP.DisplayMember = "LOAIPHONG_TENLOAIPHONG";
+            cbLP.ValueMember = "LOAIPHONG_MALOAIPHONG";
+            cbLP.DataSource = loaiPhongList;
         }
 
         //Load phòng theo loại phòng vừa chọn

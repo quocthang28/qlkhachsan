@@ -86,8 +86,6 @@ namespace DAL_Hotel
             string query = string.Format("DELETE FROM dbo.LoaiPhong WHERE MALOAIPHONG = N'{0}'", malp);
             int result = DBConnect.Instance.ExecuteNonQuery(query);
             return result > 0;
-
-
         }
     }
 }

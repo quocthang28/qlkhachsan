@@ -83,7 +83,5 @@ namespace DAL_Hotel
             DataTable result = DBConnect.Instance.ExecuteQuery(query);
             return result.Rows.Count > 0;
         }
-
-
     }
 }
