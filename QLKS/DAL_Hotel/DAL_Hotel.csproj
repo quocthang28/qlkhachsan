@@ -89,9 +89,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL_ChiTietPhieuThue.cs" />
     <Compile Include="DAL_DangKi.cs" />
+    <Compile Include="DAL_KhachHang.cs" />
+    <Compile Include="DAL_LapPhieuThue.cs" />
+    <Compile Include="DAL_LoaiKhachHang.cs" />
     <Compile Include="DAL_LoaiPhong.cs" />
     <Compile Include="DAL_Phong.cs" />
+    <Compile Include="DAL_PhuThu.cs" />
     <Compile Include="DBConnect.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
