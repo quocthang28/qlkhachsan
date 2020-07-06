@@ -183,7 +183,7 @@ namespace QLKS
             {
                 if(busHotel.xoaPhieuThue(t) && busKh.xoaKhachHang(d))
                 {
-                    MessageBox.Show("Xóa  thành công!");
+                    MessageBox.Show("Xóa thành công!");
                     dgvPT.DataSource = busHotel.getPhieuthue();
                     txtName.Text = "Họ tên";
                     txtPhoneNumber.Text = "Số điện thoại";

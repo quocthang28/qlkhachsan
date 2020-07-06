@@ -34,20 +34,15 @@ namespace QLKS
             // pnlContent.Controls.Add(laphoadon);
             pnlContent.Controls.Add(dmPhong);
             pnlContent.Controls.Add(phong);
-
             pnlContent.Controls.Add(laphoadon);
-
             pnlContent.Controls.Add(lapphieuthue);
-
             pnlContent.Controls.Add(thaydoiphuthu);
         }
-
         private void button4_Click(object sender, EventArgs e)
         {
             dmPhong.BringToFront();
             //danhmucphong.Dock = DockStyle.Fill;
         }
-
         private void button7_Click_1(object sender, EventArgs e)
         {
             phong.BringToFront();
@@ -58,7 +53,6 @@ namespace QLKS
             lapphieuthue.BringToFront();
             lapphieuthue.showLoaiPhongList();
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
             thaydoiphuthu.BringToFront();
