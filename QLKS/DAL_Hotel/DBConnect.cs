@@ -10,7 +10,7 @@ namespace DAL_Hotel
 {
     public class DBConnect
     {
-        protected SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-B182N8G\MSSQLSERVER01;Initial Catalog=QLKS;Integrated Security=True");
+        protected SqlConnection con = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=qlkhachsan;Integrated Security=True");
         private static DBConnect instance; 
 
         public static DBConnect Instance
@@ -23,7 +23,7 @@ namespace DAL_Hotel
 
         public DBConnect() { }
 
-        public string connectionSTR = "Data Source=DESKTOP-B182N8G\\MSSQLSERVER01;Initial Catalog=QLKS;Integrated Security=True";
+        public string connectionSTR = @"Data Source=.\SQLEXPRESS;Initial Catalog=qlkhachsan;Integrated Security=True";
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
