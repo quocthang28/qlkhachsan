@@ -26,6 +26,11 @@ namespace BUS_Hotel
         {
             return dalHotel.loadMaPhieuThue(a,b);
         }
+
+        public string loadMaPhong(int mpt)
+        {
+            return dalHotel.loadMaPhong(mpt);
+        }
         public bool suaPhieuThue(DTO_PhieuThuePhong pt)
         {
             return dalHotel.suaPhieuThue(pt);

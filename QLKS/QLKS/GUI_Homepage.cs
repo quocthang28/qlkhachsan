@@ -56,6 +56,7 @@ namespace QLKS
         private void button2_Click(object sender, EventArgs e)
         {
             lapphieuthue.BringToFront();
+           
         }
 
         private void button3_Click(object sender, EventArgs e)

@@ -42,6 +42,11 @@ namespace BUS_Hotel
             return dalPhong.checkTinhTrangPhong(idPhong);
 
         }
+
+        public bool updateTinhTrangPhong(string t, int mp)
+        {
+            return dalPhong.updateTinhTrangPhong(t, mp);
+        }
         private static BUS_Phong instance;
 
         public static BUS_Phong Instance

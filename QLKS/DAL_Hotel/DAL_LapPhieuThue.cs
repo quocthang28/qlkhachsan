@@ -1,5 +1,4 @@
 ﻿using System;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -44,7 +43,18 @@ namespace DAL_Hotel
             return Convert.ToString(t);
 
         }
-        
+
+        //Load mã phòng
+        public string loadMaPhong(int mpt)
+        {
+            con.Open();
+            string mp = "select MAPHONG FROM PHIEUTHUEPHONG WHERE MAPHIEUTHUE='" + mpt + "'";
+            SqlCommand cmd = new SqlCommand(mp, con);
+
+            int t = (int)cmd.ExecuteScalar();
+            con.Close();
+            return Convert.ToString(t);
+        }
         //Thêm phiếu thuê phòng
         public bool lapPhieuThue(DTO_PhieuThuePhong pt)
         {

@@ -36,6 +36,8 @@ namespace DAL_Hotel
             return listPhong;
         }
 
+       
+
         public List<DTO_Phong> getPhongList(string tenlp)
         {
             string query = string.Format("SELECT * FROM dbo.PHONG JOIN dbo.LOAIPHONG ON PHONG.MALOAIPHONG = LOAIPHONG.MALOAIPHONG AND LOAIPHONG.TENLOAIPHONG = N'{0}'", tenlp);
@@ -82,6 +84,13 @@ namespace DAL_Hotel
             string query = string.Format("SELECT * FROM dbo.Phong WHERE MAPHONG = {0} AND TINHTRANG = 1", idPhong);
             DataTable result = DBConnect.Instance.ExecuteQuery(query);
             return result.Rows.Count > 0;
+        }
+
+        public bool updateTinhTrangPhong(string t , int mp)
+        {
+            string query = string.Format("UPDATE PHONG SET TINHTRANG = {0} where MAPHONG = {1}", t, mp);
+            int result = DBConnect.Instance.ExecuteNonQuery(query);
+            return result > 0;
         }
 
 
