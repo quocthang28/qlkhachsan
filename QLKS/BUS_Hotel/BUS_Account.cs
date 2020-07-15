@@ -9,15 +9,15 @@ using DTO_Hotel;
 
 namespace BUS_Hotel
 {
-    public class BUS_DangKi
+    public class BUS_Account
     {
-        DAL_DangKi dalHotel = new DAL_DangKi();
-        public bool themDangKi(DTO_DangKi dk)
+        DAL_Account dalHotel = new DAL_Account();
+        public bool themDangKi(DTO_Account dk)
         {
             return dalHotel.themDangKi(dk);
         }
 
-        public bool DangNhap(DTO_DangKi dn)
+        public bool DangNhap(DTO_Account dn)
         {
             return dalHotel.DangNhap(dn);
         }

@@ -90,7 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL_ChiTietPhieuThue.cs" />
-    <Compile Include="DAL_DangKi.cs" />
+    <Compile Include="DAL_Account.cs" />
     <Compile Include="DAL_KhachHang.cs" />
     <Compile Include="DAL_LapPhieuThue.cs" />
     <Compile Include="DAL_LoaiKhachHang.cs" />

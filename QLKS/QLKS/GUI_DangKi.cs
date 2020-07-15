@@ -16,7 +16,7 @@ namespace QLKS
 {
     public partial class GUI_DangKi : Form
     {
-        BUS_DangKi busDK = new BUS_DangKi();
+        BUS_Account busDK = new BUS_Account();
         public GUI_DangKi()
         {
             InitializeComponent();
@@ -24,7 +24,7 @@ namespace QLKS
 
         private void btnDangKi_Click(object sender, EventArgs e)
         {
-            DTO_DangKi dk = new DTO_DangKi(null, null,txtName.Text, txtPhonenumber.Text, txtEmail.Text, null);
+            DTO_Account dk = new DTO_Account(null, null,txtName.Text, txtPhonenumber.Text, txtEmail.Text, null);
 
             if (busDK.themDangKi(dk))
             {

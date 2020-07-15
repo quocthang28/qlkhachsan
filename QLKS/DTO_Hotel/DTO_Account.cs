@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO_Hotel
 {
-    public class DTO_DangKi
+    public class DTO_Account
     {
         private int _DANGKI_ID;
         private string _DANGKI_TK;
@@ -96,7 +96,7 @@ namespace DTO_Hotel
 
         public int DANGKI_ID { get => _DANGKI_ID; set => _DANGKI_ID = value; }
 
-        public DTO_DangKi(string tk, string mk, string name = null, string email = null, string phonenumber = null, string diachi = null)
+        public DTO_Account(string tk, string mk, string name = null, string email = null, string phonenumber = null, string diachi = null)
         {
 
             this.DANGKI_TK = tk;

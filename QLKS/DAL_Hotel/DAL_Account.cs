@@ -10,10 +10,10 @@ using MySql.Data.MySqlClient;
 
 namespace DAL_Hotel
 {
-    public class DAL_DangKi
+    public class DAL_Account
     {
-        
-        public bool themDangKi(DTO_DangKi dk)
+
+        public bool themDangKi(DTO_Account dk)
         {
             //try
             //{
@@ -68,31 +68,12 @@ namespace DAL_Hotel
 
             return false;
         }
-        public bool DangNhap(DTO_DangKi dn)
+        public bool DangNhap(DTO_Account dn)
         {
-            //try
-            //{
-            //    con.Open();
-            //    string SQL = string.Format("SELECT TENDANGNHAP, MATKHAU FROM DANGKI WHERE TENDANGNHAP = '{0}' AND MATKHAU = '{1}'", dn.DANGKI_TK, dn.DANGKI_MK);
-            //    SqlCommand cmd = new SqlCommand(SQL, con);
-            //    SqlDataReader data = cmd.ExecuteReader();
-            //    if (data.Read() == true)
-            //    {
-            //        return true;
-            //    }
-
-            //}
-            //catch (Exception e)
-            //{
-
-            //}
-            //finally
-            //{
-            //    con.Close();
-            //}
-            return false;
+            string query = string.Format("SELECT * FROM TAIKHOAN WHERE TENDANGNHAP = '{0}' AND MATKHAU = '{1}'", dn.DANGKI_TK, dn.DANGKI_MK);
+            DataTable result = DBConnect.Instance.ExecuteQuery(query);
+            return result.Rows.Count > 0;
         }
-
 
 
     }

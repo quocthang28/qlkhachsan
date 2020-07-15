@@ -181,7 +181,7 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.27826F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label7.Location = new System.Drawing.Point(331, 18);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(113, 31);
+            this.label7.Size = new System.Drawing.Size(107, 30);
             this.label7.TabIndex = 16;
             this.label7.Text = "Đăng kí";
             // 
@@ -206,6 +206,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "GUI_DangKi";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmDangKi";
             this.ResumeLayout(false);
             this.PerformLayout();
