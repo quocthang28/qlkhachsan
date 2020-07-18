@@ -16,13 +16,24 @@ namespace BUS_Hotel
         {
             return dalHotel.lapctphieuthue(ctpt);
         }
+
+        public bool suactphieuthue(DTO_ChiTietPhieuThuePhong ctpt)
+        {
+            return dalHotel.suactphieuthue(ctpt);
+        }
         public string loadMaChiTietPhieuThue(int a, int b)
         {
             return dalHotel.loadMaChiTietPhieuThue(a, b);
         }
+
         public bool xoactphieuthue(int a)
         {
             return dalHotel.xoactphieuthue(a);
+        }
+        
+        public int countctphieuthue(int mpt)
+        {
+            return dalHotel.countctphieuthue(mpt);
         }
     }
 }

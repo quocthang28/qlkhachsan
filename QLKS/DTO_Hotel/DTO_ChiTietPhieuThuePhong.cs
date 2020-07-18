@@ -16,9 +16,9 @@ namespace DTO_Hotel
         public int CHITIETPHIEUTHUEPHONG_MAPHIEUTHUE { get => _CHITIETPHIEUTHUEPHONG_MAPHIEUTHUE; set => _CHITIETPHIEUTHUEPHONG_MAPHIEUTHUE = value; }
         public int CHITIETPHIEUTHUEPHONG_MAKHACHHANG { get => _CHITIETPHIEUTHUEPHONG_MAKHACHHANG; set => _CHITIETPHIEUTHUEPHONG_MAKHACHHANG = value; }
 
-        public DTO_ChiTietPhieuThuePhong( int maphieuthue, int makhachhang)
+        public DTO_ChiTietPhieuThuePhong(int machitietphieuthue, int maphieuthue, int makhachhang)
         {
-          
+            this.CHITIETPHIEUTHUEPHONG_MACHITIETPHIEUTHUE = machitietphieuthue;
             this.CHITIETPHIEUTHUEPHONG_MAPHIEUTHUE = maphieuthue;
             this.CHITIETPHIEUTHUEPHONG_MAKHACHHANG = makhachhang;
         }

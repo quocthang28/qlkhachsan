@@ -12,6 +12,7 @@ namespace DTO_Hotel
         private int _PHIEUTHUEPHONG_MAPHIEUTHUE;
         private string _PHIEUTHUEPHONG_NGAYLAPPHIEU;
         private string _PHIEUTHUEPHONG_MAPHONG;
+     
       
         
 

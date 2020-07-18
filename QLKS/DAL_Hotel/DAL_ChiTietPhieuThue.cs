@@ -13,6 +13,13 @@ namespace DAL_Hotel
 {
     public class DAL_ChiTietPhieuThue: DBConnect
     {
+        private static DAL_ChiTietPhieuThue instance;
+
+        public static DAL_ChiTietPhieuThue Instance
+        {
+            get { if (instance == null) instance = new DAL_ChiTietPhieuThue(); return DAL_ChiTietPhieuThue.instance; }
+            private set { DAL_ChiTietPhieuThue.instance = value; }
+        }
 
         //Load mã chi tiết phiếu thuê phòng
         public string loadMaChiTietPhieuThue(int a, int b)
@@ -25,6 +32,7 @@ namespace DAL_Hotel
             cmd.Parameters.AddWithValue("@MAPHIEUTHUE", a);
             cmd.Parameters.AddWithValue("@MAKHACHHANG", b);
             int t = (int)cmd.ExecuteScalar();
+
             con.Close();
             return Convert.ToString(t);
 
@@ -52,6 +60,28 @@ namespace DAL_Hotel
             return false;
         }
 
+        //Sửa chi tiết phiếu thuê
+        public bool suactphieuthue(DTO_ChiTietPhieuThuePhong ctpt)
+        {
+
+            try
+            {
+
+                int result = DBConnect.Instance.ExecuteNonQuery("exec uspSuactPhieuThue @MAPHIEUTHUE , @MACHITIETPHIEUTHUE", new object[] { ctpt.CHITIETPHIEUTHUEPHONG_MAPHIEUTHUE, ctpt.CHITIETPHIEUTHUEPHONG_MACHITIETPHIEUTHUE });
+                return result > 0;
+
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+
+            }
+            return false;
+        }
+
         //Xóa chi tiết phiếu thuê
         public bool xoactphieuthue(int a)
         {
@@ -71,6 +101,28 @@ namespace DAL_Hotel
                 con.Close();
             }
             return false;
+        }
+
+        //Dem chi tiet phieu thue
+        public int countctphieuthue(int mpt)
+        {
+
+            try
+            {
+                string query = string.Format("SELECT COUNT(*) FROM CHITIETPHIEUTHUEPHONG WHERE MAPHIEUTHUE = {0}", mpt);
+                int result =(int)DBConnect.Instance.ExecuteScalar(query);
+                return result;
+
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                con.Close();
+            }
+            return 0;
         }
     }
 }
