@@ -13,12 +13,13 @@ namespace DAL_Hotel
     public class DAL_LapPhieuThue : DBConnect
     {
         //Hiển thị thông tin phiếu thuê phòng lên datagridview
-        public DataTable getPhieuthue()
+        public DataTable getPhieuthue(int id)
         {
             con.Open();
             //SqlDataAdapter da = new SqlDataAdapter("SELECT KH.TENKHACHHANG as [Tên khách hàng], LKH.TENLOAIKHACHHANG as [Loại khách hàng],KH.NGAYSINH as [Ngày sinh], KH.CMND , KH.SODIENTHOAI as[SĐT], KH.DIACHI as [Địa chỉ],LP.TENLOAIPHONG as [Loại phòng], P.TENPHONG as [Tên phòng], PTP.NGAYLAPPHIEU as [Ngày lập phiếu] FROM KHACHHANG KH, LOAIKHACHHANG LKH, PHIEUTHUEPHONG PTP, CHITIETPHIEUTHUEPHONG CTPT, LOAIPHONG LP, PHONG P WHERE KH.MALOAIKHACHHANG = LKH.MALOAIKHACHHANG AND KH.MAKHACHHANG = CTPT.MAKHACHHANG AND CTPT.MAPHIEUTHUE = PTP.MAPHIEUTHUE AND LP.MALOAIPHONG = P.MALOAIPHONG AND P.MAPHONG = PTP.MAPHONG", con);
             SqlCommand cmd = new SqlCommand("uspGetPhieuThue", con);
             cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@MAPHONG", id);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dtThanhvien = new DataTable();
             da.Fill(dtThanhvien);

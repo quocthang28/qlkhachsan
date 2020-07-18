@@ -25,12 +25,11 @@ namespace QLKS
         public frmLapPhieuThue()
         {
             InitializeComponent();
-            
         }
 
         private void frmLapPhieuThue_Load(object sender, EventArgs e)
         {
-            dgvPT.DataSource = busHotel.getPhieuthue();
+            dgvPT.DataSource = busHotel.getPhieuthue(Convert.ToInt32(id));
 
             cbLP.DataSource = BUS_LoaiPhong.Instance.LoadDanhSachLoaiPhong();
             cbLP.DisplayMember = "LOAIPHONG_TENLOAIPHONG";
@@ -62,6 +61,8 @@ namespace QLKS
             cbP.ValueMember = "PHONG_MAPHONG";
 
         }
+
+       
 
         public int t = 0;
         public int d = 0;
@@ -104,7 +105,7 @@ namespace QLKS
                     DTO_ChiTietPhieuThuePhong ctpt = new DTO_ChiTietPhieuThuePhong(Convert.ToInt32(busHotel.loadMaPhieuThue(dtNgayLap.Text, Convert.ToInt32(cbP.SelectedValue.ToString()))), Convert.ToInt32(busKh.loadMaKhachHang(txtCMND.Text)));
                     if (busctpt.lapctphieuthue(ctpt))
                     {
-                        dgvPT.DataSource = busHotel.getPhieuthue();
+                        dgvPT.DataSource = busHotel.getPhieuthue(Convert.ToInt32(id));
                         txtName.Text = "Họ tên";
                         txtPhoneNumber.Text = "Số điện thoại";
                         txtCMND.Text = "CMND";
@@ -145,7 +146,7 @@ namespace QLKS
                 if (busHotel.suaPhieuThue(spt)&& busKh.suaKhachHang(skh))
                 {
                     MessageBox.Show("Sửa phiếu thuê thành công!");
-                    dgvPT.DataSource = busHotel.getPhieuthue();
+                    dgvPT.DataSource = busHotel.getPhieuthue(Convert.ToInt32(id));
                     txtName.Text = "Họ tên";
                     txtPhoneNumber.Text = "Số điện thoại";
                     txtCMND.Text = "CMND";
@@ -176,7 +177,7 @@ namespace QLKS
                 if(busHotel.xoaPhieuThue(t) && busKh.xoaKhachHang(d))
                 {
                     MessageBox.Show("Xóa  thành công!");
-                    dgvPT.DataSource = busHotel.getPhieuthue();
+                    dgvPT.DataSource = busHotel.getPhieuthue(Convert.ToInt32(id));
                     txtName.Text = "Họ tên";
                     txtPhoneNumber.Text = "Số điện thoại";
                     txtCMND.Text = "CMND";
@@ -232,6 +233,21 @@ namespace QLKS
         private void txtCMND_Click(object sender, EventArgs e)
         {
             txtCMND.Clear();
+        }
+
+        public string id;
+        private void cbP_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            ComboBox cb = sender as ComboBox;
+            if (cb.SelectedItem == null)
+            {
+                return;
+            }
+            DTO_Phong selected = cb.SelectedItem as DTO_Phong;
+            id = selected.PHONG_MAPHONG;
+
+            dgvPT.DataSource = busHotel.getPhieuthue(Convert.ToInt32(id));
         }
     }
 }

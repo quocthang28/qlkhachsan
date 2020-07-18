@@ -12,9 +12,9 @@ namespace BUS_Hotel
     public class BUS_LapPhieuThue
     {
         DAL_LapPhieuThue dalHotel = new DAL_LapPhieuThue();
-        public DataTable getPhieuthue()
+        public DataTable getPhieuthue(int id)
         {
-            return dalHotel.getPhieuthue();
+            return dalHotel.getPhieuthue(id);
         }
     
         public bool lapPhieuThue(DTO_PhieuThuePhong pt)

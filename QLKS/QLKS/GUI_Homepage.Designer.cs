@@ -225,7 +225,7 @@
             // 
             // pnlContent
             // 
-            this.pnlContent.Controls.Add(this.frmPhong1);
+            //this.pnlContent.Controls.Add(this.frmPhong1);
             this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContent.Location = new System.Drawing.Point(354, 0);
             this.pnlContent.Name = "pnlContent";

@@ -157,6 +157,7 @@
             this.cbP.Name = "cbP";
             this.cbP.Size = new System.Drawing.Size(84, 24);
             this.cbP.TabIndex = 52;
+            this.cbP.SelectedIndexChanged += new System.EventHandler(this.cbP_SelectedIndexChanged);
             // 
             // label6
             // 
