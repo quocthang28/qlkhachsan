@@ -14,7 +14,7 @@ namespace QLKS
 {
     public partial class GUI_DangNhap : Form
     {
-        BUS_DangKi busdn = new BUS_DangKi();
+        BUS_Account busAccount = new BUS_Account();
         public GUI_DangNhap()
         {
             InitializeComponent();
@@ -22,12 +22,14 @@ namespace QLKS
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if(txtUser.Text != "" && txtPass.Text != "")
+            if (txtUsername.Text != "" && txtPass.Text != "")
             {
-                DTO_DangKi dn = new DTO_DangKi(txtUser.Text, txtPass.Text);
-                if(busdn.DangNhap(dn))
+                DTO_Account dn = new DTO_Account(txtUsername.Text, txtPass.Text);
+                if (busAccount.DangNhap(dn))
                 {
-                    MessageBox.Show("ok");
+                    GUI_Homepage homepage = new GUI_Homepage();
+                    homepage.Show();
+                    this.Hide();
                 }
                 else
                 {
@@ -37,6 +39,14 @@ namespace QLKS
             else
             {
                 MessageBox.Show("dien day du!");
+            }
+        }
+
+        private void GUI_DangNhap_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                btnLogin.PerformClick();
             }
         }
     }

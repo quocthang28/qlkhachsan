@@ -86,13 +86,11 @@ namespace DAL_Hotel
             return result.Rows.Count > 0;
         }
 
-        public bool updateTinhTrangPhong(string t , int mp)
+        public bool updateTinhTrangPhong(string t, int mp)
         {
             string query = string.Format("UPDATE PHONG SET TINHTRANG = {0} where MAPHONG = {1}", t, mp);
             int result = DBConnect.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
-
-
     }
 }

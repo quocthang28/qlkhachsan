@@ -34,12 +34,11 @@ namespace QLKS
             // pnlContent.Controls.Add(laphoadon);
             pnlContent.Controls.Add(dmPhong);
             pnlContent.Controls.Add(phong);
-
             pnlContent.Controls.Add(laphoadon);
-
             pnlContent.Controls.Add(lapphieuthue);
-
             pnlContent.Controls.Add(thaydoiphuthu);
+
+            dmPhong.BringToFront();
         }
 
         private void button4_Click(object sender, EventArgs e)
