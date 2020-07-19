@@ -107,12 +107,11 @@ namespace DAL_Hotel
                 return listTenKhachHang;
             }
 
-            public string layDiaChiKhach(int makh)
+            public DataTable layThongTinKhach(int makh)
             {
-                string diachi;
-                string query = "select DIACHI from dbo.KHACHHANG WHERE MAKHACHHANG = " + makh;
-                diachi = (DBConnect.Instance.ExecuteScalar(query)).ToString();
-                return diachi;
+                string query = "select * from dbo.KHACHHANG WHERE MAKHACHHANG = " + makh;
+                DataTable data = DBConnect.Instance.ExecuteQuery(query);
+                return data;
             }
 
 

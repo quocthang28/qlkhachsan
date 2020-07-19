@@ -20,9 +20,9 @@ namespace BUS_Hotel
         }
 
 
-        public void ThemChiTietHoaDon(int mahd, int maphong)
+        public bool ThemChiTietHoaDon(int mahd, int maphong)
         {
-            DAL_ChiTietHoaDon.Instance.ThemChiTietHoaDon(mahd, maphong);
+            return DAL_ChiTietHoaDon.Instance.ThemChiTietHoaDon(mahd, maphong);
         }
 
         public bool XoaChiTietHoaDon(int macthd, int mahd)
@@ -35,11 +35,15 @@ namespace BUS_Hotel
             return DAL_ChiTietHoaDon.Instance.layDanhSachChiTietHoaDonTheoKhachHang(makh);
         }
 
-        public void updateChiTietHoaDon()
+        public void updateChiTietHoaDon(int maphong)
         {
-            DAL_ChiTietHoaDon.Instance.updateChiTietHoaDon();
+            DAL_ChiTietHoaDon.Instance.updateChiTietHoaDon(maphong);
         }
 
+        //public bool kiemTraTonTaiChiTietHoaDon(int maphong)
+        //{
+        //    return kiemTraTonTaiChiTietHoaDon(maphong);
+        //}       
 
 
 

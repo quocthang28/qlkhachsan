@@ -15,18 +15,18 @@ namespace QLKS
 {
     public partial class frmLapHoaDon : UserControl
     {
-
-
         BUS_KhachHang busKhachHang = new BUS_KhachHang();
         int makh = 0;
         int maHoaDon = 0;
         int maChiTietHoaDon = 0;
+
         public frmLapHoaDon()
         {
             InitializeComponent();
             loadCustomerName();
             LoadPhong();
             hienThiHoaDon(makh);
+            loadThongTinKhachHang(makh);
         }
         #region rac
         private void button3_Click(object sender, EventArgs e)
@@ -128,14 +128,23 @@ namespace QLKS
 
             for (int i = 0; i < dgvChiTietHoaDon.RowCount;i++)
             {
-                if (dgvChiTietHoaDon.Rows[i].Cells["THANHTIEN"].Value != null)
+                if (dgvChiTietHoaDon.Rows[i].Cells["THÀNH TIỀN"].Value != null)
                 {
-                    totalPrice += (int)dgvChiTietHoaDon.Rows[i].Cells["THANHTIEN"].Value;
+                    totalPrice += (int)dgvChiTietHoaDon.Rows[i].Cells["THÀNH TIỀN"].Value;
                 }
                 else totalPrice += 0;
             }
             tbTongTien.Text = totalPrice.ToString();
 
+        }
+
+        void loadThongTinKhachHang(int makh)
+        {
+            DataTable data = BUS_KhachHang.Instance.layThongTinKhach(makh);
+
+            tbDiaChi.Text = data.Rows[0]["DIACHI"].ToString();
+            tbCMND.Text = data.Rows[0]["CMND"].ToString();
+            tbSDT.Text = data.Rows[0]["SODIENTHOAI"].ToString();
         }
 
 
@@ -150,7 +159,7 @@ namespace QLKS
             DTO_KhachHang selected = cb.SelectedItem as DTO_KhachHang;
             makh = selected.KHACHHANG_MAKHACHHANG;
             hienThiHoaDon(makh);
-            tbAddress.Text = BUS_KhachHang.Instance.layDiaChiKhach(makh);
+            loadThongTinKhachHang(makh);
         }
 
 
@@ -159,20 +168,26 @@ namespace QLKS
             int maPhong = (cbRoom.SelectedItem as DTO_Phong).PHONG_MAPHONG;
             if (BUS_HoaDon.Instance.getUnCheckIDBillByIDCustomer(makh) == -1)
             {
-                if (BUS_HoaDon.Instance.themHoaDon(makh) == true)
+                if (BUS_HoaDon.Instance.themHoaDon(makh) ==true )
                 {
-                    BUS_ChiTietHoaDon.Instance.ThemChiTietHoaDon(BUS_HoaDon.Instance.GetMaxIDBill(), maPhong);
-                    MessageBox.Show("Thêm thành công");
-                    BUS_ChiTietHoaDon.Instance.updateChiTietHoaDon();
+                    if (BUS_ChiTietHoaDon.Instance.ThemChiTietHoaDon(BUS_HoaDon.Instance.GetMaxIDBill(), maPhong) ==true)
+                    {
+                        MessageBox.Show("Thêm thành công");
+                        BUS_ChiTietHoaDon.Instance.updateChiTietHoaDon(maPhong);
+                    }
+                    else MessageBox.Show("Phòng đã được chọn thanh toán bởi khách hàng khác");
                     hienThiHoaDon(makh);
                 }
                 else MessageBox.Show("Thêm không thành công");
             }
             else
             {
-                BUS_ChiTietHoaDon.Instance.ThemChiTietHoaDon(BUS_HoaDon.Instance.getUnCheckIDBillByIDCustomer(makh), maPhong);
-                MessageBox.Show("Thêm thành công");
-                BUS_ChiTietHoaDon.Instance.updateChiTietHoaDon();
+                if (BUS_ChiTietHoaDon.Instance.ThemChiTietHoaDon(BUS_HoaDon.Instance.getUnCheckIDBillByIDCustomer(makh), maPhong) ==true)
+                {
+                    MessageBox.Show("Thêm thành công");
+                    BUS_ChiTietHoaDon.Instance.updateChiTietHoaDon(maPhong);
+                }
+                else MessageBox.Show("Thêm không thành công");
                 hienThiHoaDon(makh);
             }
 
@@ -187,8 +202,8 @@ namespace QLKS
         {
             if (dgvChiTietHoaDon.SelectedCells.Count > 0)
             {
-                 maChiTietHoaDon = (int)dgvChiTietHoaDon.SelectedCells[0].OwningRow.Cells["MACHITIETHOADON"].Value;
-                 maHoaDon=(int)dgvChiTietHoaDon.SelectedCells[0].OwningRow.Cells["MAHOADON"].Value;
+                 maChiTietHoaDon = (int)dgvChiTietHoaDon.SelectedCells[0].OwningRow.Cells["MÃ CHI TIẾT HÓA ĐƠN"].Value;
+                 maHoaDon=(int)dgvChiTietHoaDon.SelectedCells[0].OwningRow.Cells["MÃ HÓA ĐƠN"].Value;
             }
         }
 
@@ -214,6 +229,19 @@ namespace QLKS
                 hienThiHoaDon(makh);
             }
             else MessageBox.Show("Thanh toan khong thanh cong");
+
+            LoadPhong();
+        }
+
+
+        int maPhong = 0;
+        private void cbRoom_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboBox cb = sender as ComboBox;
+            if (cb.SelectedItem == null)
+                return;
+            DTO_Phong selected = cb.SelectedItem as DTO_Phong;
+            maPhong = selected.PHONG_MAPHONG;
         }
     }
 }

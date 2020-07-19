@@ -22,7 +22,11 @@ namespace DAL_Hotel
         public DataTable layDanhSachChiTietHoaDonTheoKhachHang(int makh)
         {
             List<DTO_ChiTietHoaDon> listChiTietHoaDon = new List<DTO_ChiTietHoaDon>();
-            DataTable data = DBConnect.Instance.ExecuteQuery("SELECT CHITIETHOADON.MACHITIETHOADON,CHITIETHOADON.MAHOADON, CHITIETHOADON.MAPHONG, CHITIETHOADON.SONGAY, CHITIETHOADON.DONGIA, CHITIETHOADON.THANHTIEN   FROM CHITIETHOADON,KHACHHANG,HOADON WHERE (KHACHHANG.MAKHACHHANG=HOADON.MAKHACHHANG) AND (HOADON.MAHOADON=CHITIETHOADON.MAHOADON) AND (HOADON.TINHTRANGHOADON=0) AND KHACHHANG.MAKHACHHANG = " + makh );
+            DataTable data = DBConnect.Instance.ExecuteQuery("SELECT CHITIETHOADON.MACHITIETHOADON AS'MÃ CHI TIẾT HÓA ĐƠN', CHITIETHOADON.MAHOADON AS'MÃ HÓA ĐƠN', PHONG.TENPHONG AS 'TÊN PHÒNG', CHITIETHOADON.SONGAY AS 'SỐ NGÀY', " +
+                "CHITIETHOADON.DONGIA AS'ĐƠN GIÁ', CHITIETHOADON.PHUTHU AS'PHỤ THU'," +
+                "  CHITIETHOADON.HESO AS 'HỆ SỐ',CHITIETHOADON.THANHTIEN AS 'THÀNH TIỀN'"  +
+                "  FROM CHITIETHOADON,KHACHHANG,HOADON,PHONG WHERE (KHACHHANG.MAKHACHHANG=HOADON.MAKHACHHANG)" +
+                " AND (HOADON.MAHOADON=CHITIETHOADON.MAHOADON) AND (PHONG.MAPHONG=CHITIETHOADON.MAPHONG) AND (HOADON.TINHTRANGHOADON=0) AND KHACHHANG.MAKHACHHANG = " + makh );
 
             return data;
             //foreach (DataRow item in data.Rows)
@@ -35,11 +39,10 @@ namespace DAL_Hotel
 
 
         //HAM` THEM CHI TIET HOA DON VAO HOA' DON
-        public void ThemChiTietHoaDon(int mahd, int maphong)
+        public bool ThemChiTietHoaDon(int mahd, int maphong)
         {
-
             string query = "USP_addChiTietHoaDon @mahd , @maphong";
-            DBConnect.Instance.ExecuteNonQuery(query, new object[] { mahd, maphong }) ;
+            return DBConnect.Instance.ExecuteNonQuery(query, new object[] { mahd, maphong }) > 0;
         }
 
 
@@ -51,11 +54,18 @@ namespace DAL_Hotel
             return DBConnect.Instance.ExecuteNonQuery(query) > 0;
         }
 
-        public void updateChiTietHoaDon()
+        public void updateChiTietHoaDon(int maphong)
         {
-            string query = "USP_updateChiTietHoaDon";
-            DBConnect.Instance.ExecuteNonQuery(query);
+            string query = "USP_updateChiTietHoaDon @maphong";
+            DBConnect.Instance.ExecuteNonQuery(query,new object[] { maphong });
         }
+
+        //public bool kiemTraTonTaiChiTietHoaDon(int maphong)
+        //{
+        //    string query = "select machitiethoadon from chitiethoadon,phong where chitiethoadon.maphong=phong.maphong and phong.maphong=" + maphong;
+        //    if (DBConnect.Instance.ExecuteScalar(query) == null) return false;
+        //    return true;
+        //}
 
     }
 }

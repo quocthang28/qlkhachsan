@@ -21,7 +21,7 @@ namespace DAL_Hotel
 
         public bool themHoaDon(int makh) // them hoa don
         {
-                string query = "EXEC USP_InsertBill @makh";
+                string query = "USP_InsertBill @makh";
                 return DBConnect.Instance.ExecuteNonQuery(query, new object[] { makh }) > 0;   
         }
 

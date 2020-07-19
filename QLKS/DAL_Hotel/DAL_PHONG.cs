@@ -98,5 +98,19 @@ namespace DAL_Hotel
             return list;
         }
 
+        public int laySoNguoiTrongPhong(int maphong)
+        {
+            string query = "USP_laySoNguoiTrongPhong @maphong";
+            return (int)DBConnect.Instance.ExecuteScalar(query, new object[] { maphong });
+        }
+
+        public bool kiemTraSoNguoiTrongPhong(int maphong)
+        {
+            string query = "USP_kiemTraSoNguoiNuocNgoaiTrongPhong @maphong";
+            return (int)DBConnect.Instance.ExecuteScalar(query, new object[] { maphong }) > 0;
+        }
+
+
+
     }
 }

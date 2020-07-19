@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using DTO_Hotel;
 using DAL_Hotel;
+using System.Data;
 
 //using System.Data;
 //using DAL_Hotel;
@@ -28,9 +29,9 @@ namespace BUS_Hotel
             return DAL_KhachHang.Instance.layDanhSachTenKhachHang();
         }
 
-        public string layDiaChiKhach(int makh)
+        public DataTable layThongTinKhach(int makh)
         {
-            return DAL_KhachHang.Instance.layDiaChiKhach(makh);
+            return DAL_KhachHang.Instance.layThongTinKhach(makh);
         }
         DAL_KhachHang dalHotel = new DAL_KhachHang();
         public bool themKhachHang(DTO_KhachHang kh)
