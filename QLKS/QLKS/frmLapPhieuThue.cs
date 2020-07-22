@@ -141,9 +141,8 @@ namespace QLKS
                             dtNgayLap.Text = Convert.ToString(DateTime.Today);
                             dtNgaySinh.Text = Convert.ToString(DateTime.Today);
                             MessageBox.Show("Lập phiếu thuê thành công!");
-                            int mpt = Convert.ToInt32(busHotel.loadMaPhieuThue(dtNgayLap.Text, Convert.ToInt32(cbP.SelectedValue.ToString())));
                             string tt = "1";
-                            busPhong.updateTinhTrangPhong(tt, Convert.ToInt32(busHotel.loadMaPhong(mpt)));
+                            busPhong.updateTinhTrangPhong(tt, mp1);
                         }
 
                     }
