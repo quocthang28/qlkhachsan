@@ -317,8 +317,6 @@ namespace QLKS
                     if (busKh.xoaKhachHang(d))
                     {
                         MessageBox.Show("Xóa  thành công!");
-                        string tt = "0";
-                        busPhong.updateTinhTrangPhong(tt, mp1);
                         dgvPT.DataSource = busHotel.getPhieuthue(Convert.ToInt32(id));
                         txtName.Text = "Họ tên";
                         txtPhoneNumber.Text = "Số điện thoại";
