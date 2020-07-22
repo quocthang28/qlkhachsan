@@ -1,5 +1,4 @@
 ﻿using System;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,41 +28,19 @@ namespace DAL_Hotel
         //Thêm Khách hàng
         public bool themKhachHang(DTO_KhachHang kh)
         {
-            try
-            {
-                int result = DBConnect.Instance.ExecuteNonQuery("exec uspThemKhachHang @MALOAIKHACHHANG , @TENKHACHHANG , @CMND , @DIACHI , @SODIENTHOAI , @NGAYSINH", new object[] { kh.KHACHHANG_MALOAIKHACHHANG, kh.KHACHHANG_TENKHACHHANG, kh.KHACHHANG_CMND, kh.KHACHHANG_DIACHI, kh.KHACHHANG_PHONENUMBER,kh.KHACHHANG_NGAYSINH });
+                int result = DBConnect.Instance.ExecuteNonQuery("exec uspThemKhachHang @MALOAIKHACHHANG , @TENKHACHHANG , @CMND , @DIACHI , @SODIENTHOAI , @NGAYSINH", new object[] { kh.KHACHHANG_MALOAIKHACHHANG, kh.KHACHHANG_TENKHACHHANG, kh.KHACHHANG_CMND, kh.KHACHHANG_DIACHI, kh.KHACHHANG_PHONENUMBER, Convert.ToDateTime(kh.KHACHHANG_NGAYSINH) });
                 return result > 0;
-                
-            }
-            catch (Exception e)
-            {
+                //string query = string.Format("INSERT INTO KHACHHANG(MALOAIKHACHHANG,TENKHACHHANG,CMND,DIACHI,SODIENTHOAI,NGAYSINH) VALUES({0}, N'{1}', N'{2}', N'{3}', N'{4}', N'{5}')",kh.KHACHHANG_MALOAIKHACHHANG, kh.KHACHHANG_TENKHACHHANG, kh.KHACHHANG_CMND, kh.KHACHHANG_DIACHI, kh.KHACHHANG_PHONENUMBER, kh.KHACHHANG_NGAYSINH);
+                //int result = DBConnect.Instance.ExecuteNonQuery(query);
+                //return result > 0;
 
-            }
-            finally
-            {
-                
-            }
-            return false;
         }
 
         //Sửa thông tin khách hàng
         public bool suaKhachHang(DTO_KhachHang kh)
         {
-            try
-            {
-                int result = DBConnect.Instance.ExecuteNonQuery("exec uspSuaKhachHang @MALOAIKHACHHANG , @TENKHACHHANG , @CMND , @DIACHI , @SODIENTHOAI , @NGAYSINH , @MAKHACHHANG", new object[] { kh.KHACHHANG_MALOAIKHACHHANG, kh.KHACHHANG_TENKHACHHANG, kh.KHACHHANG_CMND, kh.KHACHHANG_DIACHI, kh.KHACHHANG_PHONENUMBER, kh.KHACHHANG_NGAYSINH, kh.KHACHHANG_MAKHACHHANG });
+                int result = DBConnect.Instance.ExecuteNonQuery("exec uspSuaKhachHang @MALOAIKHACHHANG , @TENKHACHHANG , @CMND , @DIACHI , @SODIENTHOAI , @NGAYSINH , @MAKHACHHANG", new object[] { kh.KHACHHANG_MALOAIKHACHHANG, kh.KHACHHANG_TENKHACHHANG, kh.KHACHHANG_CMND, kh.KHACHHANG_DIACHI, kh.KHACHHANG_PHONENUMBER, Convert.ToDateTime(kh.KHACHHANG_NGAYSINH), kh.KHACHHANG_MAKHACHHANG });
                 return result > 0;
-                
-            }
-            catch (Exception e)
-            {
-
-            }
-            finally
-            {
-                
-            }
-            return false;
         }
 
         //Xóa khách hàng
@@ -75,7 +52,7 @@ namespace DAL_Hotel
                 return result > 0;
                 
             }
-            catch (Exception e)
+            catch (Exception)
             {
 
             }

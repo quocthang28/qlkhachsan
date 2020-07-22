@@ -1,5 +1,4 @@
 ﻿using System;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,7 +31,6 @@ namespace DAL_Hotel
             cmd.Parameters.AddWithValue("@MAPHIEUTHUE", a);
             cmd.Parameters.AddWithValue("@MAKHACHHANG", b);
             int t = (int)cmd.ExecuteScalar();
-
             con.Close();
             return Convert.ToString(t);
 
@@ -44,12 +42,11 @@ namespace DAL_Hotel
 
             try
             {
-
                 int result = DBConnect.Instance.ExecuteNonQuery("exec uspLapctPhieuThue @MAPHIEUTHUE , @MAKHACHHANG", new object[] { ctpt.CHITIETPHIEUTHUEPHONG_MAPHIEUTHUE, ctpt.CHITIETPHIEUTHUEPHONG_MAKHACHHANG });
                 return result > 0;
                 
             }
-            catch (Exception e)
+            catch (Exception)
             {
 
             }
@@ -71,7 +68,7 @@ namespace DAL_Hotel
                 return result > 0;
 
             }
-            catch (Exception e)
+            catch (Exception)
             {
 
             }
@@ -92,7 +89,7 @@ namespace DAL_Hotel
                 return result > 0;
                 
             }
-            catch (Exception e)
+            catch (Exception)
             {
 
             }
@@ -114,7 +111,7 @@ namespace DAL_Hotel
                 return result;
 
             }
-            catch (Exception e)
+            catch (Exception)
             {
 
             }
