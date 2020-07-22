@@ -65,7 +65,7 @@ namespace DAL_Hotel
                 int result = DBConnect.Instance.ExecuteNonQuery("exec uspLapPhieuThue @NGAYLAPPHIEU , @MAPHONG", new object[] { pt.PHIEUTHUEPHONG_NGAYLAPPHIEU,pt.PHIEUTHUEPHONG_MAPHONG });
                     return result > 0;
             }
-            catch (Exception e)
+            catch (Exception)
             {
 
             }
@@ -91,7 +91,7 @@ namespace DAL_Hotel
                 //if (cmd.ExecuteNonQuery() > 0)
                 //    return true;
             }
-            catch (Exception e)
+            catch (Exception)
             {
 
             }
@@ -117,7 +117,7 @@ namespace DAL_Hotel
                 //if (cmd.ExecuteNonQuery() > 0)
                 //    return true;
             }
-            catch (Exception e)
+            catch (Exception)
             {
 
             }

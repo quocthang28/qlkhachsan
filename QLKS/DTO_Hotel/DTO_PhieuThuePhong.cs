@@ -12,9 +12,6 @@ namespace DTO_Hotel
         private int _PHIEUTHUEPHONG_MAPHIEUTHUE;
         private string _PHIEUTHUEPHONG_NGAYLAPPHIEU;
         private string _PHIEUTHUEPHONG_MAPHONG;
-     
-      
-        
 
         public int PHIEUTHUEPHONG_MAPHIEUTHUE { get => _PHIEUTHUEPHONG_MAPHIEUTHUE; set => _PHIEUTHUEPHONG_MAPHIEUTHUE = value; }
         public string PHIEUTHUEPHONG_NGAYLAPPHIEU { get => _PHIEUTHUEPHONG_NGAYLAPPHIEU; set => _PHIEUTHUEPHONG_NGAYLAPPHIEU = value; }

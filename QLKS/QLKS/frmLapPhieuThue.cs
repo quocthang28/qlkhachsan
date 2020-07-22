@@ -31,22 +31,18 @@ namespace QLKS
         {
             dgvPT.DataSource = busHotel.getPhieuthue(Convert.ToInt32(id));
 
-            cbLP.DataSource = BUS_LoaiPhong.Instance.LoadDanhSachLoaiPhong();
             cbLP.DisplayMember = "LOAIPHONG_TENLOAIPHONG";
             cbLP.ValueMember = "LOAIPHONG_MALOAIPHONG";
+            cbLP.DataSource = BUS_LoaiPhong.Instance.LoadDanhSachLoaiPhong();
 
-            cbK.DataSource = BUS_LoaiKhachHang.Instance.loadDanhSachLoaiKhachHang();
             cbK.DisplayMember = "LOAIKHACHHANG_TENLOAIKHACHHANG";
             cbK.ValueMember = "LOAIKHACHHANG_MALOAIKHACHHANG";
-
-            
-
+            cbK.DataSource = BUS_LoaiKhachHang.Instance.loadDanhSachLoaiKhachHang();
         }
 
         //Load phòng theo loại phòng vừa chọn
         private void cbLP_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             string id;
             ComboBox cb = sender as ComboBox;
             if (cb.SelectedItem == null)
@@ -60,9 +56,7 @@ namespace QLKS
             cbP.DisplayMember = "PHONG_TENPHONG";
             cbP.ValueMember = "PHONG_MAPHONG";
 
-        }
-
-       
+        }    
 
         public int t = 0;
         public int d = 0;
@@ -72,8 +66,6 @@ namespace QLKS
         //Load dữ liệu khi bấm vào Datagridview
         private void dgvPT_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-
             int index = e.RowIndex;
             cbLP.Text = dgvPT.Rows[index].Cells[6].Value.ToString();
             cbP.Text = dgvPT.Rows[index].Cells[7].Value.ToString();
@@ -105,7 +97,6 @@ namespace QLKS
                 {
                     if (busKh.themKhachHang(tkh))
                     {
-
                         DTO_ChiTietPhieuThuePhong ctpt = new DTO_ChiTietPhieuThuePhong(0,Convert.ToInt32(busHotel.loadMaPhieuThue(dtNgayLap.Text, Convert.ToInt32(cbP.SelectedValue.ToString()))), Convert.ToInt32(busKh.loadMaKhachHang(txtCMND.Text)));
                         if (busctpt.lapctphieuthue(ctpt))
                         {

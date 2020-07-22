@@ -24,17 +24,17 @@ namespace QLKS
 
         private void btnDangKi_Click(object sender, EventArgs e)
         {
-            DTO_Account dk = new DTO_Account(null, null,txtName.Text, txtPhonenumber.Text, txtEmail.Text, null);
+            //DTO_Account dk = new DTO_Account(null, null,txtName.Text, txtPhonenumber.Text, txtEmail.Text, null);
 
-            if (busDK.themDangKi(dk))
-            {
-                MessageBox.Show("Đăng kí thành công!");
+            //if (busDK.themDangKi(dk))
+            //{
+            //    MessageBox.Show("Đăng kí thành công!");
 
-            }
-            else
-            {
-                MessageBox.Show("Đăng kí không thành công!");
-            }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Đăng kí không thành công!");
+            //}
             //    DTO_DangKi dk = new DTO_DangKi(txtTk.Text, txtMk.Text);
             //    if (busDK.themDangKi(dk))
             //    {

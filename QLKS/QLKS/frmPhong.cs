@@ -62,7 +62,7 @@ namespace QLKS
             foreach (DTO_Phong phong in phongList)
             {
                 Button btn = new Button() { Width = 100, Height = 100 };
-                btn.Margin = new Padding(20, 0, 0, 20);
+                btn.Margin = new Padding(20, 0, 5, 20);
                 btn.Tag = phong;
                 btn.FlatStyle = FlatStyle.Flat;
                 btn.FlatAppearance.BorderSize = 5;
@@ -196,5 +196,6 @@ namespace QLKS
 
             //check hoa don
         }
+
     }
 }
