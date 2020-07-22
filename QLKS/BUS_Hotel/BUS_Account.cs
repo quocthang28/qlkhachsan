@@ -12,10 +12,11 @@ namespace BUS_Hotel
     public class BUS_Account
     {
         DAL_Account dalHotel = new DAL_Account();
-        public bool themDangKi(DTO_Account dk)
-        {
-            return dalHotel.themDangKi(dk);
-        }
+
+        //public bool themDangKi(DTO_Account dk)
+        //{
+        //    return dalHotel.themDangKi(dk);
+        //}
 
         public bool DangNhap(DTO_Account dn)
         {
