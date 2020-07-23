@@ -101,6 +101,7 @@
     <Compile Include="DTO_BCDT.cs" />
     <Compile Include="DTO_DangKi.cs" />
     <Compile Include="DTO_PhuThu.cs" />
+    <Compile Include="DTO_ThamSo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

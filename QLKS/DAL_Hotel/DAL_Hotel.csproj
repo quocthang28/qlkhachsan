@@ -99,6 +99,7 @@
     <Compile Include="DAL_LoaiPhong.cs" />
     <Compile Include="DAL_Phong.cs" />
     <Compile Include="DAL_PhuThu.cs" />
+    <Compile Include="DAL_ThamSo.cs" />
     <Compile Include="DBConnect.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -166,6 +166,7 @@ namespace QLKS
         private void btnAddRoom_Click(object sender, EventArgs e)
         {
             int maPhong = (cbRoom.SelectedItem as DTO_Phong).PHONG_MAPHONG;
+            if ((cbRoom.SelectedItem as DTO_Phong).PHONG_MAPHONG == null) return;
             if (BUS_HoaDon.Instance.getUnCheckIDBillByIDCustomer(makh) == -1)
             {
                 if (BUS_HoaDon.Instance.themHoaDon(makh) ==true )

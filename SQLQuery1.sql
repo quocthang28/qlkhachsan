@@ -409,9 +409,12 @@ SELECT * FROM CHITIETPHIEUTHUEPHONG,PHIEUTHUEPHONG,KHACHHANG
 	AND KHACHHANG.MALOAIKHACHHANG =1
 	AND PHIEUTHUEPHONG.TINHTRANG=0
 
-
+	update thamso set giatrithamso=0.25 where mathamso =2
 	DROP TABLE THAMSO
+	select * from thamso
+	insert into thamso values(3,'SONGUOITOIDATRONGPHONG',3,N'SỐ NGƯỜI TỐI ĐA TRONG PHÒNG')
 
+	delete from thamso where mathamso=3
 
 CREATE TABLE THAMSO 
 ( 

@@ -14,6 +14,7 @@ namespace QLKS
     {
         frmLapHoaDon phieuHoaDon = new frmLapHoaDon();
         frmLapPhieuThue phieuthue = new frmLapPhieuThue();
+        frmThayDoiQuiDinh thaydoiquydinh = new frmThayDoiQuiDinh();
         public GUI_Homepage()
         {
             InitializeComponent();
@@ -29,6 +30,7 @@ namespace QLKS
         {
             lastBtnClicked = btnHome;
             // pnlContent.Controls.Add(laphoadon);
+            pnlContent.Controls.Add(thaydoiquydinh);
             pnlContent.Controls.Add(phieuthue);
             pnlContent.Controls.Add(phieuHoaDon);
         }
