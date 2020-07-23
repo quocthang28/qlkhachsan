@@ -59,25 +59,11 @@ namespace DAL_Hotel
         //Thêm phiếu thuê phòng
         public bool lapPhieuThue(DTO_PhieuThuePhong pt)
         {
-                //string SQL = string.Format("INSERT INTO PHIEUTHUEPHONG(NGAYLAPPHIEU,MAPHONG) VALUES({0},'{1}')", Convert.ToDateTime(pt.PHIEUTHUEPHONG_NGAYLAPPHIEU), pt.PHIEUTHUEPHONG_MAPHONG);
-                int result = DBConnect.Instance.ExecuteNonQuery("exec uspLapPhieuThue @NGAYLAPPHIEU , @MAPHONG", new object[] { Convert.ToDateTime(pt.PHIEUTHUEPHONG_NGAYLAPPHIEU), pt.PHIEUTHUEPHONG_MAPHONG });
-                return result > 0;
-        }
-
-        //Sửa phiếu thuê phòng
-        public bool suaPhieuThue(DTO_PhieuThuePhong pt)
-        {
             try
             {
-                int result = DBConnect.Instance.ExecuteNonQuery("exec uspSuaPhieuThue @NGAYLAPPHIEU , @MAPHONG , @MAPHIEUTHUE", new object[] { pt.PHIEUTHUEPHONG_NGAYLAPPHIEU, pt.PHIEUTHUEPHONG_MAPHONG, pt.PHIEUTHUEPHONG_MAPHIEUTHUE });
+                int result = DBConnect.Instance.ExecuteNonQuery("exec uspLapPhieuThue @NGAYLAPPHIEU , @MAPHONG", new object[] { Convert.ToDateTime(pt.PHIEUTHUEPHONG_NGAYLAPPHIEU), pt.PHIEUTHUEPHONG_MAPHONG });
                 return result > 0;
-                //con.Open();
-                //string SQL = string.Format("UPDATE PHIEUTHUEPHONG SET NGAYLAPPHIEU= '{0}',MAPHONG = {1} WHERE MAPHIEUTHUE = {2} ",pt.PHIEUTHUEPHONG_NGAYLAPPHIEU,pt.PHIEUTHUEPHONG_MAPHONG,pt.PHIEUTHUEPHONG_MAPHIEUTHUE);
-               
-                //SqlCommand cmd = new SqlCommand(SQL, con);
 
-                //if (cmd.ExecuteNonQuery() > 0)
-                //    return true;
             }
             catch (Exception)
             {
@@ -85,7 +71,27 @@ namespace DAL_Hotel
             }
             finally
             {
-                
+
+            }
+            return false;
+            
+        }
+
+        //Sửa phiếu thuê phòng
+        public bool suaPhieuThue(DTO_PhieuThuePhong pt)
+        {
+            try
+            {
+                int result = DBConnect.Instance.ExecuteNonQuery("exec uspSuaPhieuThue @NGAYLAPPHIEU , @MAPHONG , @MAPHIEUTHUE", new object[] { Convert.ToDateTime(pt.PHIEUTHUEPHONG_NGAYLAPPHIEU), pt.PHIEUTHUEPHONG_MAPHONG, pt.PHIEUTHUEPHONG_MAPHIEUTHUE });
+                return result > 0;
+            }
+            catch (Exception)
+            {
+
+            }
+            finally
+            {
+
             }
             return false;
         }
@@ -97,13 +103,7 @@ namespace DAL_Hotel
             {
                 int result = DBConnect.Instance.ExecuteNonQuery("exec uspXoaPhieuThue @MAPHIEUTHUE", new object[] { a });
                 return result > 0;
-                //con.Open();
-                //string SQL = string.Format("DELETE FROM PHIEUTHUEPHONG  WHERE MAPHIEUTHUE = {0} ",  a);
-
-                //SqlCommand cmd = new SqlCommand(SQL, con);
-
-                //if (cmd.ExecuteNonQuery() > 0)
-                //    return true;
+                
             }
             catch (Exception)
             {
