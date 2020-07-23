@@ -17,6 +17,7 @@ namespace QLKS
     public partial class frmPhong : UserControl
     {
         private string ghiChu; //ghi chu phong
+        private string idPhong;
         BUS_Phong busPhong = new BUS_Phong();
         BUS_LoaiPhong busLoaiPhong = new BUS_LoaiPhong();
         public frmPhong()
@@ -116,7 +117,7 @@ namespace QLKS
                 tenPhong.Text = firstPhong.PHONG_TENPHONG;
                 ghiChu = firstPhong.PHONG_GHICHU;
                 ghiChuPhong.Text = firstPhong.PHONG_GHICHU;
-                maPhong.Text = firstPhong.PHONG_ID.ToString();
+                idPhong = maPhong.Text = firstPhong.PHONG_ID.ToString();              
             }
             else
             {
@@ -135,10 +136,12 @@ namespace QLKS
             showChiTietPhong(id.ToString());
         }
 
+
         private void loaiPhong_SelectedIndexChanged(object sender, EventArgs e)
         {
             showPhong(false);
             showDonGia();
+            showChiTietPhong(idPhong.ToString());
         }
 
         private void button1_Click(object sender, EventArgs e) // add
