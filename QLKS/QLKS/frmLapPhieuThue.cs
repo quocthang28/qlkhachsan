@@ -287,9 +287,7 @@ namespace QLKS
                         //cbP.Text = "101";
                         cbK.Text = "Trong nước";
                         dtNgayLap.Text = Convert.ToString(DateTime.Today);
-                        dtNgaySinh.Text = Convert.ToString(DateTime.Today);
-
-                        
+                        dtNgaySinh.Text = Convert.ToString(DateTime.Today);              
                     }
                     else
                     {
@@ -336,9 +334,7 @@ namespace QLKS
             m = 0;
             t = 0;
             d = 0;
-            mp = 0;
-
-            
+            mp = 0;         
         }
 
         

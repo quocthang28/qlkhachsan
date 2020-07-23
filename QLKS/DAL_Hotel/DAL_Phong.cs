@@ -25,7 +25,7 @@ namespace DAL_Hotel
         public List<DTO_Phong> loadDanhSachPhongTheoLoaiPhong(string a)
         {
             List<DTO_Phong> listPhong = new List<DTO_Phong>();
-            string query = "SELECT * FROM PHONG WHERE MALOAIPHONG='"+a+"'";
+            string query = "SELECT * FROM PHONG WHERE MALOAIPHONG='"+ a +"'";
             DataTable data = DBConnect.Instance.ExecuteQuery(query);
 
             foreach (DataRow item in data.Rows)

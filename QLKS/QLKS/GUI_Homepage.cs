@@ -56,7 +56,6 @@ namespace QLKS
         {
             this.Refresh();
             lapphieuthue.BringToFront();
-            
         }
 
         private void button3_Click(object sender, EventArgs e)
