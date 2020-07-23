@@ -102,19 +102,20 @@ namespace QLKS
                         if (busctpt.lapctphieuthue(ctpt))
                         {
                             dgvPT.DataSource = busHotel.getPhieuthue(Convert.ToInt32(id));
+                            
+                            int mpt = Convert.ToInt32(busHotel.loadMaPhieuThue(dtNgayLap.Text, Convert.ToInt32(cbP.SelectedValue.ToString())));
+                            string tt = "1";
+                            busPhong.updateTinhTrangPhong(tt, Convert.ToInt32(busHotel.loadMaPhong(mpt)));
                             txtName.Text = "Họ tên";
                             txtPhoneNumber.Text = "Số điện thoại";
                             txtCMND.Text = "CMND";
                             txtDiachi.Text = "Địa chỉ";
-                            cbLP.Text = "A";
-                            cbP.Text = "101";
+                            //cbLP.Text = "A";
+                            //cbP.Text = "101";
                             cbK.Text = "Trong nước";
                             dtNgayLap.Text = Convert.ToString(DateTime.Today);
                             dtNgaySinh.Text = Convert.ToString(DateTime.Today);
                             MessageBox.Show("Lập phiếu thuê thành công!");
-                            int mpt = Convert.ToInt32(busHotel.loadMaPhieuThue(dtNgayLap.Text, Convert.ToInt32(cbP.SelectedValue.ToString())));
-                            string tt = "1";
-                            busPhong.updateTinhTrangPhong(tt, Convert.ToInt32(busHotel.loadMaPhong(mpt)));
                         }
                     }
                     else
@@ -130,19 +131,20 @@ namespace QLKS
                         DTO_ChiTietPhieuThuePhong ctpt = new DTO_ChiTietPhieuThuePhong(0,Convert.ToInt32(busHotel.loadMaPhieuThue(dtNgayLap.Text, Convert.ToInt32(cbP.SelectedValue.ToString()))), Convert.ToInt32(busKh.loadMaKhachHang(txtCMND.Text)));
                         if (busctpt.lapctphieuthue(ctpt))
                         {
+                            string tt = "1";
+                            busPhong.updateTinhTrangPhong(tt, mp1);
                             dgvPT.DataSource = busHotel.getPhieuthue(Convert.ToInt32(id));
                             txtName.Text = "Họ tên";
                             txtPhoneNumber.Text = "Số điện thoại";
                             txtCMND.Text = "CMND";
                             txtDiachi.Text = "Địa chỉ";
-                            cbLP.Text = "A";
-                            cbP.Text = "101";
+                            //cbLP.Text = "A";
+                            //cbP.Text = "101";
                             cbK.Text = "Trong nước";
                             dtNgayLap.Text = Convert.ToString(DateTime.Today);
                             dtNgaySinh.Text = Convert.ToString(DateTime.Today);
                             MessageBox.Show("Lập phiếu thuê thành công!");
-                            string tt = "1";
-                            busPhong.updateTinhTrangPhong(tt, mp1);
+                            
                         }
 
                     }
@@ -185,8 +187,8 @@ namespace QLKS
                             txtPhoneNumber.Text = "Số điện thoại";
                             txtCMND.Text = "CMND";
                             txtDiachi.Text = "Địa chỉ";
-                            cbLP.Text = "A";
-                            cbP.Text = "101";
+                            //cbLP.Text = "A";
+                            //cbP.Text = "101";
                             cbK.Text = "Trong nước";
                             dtNgayLap.Text = Convert.ToString(DateTime.Today);
                             dtNgaySinh.Text = Convert.ToString(DateTime.Today);
@@ -213,8 +215,8 @@ namespace QLKS
                                 txtPhoneNumber.Text = "Số điện thoại";
                                 txtCMND.Text = "CMND";
                                 txtDiachi.Text = "Địa chỉ";
-                                cbLP.Text = "A";
-                                cbP.Text = "101";
+                                //cbLP.Text = "A";
+                                //cbP.Text = "101";
                                 cbK.Text = "Trong nước";
                                 dtNgayLap.Text = Convert.ToString(DateTime.Today);
                                 dtNgaySinh.Text = Convert.ToString(DateTime.Today);
@@ -239,8 +241,8 @@ namespace QLKS
                     txtPhoneNumber.Text = "Số điện thoại";
                     txtCMND.Text = "CMND";
                     txtDiachi.Text = "Địa chỉ";
-                    cbLP.Text = "A";
-                    cbP.Text = "101";
+                    //cbLP.Text = "A";
+                    //cbP.Text = "101";
                     cbK.Text = "Trong nước";
                     dtNgayLap.Text = Convert.ToString(DateTime.Today);
                     dtNgaySinh.Text = Convert.ToString(DateTime.Today);
@@ -281,8 +283,8 @@ namespace QLKS
                         txtPhoneNumber.Text = "Số điện thoại";
                         txtCMND.Text = "CMND";
                         txtDiachi.Text = "Địa chỉ";
-                        cbLP.Text = "A";
-                        cbP.Text = "101";
+                        //cbLP.Text = "A";
+                        //cbP.Text = "101";
                         cbK.Text = "Trong nước";
                         dtNgayLap.Text = Convert.ToString(DateTime.Today);
                         dtNgaySinh.Text = Convert.ToString(DateTime.Today);
@@ -312,8 +314,8 @@ namespace QLKS
                         txtPhoneNumber.Text = "Số điện thoại";
                         txtCMND.Text = "CMND";
                         txtDiachi.Text = "Địa chỉ";
-                        cbLP.Text = "A";
-                        cbP.Text = "101";
+                        //cbLP.Text = "A";
+                        //cbP.Text = "101";
                         cbK.Text = "Trong nước";
                         dtNgayLap.Text = Convert.ToString(DateTime.Today);
                         dtNgaySinh.Text = Convert.ToString(DateTime.Today);
