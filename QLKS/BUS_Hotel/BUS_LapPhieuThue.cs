@@ -22,18 +22,18 @@ namespace BUS_Hotel
             return dalHotel.lapPhieuThue(pt);
         }
         
-        public string loadMaPhieuThue(string a , int b)
+        public string loadMaPhieuThue( int b)
         {
-            return dalHotel.loadMaPhieuThue(a,b);
+            return dalHotel.loadMaPhieuThue(b);
         }
 
         public string loadMaPhong(int mpt)
         {
             return dalHotel.loadMaPhong(mpt);
         }
-        public bool suaPhieuThue(DTO_PhieuThuePhong pt)
+        public bool suaPhieuThue(int a, int b)
         {
-            return dalHotel.suaPhieuThue(pt);
+            return dalHotel.suaPhieuThue(a,b);
         }
         public bool xoaPhieuThue(int a)
         {

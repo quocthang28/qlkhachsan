@@ -49,6 +49,7 @@
             this.dgvChiTietPhong = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
             this.lblTenPhong = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietPhong)).BeginInit();
             this.SuspendLayout();
             // 
@@ -250,9 +251,20 @@
             this.lblTenPhong.Size = new System.Drawing.Size(0, 17);
             this.lblTenPhong.TabIndex = 25;
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(623, 200);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(105, 30);
+            this.button4.TabIndex = 26;
+            this.button4.Text = "Đổi phòng";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // frmPhong
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.lblTenPhong);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.dgvChiTietPhong);
@@ -306,5 +318,6 @@
         private System.Windows.Forms.DataGridView dgvChiTietPhong;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lblTenPhong;
+        private System.Windows.Forms.Button button4;
     }
 }

@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmDoiPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDoiPhong.Designer.cs">
+      <DependentUpon>frmDoiPhong.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPhong.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -109,6 +115,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmDoiPhong.resx">
+      <DependentUpon>frmDoiPhong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPhong.resx">
       <DependentUpon>frmPhong.cs</DependentUpon>
     </EmbeddedResource>

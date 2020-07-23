@@ -56,7 +56,7 @@ namespace QLKS
 
         private void showChiTietPhong(string idPhong)
         {
-            using (SqlConnection conn = new SqlConnection(@"Data Source=.;Initial Catalog=QLKS;Integrated Security=True"))
+            using (SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-B182N8G\MSSQLSERVER01;Initial Catalog=QLKS;Integrated Security=True"))
             {
                 try
                 {
@@ -227,5 +227,10 @@ namespace QLKS
             //check hoa don
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            frmDoiPhong doiPhong = new frmDoiPhong();
+            doiPhong.ShowDialog();
+        }
     }
 }

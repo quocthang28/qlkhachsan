@@ -77,7 +77,7 @@ namespace QLKS
             dtNgaySinh.Text = dgvPT.Rows[index].Cells[2].Value.ToString();
             cbK.Text = dgvPT.Rows[index].Cells[1].Value.ToString();
 
-            string id1 = busHotel.loadMaPhieuThue(dtNgayLap.Text, Convert.ToInt32(cbP.SelectedValue.ToString()));
+            string id1 = busHotel.loadMaPhieuThue( Convert.ToInt32(cbP.SelectedValue.ToString()));
             t = Convert.ToInt32(id1);
             string id2 = busKh.loadMaKhachHang(txtCMND.Text);
             d = Convert.ToInt32(id2);
@@ -96,39 +96,47 @@ namespace QLKS
                 DTO_KhachHang tkh = new DTO_KhachHang(0, Convert.ToInt32(cbK.SelectedValue.ToString()), txtName.Text, txtCMND.Text, txtDiachi.Text, txtPhoneNumber.Text, dtNgaySinh.Text);
                 if (busPhong.checkTinhTrangPhong(Convert.ToString(mp1)))
                 {
-                    if (busKh.themKhachHang(tkh))
+                    if(busctpt.countctphieuthue(Convert.ToInt32(busHotel.loadMaPhieuThue(Convert.ToInt32(cbP.SelectedValue.ToString())))) < 3)
                     {
-                        DTO_ChiTietPhieuThuePhong ctpt = new DTO_ChiTietPhieuThuePhong(0,Convert.ToInt32(busHotel.loadMaPhieuThue(dtNgayLap.Text, Convert.ToInt32(cbP.SelectedValue.ToString()))), Convert.ToInt32(busKh.loadMaKhachHang(txtCMND.Text)));
-                        if (busctpt.lapctphieuthue(ctpt))
+                        if (busKh.themKhachHang(tkh))
                         {
-                            dgvPT.DataSource = busHotel.getPhieuthue(Convert.ToInt32(id));
-                            
-                            int mpt = Convert.ToInt32(busHotel.loadMaPhieuThue(dtNgayLap.Text, Convert.ToInt32(cbP.SelectedValue.ToString())));
-                            string tt = "1";
-                            busPhong.updateTinhTrangPhong(tt, Convert.ToInt32(busHotel.loadMaPhong(mpt)));
-                            txtName.Text = "Họ tên";
-                            txtPhoneNumber.Text = "Số điện thoại";
-                            txtCMND.Text = "CMND";
-                            txtDiachi.Text = "Địa chỉ";
-                            //cbLP.Text = "A";
-                            //cbP.Text = "101";
-                            cbK.Text = "Trong nước";
-                            dtNgayLap.Text = Convert.ToString(DateTime.Today);
-                            dtNgaySinh.Text = Convert.ToString(DateTime.Today);
-                            MessageBox.Show("Lập phiếu thuê thành công!");
+                            DTO_ChiTietPhieuThuePhong ctpt = new DTO_ChiTietPhieuThuePhong(0, Convert.ToInt32(busHotel.loadMaPhieuThue(Convert.ToInt32(cbP.SelectedValue.ToString()))), Convert.ToInt32(busKh.loadMaKhachHang(txtCMND.Text)));
+                            if (busctpt.lapctphieuthue(ctpt))
+                            {
+                                dgvPT.DataSource = busHotel.getPhieuthue(Convert.ToInt32(id));
+
+                                int mpt = Convert.ToInt32(busHotel.loadMaPhieuThue(Convert.ToInt32(cbP.SelectedValue.ToString())));
+                                string tt = "1";
+                                busPhong.updateTinhTrangPhong(tt, Convert.ToInt32(busHotel.loadMaPhong(mpt)));
+                                txtName.Text = "Họ tên";
+                                txtPhoneNumber.Text = "Số điện thoại";
+                                txtCMND.Text = "CMND";
+                                txtDiachi.Text = "Địa chỉ";
+                                //cbLP.Text = "A";
+                                //cbP.Text = "101";
+                                cbK.Text = "Trong nước";
+                                dtNgayLap.Text = Convert.ToString(DateTime.Today);
+                                dtNgaySinh.Text = Convert.ToString(DateTime.Today);
+                                MessageBox.Show("Lập phiếu thuê thành công!");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Lập phiếu thuê không thành công!");
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Lập phiếu thuê không thành công!");
+                        MessageBox.Show("Không thể thêm khách hàng vào phòng!");
                     }
+                    
                 }
                 else
                 {
                     if (busHotel.lapPhieuThue(lpt) && busKh.themKhachHang(tkh))
                     {
 
-                        DTO_ChiTietPhieuThuePhong ctpt = new DTO_ChiTietPhieuThuePhong(0,Convert.ToInt32(busHotel.loadMaPhieuThue(dtNgayLap.Text, Convert.ToInt32(cbP.SelectedValue.ToString()))), Convert.ToInt32(busKh.loadMaKhachHang(txtCMND.Text)));
+                        DTO_ChiTietPhieuThuePhong ctpt = new DTO_ChiTietPhieuThuePhong(0,Convert.ToInt32(busHotel.loadMaPhieuThue( Convert.ToInt32(cbP.SelectedValue.ToString()))), Convert.ToInt32(busKh.loadMaKhachHang(txtCMND.Text)));
                         if (busctpt.lapctphieuthue(ctpt))
                         {
                             string tt = "1";
@@ -178,7 +186,7 @@ namespace QLKS
                 {
                     if(busPhong.checkTinhTrangPhong(Convert.ToString(mp1)))
                     {
-                        DTO_ChiTietPhieuThuePhong sctpt = new DTO_ChiTietPhieuThuePhong(m, Convert.ToInt32(busHotel.loadMaPhieuThue(dtNgayLap.Text, Convert.ToInt32(cbP.SelectedValue.ToString()))), d);
+                        DTO_ChiTietPhieuThuePhong sctpt = new DTO_ChiTietPhieuThuePhong(m, Convert.ToInt32(busHotel.loadMaPhieuThue(Convert.ToInt32(cbP.SelectedValue.ToString()))), d);
                         if (busctpt.suactphieuthue(sctpt) && busKh.suaKhachHang(skh))
                         {
                             MessageBox.Show("Sửa phiếu thuê thành công!");
@@ -204,7 +212,7 @@ namespace QLKS
                     {
                         if (busHotel.lapPhieuThue(lpt))
                         {
-                            DTO_ChiTietPhieuThuePhong sctpt = new DTO_ChiTietPhieuThuePhong(m, Convert.ToInt32(busHotel.loadMaPhieuThue(dtNgayLap.Text, Convert.ToInt32(cbP.SelectedValue.ToString()))), d);
+                            DTO_ChiTietPhieuThuePhong sctpt = new DTO_ChiTietPhieuThuePhong(m, Convert.ToInt32(busHotel.loadMaPhieuThue( Convert.ToInt32(cbP.SelectedValue.ToString()))), d);
                             if (busctpt.suactphieuthue(sctpt) && busKh.suaKhachHang(skh))
                             {
                                 MessageBox.Show("Sửa phiếu thuê thành công!");

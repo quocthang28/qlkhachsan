@@ -29,14 +29,13 @@ namespace DAL_Hotel
 
             
         //Load mã phiếu thuê phòng 
-        public string loadMaPhieuThue(string a, int b)
+        public string loadMaPhieuThue( int b)
         {
             con.Open();
             //string mpt = "select MAPHIEUTHUE FROM PHIEUTHUEPHONG WHERE NGAYLAPPHIEU='" + a + "' AND MAPHONG ='" + b + "'";
             //SqlCommand cmd = new SqlCommand(mpt, con);
             SqlCommand cmd = new SqlCommand("uspLoadmpt", con);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@NGAYLAPPHIEU",Convert.ToDateTime(a));
             cmd.Parameters.AddWithValue("@MAPHONG", b);
             int t = (int)cmd.ExecuteScalar();
             
@@ -78,11 +77,11 @@ namespace DAL_Hotel
         }
 
         //Sửa phiếu thuê phòng
-        public bool suaPhieuThue(DTO_PhieuThuePhong pt)
+        public bool suaPhieuThue(int a, int b)
         {
             try
             {
-                int result = DBConnect.Instance.ExecuteNonQuery("exec uspSuaPhieuThue @NGAYLAPPHIEU , @MAPHONG , @MAPHIEUTHUE", new object[] { Convert.ToDateTime(pt.PHIEUTHUEPHONG_NGAYLAPPHIEU), pt.PHIEUTHUEPHONG_MAPHONG, pt.PHIEUTHUEPHONG_MAPHIEUTHUE });
+                int result = DBConnect.Instance.ExecuteNonQuery("exec uspSuaPhieuThue @MAPHONG , @MAPHIEUTHUE", new object[] { a , b });
                 return result > 0;
             }
             catch (Exception)
