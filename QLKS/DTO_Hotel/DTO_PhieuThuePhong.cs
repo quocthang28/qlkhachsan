@@ -24,6 +24,12 @@ namespace DTO_Hotel
             this.PHIEUTHUEPHONG_MAPHONG = maphong;
         }
 
+        public DTO_PhieuThuePhong(DataRow row)
+        {
+            PHIEUTHUEPHONG_MAPHIEUTHUE = (int)row["MAPHIEUTHUE"];
+            PHIEUTHUEPHONG_NGAYLAPPHIEU = row["NGAYLAPPHIEU"].ToString();
+            PHIEUTHUEPHONG_MAPHONG = row["MAPHONG"].ToString();
+        }
        
         
     }

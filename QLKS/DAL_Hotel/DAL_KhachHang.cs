@@ -25,6 +25,19 @@ namespace DAL_Hotel
             return Convert.ToString(t);
         }
 
+        public List<DTO_KhachHang> getKHList()
+        {
+            string query = "SELECT * FROM KHACHHANG";
+            List<DTO_KhachHang> list = new List<DTO_KhachHang>();
+            DataTable dt = DBConnect.Instance.ExecuteQuery(query);
+            foreach (DataRow item in dt.Rows)
+            {
+                DTO_KhachHang kh = new DTO_KhachHang(item);
+                list.Add(kh);
+            }
+            return list;
+        }
+
         //Thêm Khách hàng
         public bool themKhachHang(DTO_KhachHang kh)
         {

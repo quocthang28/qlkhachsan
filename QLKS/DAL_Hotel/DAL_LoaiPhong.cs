@@ -35,10 +35,7 @@ namespace DAL_Hotel
             return listLoaiPhong;
 
         }
-        /// <summary>
-        /// //
-        /// </summary>
-        /// <returns></returns>
+
         public List<DTO_LoaiPhong> getLoaiPhongList()
         {
             string query = "SELECT * FROM dbo.LOAIPHONG";

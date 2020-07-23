@@ -47,6 +47,7 @@ namespace BUS_Hotel
         {
             return dalPhong.updateTinhTrangPhong(t, mp);
         }
+
         private static BUS_Phong instance;
 
         public static BUS_Phong Instance

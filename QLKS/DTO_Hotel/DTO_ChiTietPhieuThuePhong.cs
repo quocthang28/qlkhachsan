@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +22,13 @@ namespace DTO_Hotel
             this.CHITIETPHIEUTHUEPHONG_MACHITIETPHIEUTHUE = machitietphieuthue;
             this.CHITIETPHIEUTHUEPHONG_MAPHIEUTHUE = maphieuthue;
             this.CHITIETPHIEUTHUEPHONG_MAKHACHHANG = makhachhang;
+        }
+
+        public DTO_ChiTietPhieuThuePhong(DataRow row)
+        {
+            CHITIETPHIEUTHUEPHONG_MACHITIETPHIEUTHUE = (int)row["MACHITIETPHIEUTHUE"];
+            CHITIETPHIEUTHUEPHONG_MAPHIEUTHUE = (int)row["MAPHIEUTHUE"];
+            CHITIETPHIEUTHUEPHONG_MAKHACHHANG = (int)row["MAKHACHHANG"];
         }
     }
 }

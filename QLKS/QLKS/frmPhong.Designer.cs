@@ -43,8 +43,13 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.dgvChiTietPhong = new System.Windows.Forms.DataGridView();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lblTenPhong = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietPhong)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -108,14 +113,14 @@
             this.ghiChuPhong.Name = "ghiChuPhong";
             this.ghiChuPhong.Size = new System.Drawing.Size(241, 62);
             this.ghiChuPhong.TabIndex = 10;
-            this.ghiChuPhong.Text = "Ghi chú";
             // 
             // flpPhong
             // 
+            this.flpPhong.AutoScroll = true;
             this.flpPhong.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flpPhong.Location = new System.Drawing.Point(5, 245);
+            this.flpPhong.Location = new System.Drawing.Point(0, 245);
             this.flpPhong.Name = "flpPhong";
-            this.flpPhong.Size = new System.Drawing.Size(972, 452);
+            this.flpPhong.Size = new System.Drawing.Size(980, 280);
             this.flpPhong.TabIndex = 11;
             // 
             // label5
@@ -185,14 +190,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label7
-            // 
-            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label7.Location = new System.Drawing.Point(571, 78);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(2, 150);
-            this.label7.TabIndex = 19;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -202,11 +199,66 @@
             this.label8.TabIndex = 20;
             this.label8.Text = "Thông tin phòng";
             // 
+            // label7
+            // 
+            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label7.Location = new System.Drawing.Point(0, 528);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(980, 2);
+            this.label7.TabIndex = 21;
+            // 
+            // label9
+            // 
+            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label9.Location = new System.Drawing.Point(3, 240);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(980, 2);
+            this.label9.TabIndex = 22;
+            // 
+            // dgvChiTietPhong
+            // 
+            this.dgvChiTietPhong.AllowUserToAddRows = false;
+            this.dgvChiTietPhong.AllowUserToDeleteRows = false;
+            this.dgvChiTietPhong.AllowUserToResizeColumns = false;
+            this.dgvChiTietPhong.AllowUserToResizeRows = false;
+            this.dgvChiTietPhong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvChiTietPhong.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dgvChiTietPhong.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgvChiTietPhong.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvChiTietPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvChiTietPhong.Location = new System.Drawing.Point(0, 567);
+            this.dgvChiTietPhong.Name = "dgvChiTietPhong";
+            this.dgvChiTietPhong.RowHeadersWidth = 49;
+            this.dgvChiTietPhong.RowTemplate.Height = 24;
+            this.dgvChiTietPhong.Size = new System.Drawing.Size(980, 130);
+            this.dgvChiTietPhong.TabIndex = 23;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(3, 544);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(95, 17);
+            this.label10.TabIndex = 24;
+            this.label10.Text = "Chi tiết phòng";
+            // 
+            // lblTenPhong
+            // 
+            this.lblTenPhong.AutoSize = true;
+            this.lblTenPhong.Location = new System.Drawing.Point(115, 544);
+            this.lblTenPhong.Name = "lblTenPhong";
+            this.lblTenPhong.Size = new System.Drawing.Size(0, 17);
+            this.lblTenPhong.TabIndex = 25;
+            // 
             // frmPhong
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.lblTenPhong);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.dgvChiTietPhong);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -225,6 +277,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmPhong";
             this.Size = new System.Drawing.Size(980, 700);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietPhong)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -247,7 +300,11 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataGridView dgvChiTietPhong;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblTenPhong;
     }
 }

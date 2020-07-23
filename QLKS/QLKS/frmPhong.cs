@@ -11,7 +11,7 @@ using DTO_Hotel;
 using BUS_Hotel;
 using System.Windows;
 using System.Globalization;
-
+using System.Data.SqlClient;
 namespace QLKS
 {
     public partial class frmPhong : UserControl
@@ -54,15 +54,44 @@ namespace QLKS
             }
         }
 
+        private void showChiTietPhong(string idPhong)
+        {
+            using (SqlConnection conn = new SqlConnection(@"Data Source=.;Initial Catalog=QLKS;Integrated Security=True"))
+            {
+                try
+                {
+                    string query = String.Format("SELECT KH.TENKHACHHANG as 'Tên khách hàng', LKH.TENLOAIKHACHHANG as 'Loại khách hàng', KH.CMND as 'Số CMND', KH.DIACHI as 'Địa chỉ', PT.NGAYLAPPHIEU as 'Ngày lập phiếu' FROM KHACHHANG AS KH JOIN LOAIKHACHHANG LKH ON KH.MALOAIKHACHHANG = LKH.MALOAIKHACHHANG JOIN CHITIETPHIEUTHUEPHONG CT ON CT.MAKHACHHANG = KH.MAKHACHHANG JOIN PHIEUTHUEPHONG PT ON PT.MAPHIEUTHUE = CT.MAPHIEUTHUE WHERE MAPHONG = N'{0}'", idPhong);
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    SqlDataAdapter dAdapter = new SqlDataAdapter(cmd);
+                    DataSet ds = new DataSet();
+                    dAdapter.Fill(ds);
+                    dgvChiTietPhong.ReadOnly = true;
+                    dgvChiTietPhong.DataSource = ds.Tables[0];
+                }
+                catch (Exception e)
+                {
+                    System.Windows.Forms.MessageBox.Show("Exception: " + e.Message);
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+
         public void showPhong(bool buttonClicked)
         {
             flpPhong.Controls.Clear();
+            flpPhong.HorizontalScroll.Maximum = 0;
+            flpPhong.AutoScroll = false;
+            flpPhong.VerticalScroll.Visible = false;
+            flpPhong.AutoScroll = true;
             List<DTO_Phong> phongList = busPhong.getPhongList(loaiPhong.Text);
             string tinhTrang;
             foreach (DTO_Phong phong in phongList)
             {
                 Button btn = new Button() { Width = 100, Height = 100 };
-                btn.Margin = new Padding(20, 0, 5, 20);
+                btn.Margin = new Padding(20, 5, 0, 20);
                 btn.Tag = phong;
                 btn.FlatStyle = FlatStyle.Flat;
                 btn.FlatAppearance.BorderSize = 5;
@@ -101,8 +130,9 @@ namespace QLKS
             tenPhong.Text = tenp;
             ghiChuPhong.Text = gc;
             maPhong.Text = id.ToString();
-            // show thong tin phong, thong tin khach
             ghiChu = gc;
+            lblTenPhong.Text = tenp;
+            showChiTietPhong(id.ToString());
         }
 
         private void loaiPhong_SelectedIndexChanged(object sender, EventArgs e)
