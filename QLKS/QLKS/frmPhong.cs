@@ -17,7 +17,7 @@ namespace QLKS
     public partial class frmPhong : UserControl
     {
         private string ghiChu; //ghi chu phong
-        private string idPhong;
+        private string idPhong = "";
         BUS_Phong busPhong = new BUS_Phong();
         BUS_LoaiPhong busLoaiPhong = new BUS_LoaiPhong();
         public frmPhong()
@@ -57,7 +57,7 @@ namespace QLKS
 
         private void showChiTietPhong(string idPhong)
         {
-            using (SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-B182N8G\MSSQLSERVER01;Initial Catalog=QLKS;Integrated Security=True"))
+            using (SqlConnection conn = new SqlConnection(@"Data Source=.;Initial Catalog=QLKS;Integrated Security=True"))
             {
                 try
                 {
@@ -117,7 +117,7 @@ namespace QLKS
                 tenPhong.Text = firstPhong.PHONG_TENPHONG;
                 ghiChu = firstPhong.PHONG_GHICHU;
                 ghiChuPhong.Text = firstPhong.PHONG_GHICHU;
-                idPhong = maPhong.Text = firstPhong.PHONG_ID.ToString();              
+                idPhong = maPhong.Text = firstPhong.PHONG_ID.ToString();
             }
             else
             {
@@ -144,7 +144,7 @@ namespace QLKS
             showChiTietPhong(idPhong.ToString());
         }
 
-        private void button1_Click(object sender, EventArgs e) // add
+        private void btnThem_Click(object sender, EventArgs e)
         {
             if (validateData())
             {
@@ -172,7 +172,7 @@ namespace QLKS
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnSua_Click(object sender, EventArgs e)
         {
             if (validateData())
             {
@@ -200,7 +200,7 @@ namespace QLKS
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnXoa_Click(object sender, EventArgs e)
         {
             if (validateData())
             {
@@ -227,10 +227,9 @@ namespace QLKS
                 }
             }
 
-            //check hoa don
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void btnDoiPhong_Click(object sender, EventArgs e)
         {
             frmDoiPhong doiPhong = new frmDoiPhong();
             doiPhong.ShowDialog();

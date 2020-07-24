@@ -107,6 +107,8 @@ namespace QLKS
 
                 string ttcu = "0";
                 busPhong.updateTinhTrangPhong(ttcu, mpcu);
+                
+                
 
                 MessageBox.Show("Đổi phòng thành công!");
             }
