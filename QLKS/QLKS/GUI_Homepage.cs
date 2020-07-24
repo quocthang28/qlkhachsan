@@ -62,5 +62,11 @@ namespace QLKS
         {
             thaydoiphuthu.BringToFront();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            laphoadon.BringToFront();
+            laphoadon.LoadPhong();
+        }
     }
 }

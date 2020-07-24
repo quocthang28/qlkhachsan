@@ -77,7 +77,7 @@ namespace QLKS
                 return;
             }
             DTO_Phong selected = cb.SelectedItem as DTO_Phong;
-            id1 = selected.PHONG_MAPHONG;
+            id1 = selected.PHONG_MAPHONG.ToString();
             mpcu = Convert.ToInt32(id1);
 
             string lmpt = busHotel.loadMaPhieuThue(mpcu);
@@ -94,7 +94,7 @@ namespace QLKS
                 return;
             }
             DTO_Phong selected = cb.SelectedItem as DTO_Phong;
-            id2 = selected.PHONG_MAPHONG;
+            id2 = selected.PHONG_MAPHONG.ToString();
             mpmoi = Convert.ToInt32(id2);
         }
 

@@ -8,7 +8,6 @@ namespace DTO_Hotel
 {
     public class DTO_ThamSo
     {
-<<<<<<< HEAD
         private int _THAMSO_SOLUONGKHACHTOIDA;
 
         public int THAMSO_SOLUONGKHACHTOIDA { get => _THAMSO_SOLUONGKHACHTOIDA; set => _THAMSO_SOLUONGKHACHTOIDA = value; }
@@ -17,7 +16,7 @@ namespace DTO_Hotel
         {
             THAMSO_SOLUONGKHACHTOIDA = soluongkhachtoida;
         }
-=======
+
         private int _THAMSO_MATHAMSO;
         private string _THAMSO_TENTHAMSO;
         private float _THAMSO_GIATRITHAMSO;
@@ -35,8 +34,5 @@ namespace DTO_Hotel
             this.THAMSO_GIATRITHAMSO = giatrithamso;
             this.THAMSO_GHICHU = ghichu;
         }
-
-
->>>>>>> quy
     }
 }

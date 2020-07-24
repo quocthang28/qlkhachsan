@@ -52,15 +52,15 @@ namespace DTO_Hotel
             KHACHHANG_NGAYSINH = row["NGAYSINH"].ToString();
         }
 
-        public DTO_KhachHang(DataRow row)
-        {
-            KHACHHANG_MAKHACHHANG = (int)row["MAKHACHHANG"];
-            KHACHHANG_MALOAIKHACHHANG = (int)row["MALOAIKHACHHANG"];
-            KHACHHANG_TENKHACHHANG = row["TENKHACHHANG"].ToString();
-            KHACHHANG_CMND = row["CMND"].ToString();
-            KHACHHANG_DIACHI = row["DIACHI"].ToString();
-            KHACHHANG_PHONENUMBER = row["SODIENTHOAI"].ToString();
-            KHACHHANG_NGAYSINH = row["NGAYSINH"].ToString();
-        }
+        //public DTO_KhachHang(DataRow row)
+        //{
+        //    KHACHHANG_MAKHACHHANG = (int)row["MAKHACHHANG"];
+        //    KHACHHANG_MALOAIKHACHHANG = (int)row["MALOAIKHACHHANG"];
+        //    KHACHHANG_TENKHACHHANG = row["TENKHACHHANG"].ToString();
+        //    KHACHHANG_CMND = row["CMND"].ToString();
+        //    KHACHHANG_DIACHI = row["DIACHI"].ToString();
+        //    KHACHHANG_PHONENUMBER = row["SODIENTHOAI"].ToString();
+        //    KHACHHANG_NGAYSINH = row["NGAYSINH"].ToString();
+        //}
     }
 }

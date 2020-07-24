@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using BUS_Hotel;
 using DTO_Hotel;
 
-
 namespace QLKS
 {
     public partial class frmLapHoaDon : UserControl
@@ -110,7 +109,7 @@ namespace QLKS
             cbTenKhachHang.ValueMember = "KHACHHANG_MAKHACHHANG";
         }
 
-        void LoadPhong()
+        public void LoadPhong()
         {
             cbRoom.DataSource = BUS_Phong.Instance.layDanhSachPhongCoNguoi();
             cbRoom.DisplayMember = "PHONG_TENPHONG";
@@ -140,11 +139,23 @@ namespace QLKS
 
         void loadThongTinKhachHang(int makh)
         {
-            DataTable data = BUS_KhachHang.Instance.layThongTinKhach(makh);
+            try
+            {
+                DataTable data = BUS_KhachHang.Instance.layThongTinKhach(makh);
 
-            tbDiaChi.Text = data.Rows[0]["DIACHI"].ToString();
-            tbCMND.Text = data.Rows[0]["CMND"].ToString();
-            tbSDT.Text = data.Rows[0]["SODIENTHOAI"].ToString();
+                tbDiaChi.Text = data.Rows[0]["DIACHI"].ToString();
+                tbCMND.Text = data.Rows[0]["CMND"].ToString();
+                tbSDT.Text = data.Rows[0]["SODIENTHOAI"].ToString();
+            }
+            catch (Exception)
+            {
+
+            }
+            finally
+            {
+
+            }
+           
         }
 
 

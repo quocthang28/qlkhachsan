@@ -3,21 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-<<<<<<< HEAD
 using System.Data;
 using System.Data.SqlClient;
 using DTO_Hotel;
 using MySql.Data.MySqlClient;
-=======
->>>>>>> quy
 
 namespace DAL_Hotel
 {
     public class DAL_ThamSo
     {
-<<<<<<< HEAD
 
-=======
         private static DAL_ThamSo instance;
 
         public static DAL_ThamSo Instance
@@ -43,6 +38,5 @@ namespace DAL_Hotel
             string query = "update thamso set giatrithamso=" + songuoitoidatrongphong + "where mathamso =3";
             return (int)DBConnect.Instance.ExecuteNonQuery(query) > 0;
         }
->>>>>>> quy
     }
 }

@@ -7,11 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DTO_Hotel;
-using BUS_Hotel;
 using System.Windows;
 using System.Globalization;
 using System.Data.SqlClient;
+using BUS_Hotel;
+using DTO_Hotel;
+
 namespace QLKS
 {
     public partial class frmPhong : UserControl
@@ -96,7 +97,7 @@ namespace QLKS
                 btn.Tag = phong;
                 btn.FlatStyle = FlatStyle.Flat;
                 btn.FlatAppearance.BorderSize = 5;
-                if (phong.PHONG_CONTRONG == 1)
+                if (phong.PHONG_TINHTRANG == 1)
                 {
                     tinhTrang = "Có người";
                     btn.FlatAppearance.BorderColor = Color.Red;

@@ -13,6 +13,13 @@ namespace DAL_Hotel
     public class DAL_KhachHang: DBConnect
     {
 
+        private static DAL_KhachHang instance;
+        public static DAL_KhachHang Instance
+        {
+            get { if (instance == null) instance = new DAL_KhachHang(); return DAL_KhachHang.instance; }
+            private set { DAL_KhachHang.instance = value; }
+        }
+
         //Load mã khách hàng
         public string loadMaKhachHang(string a)
         {
@@ -44,7 +51,7 @@ namespace DAL_Hotel
                 
             try
             {
-                int result = DBConnect.Instance.ExecuteNonQuery("exec uspThemKhachHang @MALOAIKHACHHANG , @TENKHACHHANG , @CMND , @DIACHI , @SODIENTHOAI , @NGAYSINH", new object[] { kh.KHACHHANG_MALOAIKHACHHANG, kh.KHACHHANG_TENKHACHHANG, kh.KHACHHANG_CMND, kh.KHACHHANG_DIACHI, kh.KHACHHANG_PHONENUMBER, Convert.ToDateTime(kh.KHACHHANG_NGAYSINH) });
+                int result = DBConnect.Instance.ExecuteNonQuery("exec uspThemKhachHang @MALOAIKHACHHANG , @TENKHACHHANG , @CMND , @DIACHI , @SODIENTHOAI , @NGAYSINH", new object[] { kh.KHACHHANG_MALOAIKHACHHANG, kh.KHACHHANG_TENKHACHHANG, kh.KHACHHANG_CMND, kh.KHACHHANG_DIACHI, kh.KHACHHANG_SODIENTHOAI, Convert.ToDateTime(kh.KHACHHANG_NGAYSINH) });
                 return result > 0;
 
             }
@@ -66,7 +73,7 @@ namespace DAL_Hotel
                 
             try
             {
-                int result = DBConnect.Instance.ExecuteNonQuery("exec uspSuaKhachHang @MALOAIKHACHHANG , @TENKHACHHANG , @CMND , @DIACHI , @SODIENTHOAI , @NGAYSINH , @MAKHACHHANG", new object[] { kh.KHACHHANG_MALOAIKHACHHANG, kh.KHACHHANG_TENKHACHHANG, kh.KHACHHANG_CMND, kh.KHACHHANG_DIACHI, kh.KHACHHANG_PHONENUMBER, Convert.ToDateTime(kh.KHACHHANG_NGAYSINH), kh.KHACHHANG_MAKHACHHANG });
+                int result = DBConnect.Instance.ExecuteNonQuery("exec uspSuaKhachHang @MALOAIKHACHHANG , @TENKHACHHANG , @CMND , @DIACHI , @SODIENTHOAI , @NGAYSINH , @MAKHACHHANG", new object[] { kh.KHACHHANG_MALOAIKHACHHANG, kh.KHACHHANG_TENKHACHHANG, kh.KHACHHANG_CMND, kh.KHACHHANG_DIACHI, kh.KHACHHANG_SODIENTHOAI, Convert.ToDateTime(kh.KHACHHANG_NGAYSINH), kh.KHACHHANG_MAKHACHHANG });
                 return result > 0;
 
             }
@@ -100,5 +107,29 @@ namespace DAL_Hotel
             }
             return false;
         }
+
+        public List<DTO_KhachHang> layDanhSachTenKhachHang()
+        {
+            List<DTO_KhachHang> listTenKhachHang = new List<DTO_KhachHang>();
+
+            string query = "select * from dbo.KHACHHANG ";
+            DataTable data = DBConnect.Instance.ExecuteQuery(query);
+
+            foreach (DataRow item in data.Rows)
+            {
+                DTO_KhachHang info = new DTO_KhachHang(item);
+                listTenKhachHang.Add(info);
+            }
+            return listTenKhachHang;
+        }
+
+        public DataTable layThongTinKhach(int makh)
+        {
+            string query = "select * from dbo.KHACHHANG WHERE MAKHACHHANG = " + makh;
+            DataTable data = DBConnect.Instance.ExecuteQuery(query);
+            return data;
+        }
+
+
     }
 }
