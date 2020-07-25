@@ -36,7 +36,7 @@ namespace QLKS
             pnlContent.Controls.Add(phong);
             pnlContent.Controls.Add(laphoadon);
             pnlContent.Controls.Add(lapphieuthue);
-            pnlContent.Controls.Add(thaydoiphuthu);
+            //pnlContent.Controls.Add(thaydoiphuthu);
 
             dmPhong.BringToFront();
         }

@@ -11,19 +11,19 @@ namespace BUS_Hotel
 {
     public class BUS_PhuThu
     {
-        DAL_PhuThu dalHotel = new DAL_PhuThu();
-        public DataTable getPhuThu()
-        {
-            return dalHotel.getPhuThu();
-        }
-        public DataTable Hienthi(string sql)
-        {
-            return dalHotel.loadData(sql);
-        }
+        //DAL_PhuThu dalHotel = new DAL_PhuThu();
+        //public DataTable getPhuThu()
+        //{
+        //    return dalHotel.getPhuThu();
+        //}
+        //public DataTable Hienthi(string sql)
+        //{
+        //    return dalHotel.loadData(sql);
+        //}
 
-        public bool editPhuThu(DTO_PhuThu pt)
-        {
-            return dalHotel.editPhuThu(pt);
-        }
+        //public bool editPhuThu(DTO_PhuThu pt)
+        //{
+        //    return dalHotel.editPhuThu(pt);
+        //}
     }
 }

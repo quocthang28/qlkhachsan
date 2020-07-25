@@ -58,11 +58,11 @@ namespace QLKS
 
         private void showChiTietPhong(string mp)
         {
-            using (SqlConnection conn = new SqlConnection(@"Data Source=.;Initial Catalog=QLKS;Integrated Security=True"))
+            using (SqlConnection conn = new SqlConnection("Data Source=ADMIN\\SQL;Initial Catalog=QLKS;Integrated Security=True"))
             {
                 try
                 {
-                    string query = String.Format("SELECT KH.TENKHACHHANG as 'Tên khách hàng', LKH.TENLOAIKHACHHANG as 'Loại khách hàng', KH.CMND as 'Số CMND', KH.DIACHI as 'Địa chỉ', PT.NGAYLAPPHIEU as 'Ngày lập phiếu' FROM KHACHHANG AS KH JOIN LOAIKHACHHANG LKH ON KH.MALOAIKHACHHANG = LKH.MALOAIKHACHHANG JOIN CHITIETPHIEUTHUEPHONG CT ON CT.MAKHACHHANG = KH.MAKHACHHANG JOIN PHIEUTHUEPHONG PT ON PT.MAPHIEUTHUE = CT.MAPHIEUTHUE WHERE MAPHONG = N'{0}'", mp);
+                    string query = String.Format("SELECT KH.TENKHACHHANG as 'Tên khách hàng', LKH.TENLOAIKHACHHANG as 'Loại khách hàng', KH.CMND as 'Số CMND', KH.DIACHI as 'Địa chỉ', PT.NGAYLAPPHIEU as 'Ngày lập phiếu' FROM KHACHHANG AS KH JOIN LOAIKHACHHANG LKH ON KH.MALOAIKHACHHANG = LKH.MALOAIKHACHHANG JOIN CHITIETPHIEUTHUEPHONG CT ON CT.MAKHACHHANG = KH.MAKHACHHANG JOIN PHIEUTHUEPHONG PT ON PT.MAPHIEUTHUE = CT.MAPHIEUTHUE WHERE MAPHONG = N'{0}' and tinhtrang = 0", mp);
                     SqlCommand cmd = new SqlCommand(query, conn);
                     SqlDataAdapter dAdapter = new SqlDataAdapter(cmd);
                     DataSet ds = new DataSet();

@@ -176,8 +176,15 @@ namespace QLKS
 
         private void btnAddRoom_Click(object sender, EventArgs e)
         {
+
+            if ((cbRoom.SelectedItem as DTO_Phong) == null)
+            {
+                MessageBox.Show("Không có phòng để thêm");
+                return;
+            }
+
             int maPhong = (cbRoom.SelectedItem as DTO_Phong).PHONG_MAPHONG;
-            if ((cbRoom.SelectedItem as DTO_Phong).PHONG_MAPHONG == null) return;
+            
             if (BUS_HoaDon.Instance.getUnCheckIDBillByIDCustomer(makh) == -1)
             {
                 if (BUS_HoaDon.Instance.themHoaDon(makh) ==true )
@@ -212,10 +219,15 @@ namespace QLKS
 
         private void dgvChiTietHoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            
             if (dgvChiTietHoaDon.SelectedCells.Count > 0)
             {
-                 maChiTietHoaDon = (int)dgvChiTietHoaDon.SelectedCells[0].OwningRow.Cells["MÃ CHI TIẾT HÓA ĐƠN"].Value;
-                 maHoaDon=(int)dgvChiTietHoaDon.SelectedCells[0].OwningRow.Cells["MÃ HÓA ĐƠN"].Value;
+                if (dgvChiTietHoaDon.SelectedCells[0].OwningRow.Cells["MÃ CHI TIẾT HÓA ĐƠN"].Value.ToString() !="")
+                {
+                    maChiTietHoaDon = (int)dgvChiTietHoaDon.SelectedCells[0].OwningRow.Cells["MÃ CHI TIẾT HÓA ĐƠN"].Value;
+                    maHoaDon = (int)dgvChiTietHoaDon.SelectedCells[0].OwningRow.Cells["MÃ HÓA ĐƠN"].Value;
+                }
+                else return;
             }
         }
 

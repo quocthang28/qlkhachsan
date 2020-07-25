@@ -181,7 +181,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(865, 207);
             this.dataGridView1.TabIndex = 60;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            //this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // btnEdit
             // 
@@ -192,7 +192,7 @@
             this.btnEdit.TabIndex = 61;
             this.btnEdit.Text = "Thay đổi";
             this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            //this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnThoat
             // 
@@ -202,7 +202,7 @@
             this.btnThoat.TabIndex = 62;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+           // this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // frmThayDoiPhuThu
             // 
@@ -221,7 +221,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "frmThayDoiPhuThu";
             this.Size = new System.Drawing.Size(994, 560);
-            this.Load += new System.EventHandler(this.frmThayDoiPhuThu_Load);
+           // this.Load += new System.EventHandler(this.frmThayDoiPhuThu_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
