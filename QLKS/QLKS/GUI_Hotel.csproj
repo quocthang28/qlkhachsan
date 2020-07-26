@@ -59,12 +59,6 @@
     <Compile Include="frmPhong.Designer.cs">
       <DependentUpon>frmPhong.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmThayDoiPhuThu.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="frmThayDoiPhuThu.Designer.cs">
-      <DependentUpon>frmThayDoiPhuThu.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI_Homepage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,9 +114,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPhong.resx">
       <DependentUpon>frmPhong.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmThayDoiPhuThu.resx">
-      <DependentUpon>frmThayDoiPhuThu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_Homepage.resx">
       <DependentUpon>GUI_Homepage.cs</DependentUpon>

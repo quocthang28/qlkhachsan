@@ -98,7 +98,6 @@
     <Compile Include="BUS_LoaiKhachHang.cs" />
     <Compile Include="BUS_LoaiPhong.cs" />
     <Compile Include="BUS_Phong.cs" />
-    <Compile Include="BUS_PhuThu.cs" />
     <Compile Include="BUS_ThamSO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
