@@ -64,8 +64,16 @@ namespace DAL_Hotel
                 
             try
             {
-                int result = DBConnect.Instance.ExecuteNonQuery("exec uspThemKhachHang @MALOAIKHACHHANG , @TENKHACHHANG , @CMND , @DIACHI , @SODIENTHOAI , @NGAYSINH", new object[] { kh.KHACHHANG_MALOAIKHACHHANG, kh.KHACHHANG_TENKHACHHANG, kh.KHACHHANG_CMND, kh.KHACHHANG_DIACHI, kh.KHACHHANG_SODIENTHOAI, Convert.ToDateTime(kh.KHACHHANG_NGAYSINH) });
-                return result > 0;
+                if (kiemTraTrungCMND(Convert.ToInt32(kh.KHACHHANG_CMND)) == false)
+                {
+                    int result = DBConnect.Instance.ExecuteNonQuery("exec uspThemKhachHang @MALOAIKHACHHANG , @TENKHACHHANG , @CMND , @DIACHI , @SODIENTHOAI , @NGAYSINH", new object[] { kh.KHACHHANG_MALOAIKHACHHANG, kh.KHACHHANG_TENKHACHHANG, kh.KHACHHANG_CMND, kh.KHACHHANG_DIACHI, kh.KHACHHANG_SODIENTHOAI, Convert.ToDateTime(kh.KHACHHANG_NGAYSINH) });
+                    return result > 0;
+                }
+                else
+                {
+                    return false;
+                }
+
 
             }
             catch (Exception)
@@ -143,6 +151,12 @@ namespace DAL_Hotel
             return data;
         }
 
-
+        public bool kiemTraTrungCMND(int cmnd)
+        {
+            string query = "select MAKHACHHANG from KHACHHANG WHERE CMND =" + cmnd;
+            if (DBConnect.Instance.ExecuteScalar(query) == null)
+                return false;
+            return true;
+        }
     }
 }

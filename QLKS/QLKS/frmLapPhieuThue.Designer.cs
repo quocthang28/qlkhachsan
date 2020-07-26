@@ -137,12 +137,12 @@
             this.panel1.Location = new System.Drawing.Point(0, 64);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(975, 496);
+            this.panel1.Size = new System.Drawing.Size(975, 636);
             this.panel1.TabIndex = 4;
             // 
             // btnThoat
             // 
-            this.btnThoat.Location = new System.Drawing.Point(725, 196);
+            this.btnThoat.Location = new System.Drawing.Point(798, 284);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(67, 28);
             this.btnThoat.TabIndex = 53;
@@ -153,16 +153,16 @@
             // cbP
             // 
             this.cbP.FormattingEnabled = true;
-            this.cbP.Location = new System.Drawing.Point(201, 82);
+            this.cbP.Location = new System.Drawing.Point(452, 39);
             this.cbP.Name = "cbP";
-            this.cbP.Size = new System.Drawing.Size(84, 24);
+            this.cbP.Size = new System.Drawing.Size(111, 24);
             this.cbP.TabIndex = 52;
             this.cbP.SelectedIndexChanged += new System.EventHandler(this.cbP_SelectedIndexChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(34, 88);
+            this.label6.Location = new System.Drawing.Point(307, 46);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(139, 17);
             this.label6.TabIndex = 51;
@@ -171,11 +171,11 @@
             // txtPhoneNumber
             // 
             this.txtPhoneNumber.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtPhoneNumber.Location = new System.Drawing.Point(328, 79);
+            this.txtPhoneNumber.Location = new System.Drawing.Point(607, 111);
             this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPhoneNumber.Multiline = true;
             this.txtPhoneNumber.Name = "txtPhoneNumber";
-            this.txtPhoneNumber.Size = new System.Drawing.Size(168, 27);
+            this.txtPhoneNumber.Size = new System.Drawing.Size(258, 27);
             this.txtPhoneNumber.TabIndex = 50;
             this.txtPhoneNumber.Text = "Số điện thoại";
             this.txtPhoneNumber.Click += new System.EventHandler(this.txtPhoneNumber_Click);
@@ -183,11 +183,11 @@
             // txtDiachi
             // 
             this.txtDiachi.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtDiachi.Location = new System.Drawing.Point(328, 126);
+            this.txtDiachi.Location = new System.Drawing.Point(310, 177);
             this.txtDiachi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDiachi.Multiline = true;
             this.txtDiachi.Name = "txtDiachi";
-            this.txtDiachi.Size = new System.Drawing.Size(168, 27);
+            this.txtDiachi.Size = new System.Drawing.Size(253, 27);
             this.txtDiachi.TabIndex = 49;
             this.txtDiachi.Text = "Địa chỉ";
             this.txtDiachi.Click += new System.EventHandler(this.txtDiachi_Click);
@@ -195,11 +195,11 @@
             // txtName
             // 
             this.txtName.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtName.Location = new System.Drawing.Point(328, 35);
+            this.txtName.Location = new System.Drawing.Point(34, 111);
             this.txtName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtName.Multiline = true;
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(168, 27);
+            this.txtName.Size = new System.Drawing.Size(218, 27);
             this.txtName.TabIndex = 48;
             this.txtName.Text = "Họ Tên";
             this.txtName.Click += new System.EventHandler(this.txtName_Click);
@@ -208,7 +208,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(545, 88);
+            this.label5.Location = new System.Drawing.Point(31, 186);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(79, 18);
             this.label5.TabIndex = 44;
@@ -218,7 +218,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(545, 136);
+            this.label4.Location = new System.Drawing.Point(604, 188);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(88, 18);
             this.label4.TabIndex = 43;
@@ -227,29 +227,29 @@
             // cbK
             // 
             this.cbK.FormattingEnabled = true;
-            this.cbK.Location = new System.Drawing.Point(675, 129);
+            this.cbK.Location = new System.Drawing.Point(698, 180);
             this.cbK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbK.Name = "cbK";
-            this.cbK.Size = new System.Drawing.Size(117, 24);
+            this.cbK.Size = new System.Drawing.Size(167, 24);
             this.cbK.TabIndex = 42;
             // 
             // dtNgaySinh
             // 
             this.dtNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtNgaySinh.Location = new System.Drawing.Point(624, 84);
+            this.dtNgaySinh.Location = new System.Drawing.Point(116, 182);
             this.dtNgaySinh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtNgaySinh.Name = "dtNgaySinh";
-            this.dtNgaySinh.Size = new System.Drawing.Size(168, 22);
+            this.dtNgaySinh.Size = new System.Drawing.Size(136, 22);
             this.dtNgaySinh.TabIndex = 41;
             // 
             // txtCMND
             // 
             this.txtCMND.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtCMND.Location = new System.Drawing.Point(549, 35);
+            this.txtCMND.Location = new System.Drawing.Point(310, 111);
             this.txtCMND.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCMND.Multiline = true;
             this.txtCMND.Name = "txtCMND";
-            this.txtCMND.Size = new System.Drawing.Size(243, 27);
+            this.txtCMND.Size = new System.Drawing.Size(253, 27);
             this.txtCMND.TabIndex = 40;
             this.txtCMND.Text = "CMND";
             this.txtCMND.Click += new System.EventHandler(this.txtCMND_Click);
@@ -257,7 +257,7 @@
             // dtNgayLap
             // 
             this.dtNgayLap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtNgayLap.Location = new System.Drawing.Point(145, 131);
+            this.dtNgayLap.Location = new System.Drawing.Point(725, 40);
             this.dtNgayLap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtNgayLap.Name = "dtNgayLap";
             this.dtNgayLap.Size = new System.Drawing.Size(140, 22);
@@ -267,7 +267,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(31, 134);
+            this.label3.Location = new System.Drawing.Point(604, 44);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(108, 18);
             this.label3.TabIndex = 34;
@@ -285,7 +285,7 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(565, 196);
+            this.btnSua.Location = new System.Drawing.Point(607, 284);
             this.btnSua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(67, 28);
@@ -296,7 +296,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(645, 196);
+            this.btnXoa.Location = new System.Drawing.Point(700, 284);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(67, 28);
@@ -307,7 +307,7 @@
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(485, 196);
+            this.btnLuu.Location = new System.Drawing.Point(499, 284);
             this.btnLuu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(64, 28);
@@ -319,10 +319,10 @@
             // cbLP
             // 
             this.cbLP.FormattingEnabled = true;
-            this.cbLP.Location = new System.Drawing.Point(201, 38);
+            this.cbLP.Location = new System.Drawing.Point(157, 38);
             this.cbLP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbLP.Name = "cbLP";
-            this.cbLP.Size = new System.Drawing.Size(84, 24);
+            this.cbLP.Size = new System.Drawing.Size(95, 24);
             this.cbLP.TabIndex = 28;
             this.cbLP.SelectedIndexChanged += new System.EventHandler(this.cbLP_SelectedIndexChanged);
             // 
@@ -340,9 +340,9 @@
             // 
             this.panel2.Controls.Add(this.dgvPT);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 319);
+            this.panel2.Location = new System.Drawing.Point(0, 396);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(975, 241);
+            this.panel2.Size = new System.Drawing.Size(975, 304);
             this.panel2.TabIndex = 5;
             // 
             // dgvPT
@@ -362,7 +362,7 @@
             this.dgvPT.Name = "dgvPT";
             this.dgvPT.RowHeadersWidth = 51;
             this.dgvPT.RowTemplate.Height = 24;
-            this.dgvPT.Size = new System.Drawing.Size(969, 235);
+            this.dgvPT.Size = new System.Drawing.Size(969, 298);
             this.dgvPT.TabIndex = 0;
             this.dgvPT.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPT_CellClick);
             // 
@@ -375,7 +375,7 @@
             this.Controls.Add(this.panel4);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmLapPhieuThue";
-            this.Size = new System.Drawing.Size(975, 560);
+            this.Size = new System.Drawing.Size(975, 700);
             this.Load += new System.EventHandler(this.frmLapPhieuThue_Load);
             this.panel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
