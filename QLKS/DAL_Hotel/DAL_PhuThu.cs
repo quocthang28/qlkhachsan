@@ -13,49 +13,49 @@ namespace DAL_Hotel
 {
     public class DAL_PhuThu : DBConnect
     {
-        public DataTable getPhuThu()
-        {
-            con.Open();
-            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM PHUTHU", con);
-            DataTable dtThanhvien = new DataTable();
-            da.Fill(dtThanhvien);
-            con.Close();
-            return dtThanhvien;
-        }
-        public DataTable loadData(string sql)
-        {
-            con.Open();
+        //public DataTable getPhuThu()
+        //{
+        //    con.Open();
+        //    SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM PHUTHU", con);
+        //    DataTable dtThanhvien = new DataTable();
+        //    da.Fill(dtThanhvien);
+        //    con.Close();
+        //    return dtThanhvien;
+        //}
+        //public DataTable loadData(string sql)
+        //{
+        //    con.Open();
 
-            SqlCommand cmd = new SqlCommand(sql, con);
-            var dr = cmd.ExecuteReader();
-            var dt = new DataTable();
-            dt.Load(dr);
-            dr.Dispose();
-            con.Close();
-            return dt;
-        }
+        //    SqlCommand cmd = new SqlCommand(sql, con);
+        //    var dr = cmd.ExecuteReader();
+        //    var dt = new DataTable();
+        //    dt.Load(dr);
+        //    dr.Dispose();
+        //    con.Close();
+        //    return dt;
+        //}
 
-        public bool editPhuThu(DTO_PhuThu pt)
-        {
-            try
-            {
-                con.Open();
-                string SQL = string.Format("UPDATE PHUTHU SET TYLE= {0} WHERE MAPHUTHU = {1} ", pt.PHUTHU_TYLE, pt.PHUTHU_NAME);
+        //public bool editPhuThu(DTO_PhuThu pt)
+        //{
+        //    try
+        //    {
+        //        con.Open();
+        //        string SQL = string.Format("UPDATE PHUTHU SET TYLE= {0} WHERE MAPHUTHU = {1} ", pt.PHUTHU_TYLE, pt.PHUTHU_NAME);
 
-                SqlCommand cmd = new SqlCommand(SQL, con);
+        //        SqlCommand cmd = new SqlCommand(SQL, con);
 
-                if (cmd.ExecuteNonQuery() > 0)
-                    return true;
-            }
-            catch (Exception)
-            {
+        //        if (cmd.ExecuteNonQuery() > 0)
+        //            return true;
+        //    }
+        //    catch (Exception)
+        //    {
 
-            }
-            finally
-            {
-                con.Close();
-            }
-            return false;
-        }
+        //    }
+        //    finally
+        //    {
+        //        con.Close();
+        //    }
+        //    return false;
+        //}
     }
 }

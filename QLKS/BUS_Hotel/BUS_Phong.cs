@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using System.Data;
 using DAL_Hotel;
 using DTO_Hotel;
-
 namespace BUS_Hotel
 {
     public class BUS_Phong
@@ -60,6 +59,11 @@ namespace BUS_Hotel
         public List<DTO_Phong> loadDanhSachPhongTheoLoaiPhong(string a)
         {
             return DAL_Phong.Instance.loadDanhSachPhongTheoLoaiPhong(a);
+        }
+
+        public List<DTO_Phong> layDanhSachPhongCoNguoi()
+        {
+            return dalPhong.layDanhSachPhongCoNguoi();
         }
     }
 }

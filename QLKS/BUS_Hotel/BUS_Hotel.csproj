@@ -89,15 +89,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS_ChiTietHoaDon.cs" />
     <Compile Include="BUS_ChiTietPhieuThue.cs" />
     <Compile Include="BUS_Account.cs" />
+    <Compile Include="BUS_HoaDon.cs" />
     <Compile Include="BUS_KhachHang.cs" />
     <Compile Include="BUS_LapPhieuThue.cs" />
     <Compile Include="BUS_LoaiKhachHang.cs" />
     <Compile Include="BUS_LoaiPhong.cs" />
     <Compile Include="BUS_Phong.cs" />
     <Compile Include="BUS_PhuThu.cs" />
+    <Compile Include="BUS_ThamSO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL_Hotel\DAL_Hotel.csproj">
@@ -108,10 +115,6 @@
       <Project>{bd991801-de8b-46d9-89b7-c6e70461f869}</Project>
       <Name>DTO_Hotel</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

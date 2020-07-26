@@ -7,17 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DTO_Hotel;
-using BUS_Hotel;
 using System.Windows;
 using System.Globalization;
 using System.Data.SqlClient;
+using BUS_Hotel;
+using DTO_Hotel;
+
 namespace QLKS
 {
     public partial class frmPhong : UserControl
     {
         private string ghiChu; //ghi chu phong
-        private string idPhong;
+        private string mp;
         BUS_Phong busPhong = new BUS_Phong();
         BUS_LoaiPhong busLoaiPhong = new BUS_LoaiPhong();
         public frmPhong()
@@ -55,13 +56,13 @@ namespace QLKS
             }
         }
 
-        private void showChiTietPhong(string idPhong)
+        private void showChiTietPhong(string mp)
         {
-            using (SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-B182N8G\MSSQLSERVER01;Initial Catalog=QLKS;Integrated Security=True"))
+            using (SqlConnection conn = new SqlConnection("Data Source=ADMIN\\SQL;Initial Catalog=QLKS;Integrated Security=True"))
             {
                 try
                 {
-                    string query = String.Format("SELECT KH.TENKHACHHANG as 'Tên khách hàng', LKH.TENLOAIKHACHHANG as 'Loại khách hàng', KH.CMND as 'Số CMND', KH.DIACHI as 'Địa chỉ', PT.NGAYLAPPHIEU as 'Ngày lập phiếu' FROM KHACHHANG AS KH JOIN LOAIKHACHHANG LKH ON KH.MALOAIKHACHHANG = LKH.MALOAIKHACHHANG JOIN CHITIETPHIEUTHUEPHONG CT ON CT.MAKHACHHANG = KH.MAKHACHHANG JOIN PHIEUTHUEPHONG PT ON PT.MAPHIEUTHUE = CT.MAPHIEUTHUE WHERE MAPHONG = N'{0}'", idPhong);
+                    string query = String.Format("SELECT KH.TENKHACHHANG as 'Tên khách hàng', LKH.TENLOAIKHACHHANG as 'Loại khách hàng', KH.CMND as 'Số CMND', KH.DIACHI as 'Địa chỉ', PT.NGAYLAPPHIEU as 'Ngày lập phiếu' FROM KHACHHANG AS KH JOIN LOAIKHACHHANG LKH ON KH.MALOAIKHACHHANG = LKH.MALOAIKHACHHANG JOIN CHITIETPHIEUTHUEPHONG CT ON CT.MAKHACHHANG = KH.MAKHACHHANG JOIN PHIEUTHUEPHONG PT ON PT.MAPHIEUTHUE = CT.MAPHIEUTHUE WHERE MAPHONG = N'{0}' and tinhtrang = 0", mp);
                     SqlCommand cmd = new SqlCommand(query, conn);
                     SqlDataAdapter dAdapter = new SqlDataAdapter(cmd);
                     DataSet ds = new DataSet();
@@ -108,7 +109,7 @@ namespace QLKS
                 }
                 btn.Text = phong.PHONG_TENPHONG + "\n" + tinhTrang;
                 flpPhong.Controls.Add(btn);
-                btn.Click += (sender, EventArgs) => { Btn_Click(sender, EventArgs, phong.PHONG_ID, phong.PHONG_TENPHONG, phong.PHONG_GHICHU); };
+                btn.Click += (sender, EventArgs) => { Btn_Click(sender, EventArgs, phong.PHONG_MAPHONG, phong.PHONG_TENPHONG, phong.PHONG_GHICHU); };
             }
 
             if (phongList.Any() && buttonClicked == false)
@@ -117,7 +118,8 @@ namespace QLKS
                 tenPhong.Text = firstPhong.PHONG_TENPHONG;
                 ghiChu = firstPhong.PHONG_GHICHU;
                 ghiChuPhong.Text = firstPhong.PHONG_GHICHU;
-                idPhong = maPhong.Text = firstPhong.PHONG_ID.ToString();              
+                mp = maPhong.Text = firstPhong.PHONG_MAPHONG.ToString();
+                lblTenPhong.Text = firstPhong.PHONG_TENPHONG;
             }
             else
             {
@@ -126,14 +128,14 @@ namespace QLKS
 
         }
 
-        private void Btn_Click(object sender, EventArgs e, int id, string tenp, string gc) // Phong btn click
+        private void Btn_Click(object sender, EventArgs e, int mp, string tenp, string gc) // Phong btn click
         {
             tenPhong.Text = tenp;
             ghiChuPhong.Text = gc;
-            maPhong.Text = id.ToString();
+            maPhong.Text = mp.ToString();
             ghiChu = gc;
             lblTenPhong.Text = tenp;
-            showChiTietPhong(id.ToString());
+            showChiTietPhong(mp.ToString());
         }
 
 
@@ -141,10 +143,10 @@ namespace QLKS
         {
             showPhong(false);
             showDonGia();
-            showChiTietPhong(idPhong.ToString());
+            showChiTietPhong(mp.ToString());
         }
 
-        private void button1_Click(object sender, EventArgs e) // add
+        private void btnThem_Click(object sender, EventArgs e)
         {
             if (validateData())
             {
@@ -158,7 +160,7 @@ namespace QLKS
                 }
                 else
                 {
-                    DTO_Phong phong = new DTO_Phong(loaiPhong.SelectedValue.ToString(), tenPhong.Text, ghiChuPhong.Text, 0);
+                    DTO_Phong phong = new DTO_Phong(loaiPhong.SelectedValue.ToString(), tenPhong.Text, ghiChuPhong.Text, 0 ,0);
                     if (busPhong.addPhong(phong))
                     {
                         showPhong(true);
@@ -172,7 +174,7 @@ namespace QLKS
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnSua_Click(object sender, EventArgs e)
         {
             if (validateData())
             {
@@ -186,7 +188,7 @@ namespace QLKS
                 }
                 else
                 {
-                    DTO_Phong phong = new DTO_Phong(loaiPhong.SelectedValue.ToString(), tenPhong.Text, ghiChuPhong.Text, 0);
+                    DTO_Phong phong = new DTO_Phong(loaiPhong.SelectedValue.ToString(), tenPhong.Text, ghiChuPhong.Text, 0 ,0);
                     if (busPhong.suaPhong(phong, maPhong.Text))
                     {
                         showPhong(true);
@@ -200,7 +202,7 @@ namespace QLKS
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnXoa_Click(object sender, EventArgs e)
         {
             if (validateData())
             {
@@ -214,7 +216,7 @@ namespace QLKS
                 }
                 else
                 {
-                    DTO_Phong phong = new DTO_Phong(loaiPhong.SelectedValue.ToString(), tenPhong.Text, ghiChuPhong.Text, 0);
+                    DTO_Phong phong = new DTO_Phong(loaiPhong.SelectedValue.ToString(), tenPhong.Text, ghiChuPhong.Text, 0 ,0);
                     if (busPhong.xoaPhong(phong, maPhong.Text))
                     {
                         showPhong(true);
@@ -227,10 +229,9 @@ namespace QLKS
                 }
             }
 
-            //check hoa don
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void btnDoiPhong_Click(object sender, EventArgs e)
         {
             frmDoiPhong doiPhong = new frmDoiPhong(this);
             doiPhong.ShowDialog();

@@ -14,12 +14,10 @@ namespace QLKS
 {
     public partial class frmDoiPhong : Form
     {
-        private frmPhong Phong = new frmPhong();
         BUS_LapPhieuThue busHotel = new BUS_LapPhieuThue();
         BUS_Phong busPhong = new BUS_Phong();
-        public frmDoiPhong(frmPhong phong)
+        public frmDoiPhong()
         {
-            Phong = phong;
             InitializeComponent();
         }
 
@@ -79,7 +77,7 @@ namespace QLKS
                 return;
             }
             DTO_Phong selected = cb.SelectedItem as DTO_Phong;
-            id1 = selected.PHONG_MAPHONG;
+            id1 = selected.PHONG_MAPHONG.ToString();
             mpcu = Convert.ToInt32(id1);
 
             string lmpt = busHotel.loadMaPhieuThue(mpcu);
@@ -96,14 +94,13 @@ namespace QLKS
                 return;
             }
             DTO_Phong selected = cb.SelectedItem as DTO_Phong;
-            id2 = selected.PHONG_MAPHONG;
+            id2 = selected.PHONG_MAPHONG.ToString();
             mpmoi = Convert.ToInt32(id2);
         }
 
-
-        private void btnLuu_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            if (busHotel.suaPhieuThue(mpmoi, mpt))
+            if(busHotel.suaPhieuThue(mpmoi, mpt))
             {
                 string ttmoi = "1";
                 busPhong.updateTinhTrangPhong(ttmoi, mpmoi);
@@ -111,12 +108,11 @@ namespace QLKS
                 string ttcu = "0";
                 busPhong.updateTinhTrangPhong(ttcu, mpcu);
                 
-            
-                Phong.showPhong(false);
+                
 
                 MessageBox.Show("Đổi phòng thành công!");
-                this.Close();
             }
+
         }
     }
 }

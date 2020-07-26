@@ -40,16 +40,16 @@
             this.donGia = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.maPhong = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.dgvChiTietPhong = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
             this.lblTenPhong = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnDoiPhong = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietPhong)).BeginInit();
             this.SuspendLayout();
             // 
@@ -158,38 +158,38 @@
             this.maPhong.Size = new System.Drawing.Size(0, 17);
             this.maPhong.TabIndex = 15;
             // 
-            // button3
+            // btnSua
             // 
-            this.button3.Location = new System.Drawing.Point(407, 200);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(67, 28);
-            this.button3.TabIndex = 17;
-            this.button3.Text = "Sửa";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnSua.Location = new System.Drawing.Point(407, 200);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(67, 28);
+            this.btnSua.TabIndex = 17;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
-            // button2
+            // btnXoa
             // 
-            this.button2.Location = new System.Drawing.Point(498, 200);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(67, 28);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "Xoá";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnXoa.Location = new System.Drawing.Point(498, 200);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(67, 28);
+            this.btnXoa.TabIndex = 18;
+            this.btnXoa.Text = "Xoá";
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
-            // button1
+            // btnThem
             // 
-            this.button1.Location = new System.Drawing.Point(324, 200);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(64, 28);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Thêm";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnThem.Location = new System.Drawing.Point(324, 200);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(64, 28);
+            this.btnThem.TabIndex = 16;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // label8
             // 
@@ -251,29 +251,29 @@
             this.lblTenPhong.Size = new System.Drawing.Size(0, 17);
             this.lblTenPhong.TabIndex = 25;
             // 
-            // button4
+            // btnDoiPhong
             // 
-            this.button4.Location = new System.Drawing.Point(623, 200);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(105, 30);
-            this.button4.TabIndex = 26;
-            this.button4.Text = "Đổi phòng";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnDoiPhong.Location = new System.Drawing.Point(623, 200);
+            this.btnDoiPhong.Name = "btnDoiPhong";
+            this.btnDoiPhong.Size = new System.Drawing.Size(105, 30);
+            this.btnDoiPhong.TabIndex = 26;
+            this.btnDoiPhong.Text = "Đổi phòng";
+            this.btnDoiPhong.UseVisualStyleBackColor = true;
+            this.btnDoiPhong.Click += new System.EventHandler(this.btnDoiPhong_Click);
             // 
             // frmPhong
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnDoiPhong);
             this.Controls.Add(this.lblTenPhong);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.dgvChiTietPhong);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSua);
+            this.Controls.Add(this.btnXoa);
+            this.Controls.Add(this.btnThem);
             this.Controls.Add(this.maPhong);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.donGia);
@@ -309,15 +309,15 @@
         private System.Windows.Forms.Label donGia;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label maPhong;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSua;
+        private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dgvChiTietPhong;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lblTenPhong;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnDoiPhong;
     }
 }

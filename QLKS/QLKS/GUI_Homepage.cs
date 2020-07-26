@@ -36,7 +36,7 @@ namespace QLKS
             pnlContent.Controls.Add(phong);
             pnlContent.Controls.Add(laphoadon);
             pnlContent.Controls.Add(lapphieuthue);
-            pnlContent.Controls.Add(thaydoiphuthu);
+            //pnlContent.Controls.Add(thaydoiphuthu);
 
             dmPhong.BringToFront();
         }
@@ -63,6 +63,12 @@ namespace QLKS
         private void button3_Click(object sender, EventArgs e)
         {
             thaydoiphuthu.BringToFront();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            laphoadon.BringToFront();
+            laphoadon.LoadPhong();
         }
     }
 }

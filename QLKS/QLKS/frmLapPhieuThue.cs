@@ -390,7 +390,7 @@ namespace QLKS
                 return;
             }
             DTO_Phong selected = cb.SelectedItem as DTO_Phong;
-            id = selected.PHONG_MAPHONG;
+            id = selected.PHONG_MAPHONG.ToString();
             mp1 = Convert.ToInt32(id);
             dgvPT.DataSource = busHotel.getPhieuthue(Convert.ToInt32(id));
         }

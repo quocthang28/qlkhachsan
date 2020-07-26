@@ -3,14 +3,36 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data;
-using DAL_Hotel;
+
 using DTO_Hotel;
+using DAL_Hotel;
+using System.Data;
+
+//using System.Data;
+//using DAL_Hotel;
+//using DTO_Hotel;
+
 
 namespace BUS_Hotel
 {
     public class BUS_KhachHang
     {
+        private static BUS_KhachHang instance;
+
+        public static BUS_KhachHang Instance
+        {
+            get { if (instance == null) instance = new BUS_KhachHang(); return BUS_KhachHang.instance; }
+            private set { BUS_KhachHang.instance = value; }
+        }
+        public List<DTO_KhachHang> layDanhSachTenKhach()
+        {
+            return DAL_KhachHang.Instance.layDanhSachTenKhachHang();
+        }
+
+        public DataTable layThongTinKhach(int makh)
+        {
+            return DAL_KhachHang.Instance.layThongTinKhach(makh);
+        }
         DAL_KhachHang dalHotel = new DAL_KhachHang();
         public bool themKhachHang(DTO_KhachHang kh)
         {
@@ -30,3 +52,4 @@ namespace BUS_Hotel
         }
     }
 }
+
