@@ -48,7 +48,6 @@
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.pnlContent.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -225,7 +224,6 @@
             // 
             // pnlContent
             // 
-            //this.pnlContent.Controls.Add(this.frmPhong1);
             this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContent.Location = new System.Drawing.Point(354, 0);
             this.pnlContent.Name = "pnlContent";
@@ -258,7 +256,6 @@
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.pnlContent.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -278,7 +275,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel pnlContent;
         private frmPhong frmPhong1;
-        private System.Windows.Forms.Button button7;
+        public System.Windows.Forms.Button button7;
     }
 }
 

@@ -31,29 +31,55 @@ namespace DAL_Hotel
         //Load mã phiếu thuê phòng 
         public string loadMaPhieuThue( int b)
         {
-            con.Open();
-            //string mpt = "select MAPHIEUTHUE FROM PHIEUTHUEPHONG WHERE NGAYLAPPHIEU='" + a + "' AND MAPHONG ='" + b + "'";
-            //SqlCommand cmd = new SqlCommand(mpt, con);
-            SqlCommand cmd = new SqlCommand("uspLoadmpt", con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@MAPHONG", b);
-            int t = (int)cmd.ExecuteScalar();
-            
-            con.Close();
-            return Convert.ToString(t);
+            try
+            {
+                con.Open();
+                //string mpt = "select MAPHIEUTHUE FROM PHIEUTHUEPHONG WHERE NGAYLAPPHIEU='" + a + "' AND MAPHONG ='" + b + "'";
+                //SqlCommand cmd = new SqlCommand(mpt, con);
+                SqlCommand cmd = new SqlCommand("uspLoadmpt", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@MAPHONG", b);
+                int t = (int)cmd.ExecuteScalar();
+
+                
+                return Convert.ToString(t);
+            }
+            catch(Exception e)
+            {
+
+            }
+            finally
+            {
+                con.Close();
+            }
+            return null;
+
 
         }
 
         //Load mã phòng
         public string loadMaPhong(int mpt)
         {
-            con.Open();
-            string mp = "select MAPHONG FROM PHIEUTHUEPHONG WHERE MAPHIEUTHUE='" + mpt + "'";
-            SqlCommand cmd = new SqlCommand(mp, con);
+            try
+            {
+                con.Open();
+                string mp = "select MAPHONG FROM PHIEUTHUEPHONG WHERE MAPHIEUTHUE='" + mpt + "'";
+                SqlCommand cmd = new SqlCommand(mp, con);
+                int t = (int)cmd.ExecuteScalar();
+             
+                return Convert.ToString(t);
+            }
+            catch (Exception e)
+            {
 
-            int t = (int)cmd.ExecuteScalar();
-            con.Close();
-            return Convert.ToString(t);
+            }
+            finally
+            {
+                con.Close();
+            }
+            return null;
+
+            
         }
         //Thêm phiếu thuê phòng
         public bool lapPhieuThue(DTO_PhieuThuePhong pt)

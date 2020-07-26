@@ -40,6 +40,13 @@ namespace QLKS
             cbK.DataSource = BUS_LoaiKhachHang.Instance.loadDanhSachLoaiKhachHang();
         }
 
+        public void loadListLoaiPhong()
+        {
+            cbLP.DisplayMember = "LOAIPHONG_TENLOAIPHONG";
+            cbLP.ValueMember = "LOAIPHONG_MALOAIPHONG";
+            cbLP.DataSource = BUS_LoaiPhong.Instance.LoadDanhSachLoaiPhong();
+        }
+
         //Load phòng theo loại phòng vừa chọn
         private void cbLP_SelectedIndexChanged(object sender, EventArgs e)
         {

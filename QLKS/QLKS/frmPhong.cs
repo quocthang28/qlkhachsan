@@ -232,7 +232,7 @@ namespace QLKS
 
         private void button4_Click(object sender, EventArgs e)
         {
-            frmDoiPhong doiPhong = new frmDoiPhong();
+            frmDoiPhong doiPhong = new frmDoiPhong(this);
             doiPhong.ShowDialog();
         }
     }

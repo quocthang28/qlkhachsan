@@ -14,10 +14,12 @@ namespace QLKS
 {
     public partial class frmDoiPhong : Form
     {
+        private frmPhong Phong = new frmPhong();
         BUS_LapPhieuThue busHotel = new BUS_LapPhieuThue();
         BUS_Phong busPhong = new BUS_Phong();
-        public frmDoiPhong()
+        public frmDoiPhong(frmPhong phong)
         {
+            Phong = phong;
             InitializeComponent();
         }
 
@@ -98,19 +100,23 @@ namespace QLKS
             mpmoi = Convert.ToInt32(id2);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        private void btnLuu_Click(object sender, EventArgs e)
         {
-            if(busHotel.suaPhieuThue(mpmoi, mpt))
+            if (busHotel.suaPhieuThue(mpmoi, mpt))
             {
                 string ttmoi = "1";
                 busPhong.updateTinhTrangPhong(ttmoi, mpmoi);
 
                 string ttcu = "0";
                 busPhong.updateTinhTrangPhong(ttcu, mpcu);
+                
+            
+                Phong.showPhong(false);
 
                 MessageBox.Show("Đổi phòng thành công!");
+                this.Close();
             }
-
         }
     }
 }

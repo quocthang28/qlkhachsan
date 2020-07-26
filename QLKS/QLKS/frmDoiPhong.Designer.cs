@@ -31,15 +31,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cbLpCu = new System.Windows.Forms.ComboBox();
             this.cbPCu = new System.Windows.Forms.ComboBox();
-            this.cbLpMoi = new System.Windows.Forms.ComboBox();
+            this.cbLpCu = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cbPMoi = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.cbLpMoi = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnLuu = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -76,6 +76,33 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Phòng hiện tại";
             // 
+            // cbPCu
+            // 
+            this.cbPCu.FormattingEnabled = true;
+            this.cbPCu.Location = new System.Drawing.Point(264, 74);
+            this.cbPCu.Name = "cbPCu";
+            this.cbPCu.Size = new System.Drawing.Size(121, 24);
+            this.cbPCu.TabIndex = 4;
+            this.cbPCu.SelectedIndexChanged += new System.EventHandler(this.cbPCu_SelectedIndexChanged);
+            // 
+            // cbLpCu
+            // 
+            this.cbLpCu.FormattingEnabled = true;
+            this.cbLpCu.Location = new System.Drawing.Point(264, 32);
+            this.cbLpCu.Name = "cbLpCu";
+            this.cbLpCu.Size = new System.Drawing.Size(121, 24);
+            this.cbLpCu.TabIndex = 3;
+            this.cbLpCu.SelectedIndexChanged += new System.EventHandler(this.cbLpCu_SelectedIndexChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(158, 83);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 17);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Phòng:";
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.cbPMoi);
@@ -89,50 +116,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Phòng mới";
             // 
-            // label3
+            // cbPMoi
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(158, 83);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 17);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Phòng:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(161, 36);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 17);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Loại phòng:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(161, 76);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 17);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Phòng:";
-            // 
-            // cbLpCu
-            // 
-            this.cbLpCu.FormattingEnabled = true;
-            this.cbLpCu.Location = new System.Drawing.Point(264, 32);
-            this.cbLpCu.Name = "cbLpCu";
-            this.cbLpCu.Size = new System.Drawing.Size(121, 24);
-            this.cbLpCu.TabIndex = 3;
-            this.cbLpCu.SelectedIndexChanged += new System.EventHandler(this.cbLpCu_SelectedIndexChanged);
-            // 
-            // cbPCu
-            // 
-            this.cbPCu.FormattingEnabled = true;
-            this.cbPCu.Location = new System.Drawing.Point(264, 74);
-            this.cbPCu.Name = "cbPCu";
-            this.cbPCu.Size = new System.Drawing.Size(121, 24);
-            this.cbPCu.TabIndex = 4;
-            this.cbPCu.SelectedIndexChanged += new System.EventHandler(this.cbPCu_SelectedIndexChanged);
+            this.cbPMoi.FormattingEnabled = true;
+            this.cbPMoi.Location = new System.Drawing.Point(264, 76);
+            this.cbPMoi.Name = "cbPMoi";
+            this.cbPMoi.Size = new System.Drawing.Size(121, 24);
+            this.cbPMoi.TabIndex = 3;
+            this.cbPMoi.SelectedIndexChanged += new System.EventHandler(this.cbPMoi_SelectedIndexChanged);
             // 
             // cbLpMoi
             // 
@@ -143,31 +134,40 @@
             this.cbLpMoi.TabIndex = 2;
             this.cbLpMoi.SelectedIndexChanged += new System.EventHandler(this.cbLpMoi_SelectedIndexChanged);
             // 
-            // cbPMoi
+            // label5
             // 
-            this.cbPMoi.FormattingEnabled = true;
-            this.cbPMoi.Location = new System.Drawing.Point(264, 76);
-            this.cbPMoi.Name = "cbPMoi";
-            this.cbPMoi.Size = new System.Drawing.Size(121, 24);
-            this.cbPMoi.TabIndex = 3;
-            this.cbPMoi.SelectedIndexChanged += new System.EventHandler(this.cbPMoi_SelectedIndexChanged);
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(161, 76);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 17);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Phòng:";
             // 
-            // button1
+            // label4
             // 
-            this.button1.Location = new System.Drawing.Point(336, 384);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 36);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Lưu";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(161, 36);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(83, 17);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Loại phòng:";
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.Location = new System.Drawing.Point(336, 384);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(75, 36);
+            this.btnLuu.TabIndex = 4;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // frmDoiPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
@@ -197,6 +197,6 @@
         private System.Windows.Forms.ComboBox cbLpCu;
         private System.Windows.Forms.ComboBox cbPMoi;
         private System.Windows.Forms.ComboBox cbLpMoi;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnLuu;
     }
 }

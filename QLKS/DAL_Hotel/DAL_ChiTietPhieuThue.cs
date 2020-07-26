@@ -23,16 +23,29 @@ namespace DAL_Hotel
         //Load mã chi tiết phiếu thuê phòng
         public string loadMaChiTietPhieuThue(int a, int b)
         {
-            con.Open();
-            //string mpt = "select MACHITIETPHIEUTHUE FROM CHITIETPHIEUTHUEPHONG WHERE MAPHIEUTHUE='" + a + "' AND MAKHACHHANG ='" + b + "'";
-            //SqlCommand cmd = new SqlCommand(mpt, con);
-            SqlCommand cmd = new SqlCommand("uspLoadmctpt", con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@MAPHIEUTHUE", a);
-            cmd.Parameters.AddWithValue("@MAKHACHHANG", b);
-            int t = (int)cmd.ExecuteScalar();
-            con.Close();
-            return Convert.ToString(t);
+            try
+            {
+                con.Open();
+                //string mpt = "select MACHITIETPHIEUTHUE FROM CHITIETPHIEUTHUEPHONG WHERE MAPHIEUTHUE='" + a + "' AND MAKHACHHANG ='" + b + "'";
+                //SqlCommand cmd = new SqlCommand(mpt, con);
+                SqlCommand cmd = new SqlCommand("uspLoadmctpt", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@MAPHIEUTHUE", a);
+                cmd.Parameters.AddWithValue("@MAKHACHHANG", b);
+                int t = (int)cmd.ExecuteScalar();
+            
+                return Convert.ToString(t);
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                con.Close();
+            }
+            return null;
+           
 
         }
 

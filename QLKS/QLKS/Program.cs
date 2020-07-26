@@ -6,17 +6,18 @@ using System.Windows.Forms;
 
 namespace QLKS
 {
-    static class Program
+    public static class Program
     {
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        public static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GUI_Homepage());
+            GUI_Homepage mainForm = new GUI_Homepage();
+            Application.Run(mainForm);
             //Application.Run(new GUI_DangNhap());
         }
     }

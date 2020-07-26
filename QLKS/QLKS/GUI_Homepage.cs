@@ -47,8 +47,9 @@ namespace QLKS
             //danhmucphong.Dock = DockStyle.Fill;
         }
 
-        private void button7_Click_1(object sender, EventArgs e)
+        public void button7_Click_1(object sender, EventArgs e)
         {
+            
             phong.BringToFront();
             phong.showLoaiPhongList();
         }
@@ -56,6 +57,7 @@ namespace QLKS
         {
             this.Refresh();
             lapphieuthue.BringToFront();
+            lapphieuthue.loadListLoaiPhong();
         }
 
         private void button3_Click(object sender, EventArgs e)

@@ -16,13 +16,26 @@ namespace DAL_Hotel
         //Load mã khách hàng
         public string loadMaKhachHang(string a)
         {
-            con.Open();
-            SqlCommand cmd = new SqlCommand("uspLoadmkh", con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@CMND", a);
-            int t = (int)cmd.ExecuteScalar();
-            con.Close();
-            return Convert.ToString(t);
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("uspLoadmkh", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@CMND", a);
+                int t = (int)cmd.ExecuteScalar();
+                
+                return Convert.ToString(t);
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                con.Close();
+            }
+            return null;
+           
         }
 
         public List<DTO_KhachHang> getKHList()
