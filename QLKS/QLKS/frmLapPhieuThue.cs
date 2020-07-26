@@ -193,26 +193,33 @@ namespace QLKS
                 {
                     if(busPhong.checkTinhTrangPhong(Convert.ToString(mp1)))
                     {
-                        DTO_ChiTietPhieuThuePhong sctpt = new DTO_ChiTietPhieuThuePhong(m, Convert.ToInt32(busHotel.loadMaPhieuThue(Convert.ToInt32(cbP.SelectedValue.ToString()))), d);
-                        if (busctpt.suactphieuthue(sctpt) && busKh.suaKhachHang(skh))
+                        if (busctpt.countctphieuthue(Convert.ToInt32(busHotel.loadMaPhieuThue(Convert.ToInt32(cbP.SelectedValue.ToString())))) < 3)
                         {
-                            MessageBox.Show("Sửa phiếu thuê thành công!");
-                            dgvPT.DataSource = busHotel.getPhieuthue(Convert.ToInt32(id));
-                            txtName.Text = "Họ tên";
-                            txtPhoneNumber.Text = "Số điện thoại";
-                            txtCMND.Text = "CMND";
-                            txtDiachi.Text = "Địa chỉ";
-                            //cbLP.Text = "A";
-                            //cbP.Text = "101";
-                            cbK.Text = "Trong nước";
-                            dtNgayLap.Text = Convert.ToString(DateTime.Today);
-                            dtNgaySinh.Text = Convert.ToString(DateTime.Today);
+                            DTO_ChiTietPhieuThuePhong sctpt = new DTO_ChiTietPhieuThuePhong(m, Convert.ToInt32(busHotel.loadMaPhieuThue(Convert.ToInt32(cbP.SelectedValue.ToString()))), d);
+                            if (busctpt.suactphieuthue(sctpt) && busKh.suaKhachHang(skh))
+                            {
+                                MessageBox.Show("Sửa phiếu thuê thành công!");
+                                dgvPT.DataSource = busHotel.getPhieuthue(Convert.ToInt32(id));
+                                txtName.Text = "Họ tên";
+                                txtPhoneNumber.Text = "Số điện thoại";
+                                txtCMND.Text = "CMND";
+                                txtDiachi.Text = "Địa chỉ";
+                                //cbLP.Text = "A";
+                                //cbP.Text = "101";
+                                cbK.Text = "Trong nước";
+                                dtNgayLap.Text = Convert.ToString(DateTime.Today);
+                                dtNgaySinh.Text = Convert.ToString(DateTime.Today);
 
                            
+                            }
+                            else
+                            {
+                                MessageBox.Show("Sửa phiếu thuê không thành công!");
+                            }
                         }
                         else
                         {
-                            MessageBox.Show("Sửa phiếu thuê không thành công!");
+                            MessageBox.Show("Không thể thêm khách hàng vào phòng!");
                         }
                     }
                     else

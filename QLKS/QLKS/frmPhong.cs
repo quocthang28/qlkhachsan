@@ -18,7 +18,7 @@ namespace QLKS
     public partial class frmPhong : UserControl
     {
         private string ghiChu; //ghi chu phong
-        private string mp;
+        private string mp = "";
         BUS_Phong busPhong = new BUS_Phong();
         BUS_LoaiPhong busLoaiPhong = new BUS_LoaiPhong();
         public frmPhong()
@@ -58,7 +58,7 @@ namespace QLKS
 
         private void showChiTietPhong(string mp)
         {
-            using (SqlConnection conn = new SqlConnection("Data Source=ADMIN\\SQL;Initial Catalog=QLKS;Integrated Security=True"))
+            using (SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-B182N8G\MSSQLSERVER01;Initial Catalog=QLKS;Integrated Security=True"))
             {
                 try
                 {

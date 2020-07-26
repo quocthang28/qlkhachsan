@@ -14,10 +14,12 @@ namespace QLKS
 {
     public partial class frmDoiPhong : Form
     {
+        private frmPhong Phong = new frmPhong();
         BUS_LapPhieuThue busHotel = new BUS_LapPhieuThue();
         BUS_Phong busPhong = new BUS_Phong();
-        public frmDoiPhong()
+        public frmDoiPhong(frmPhong phong)
         {
+            Phong = phong;
             InitializeComponent();
         }
 
@@ -32,7 +34,7 @@ namespace QLKS
             cbLpMoi.DataSource = BUS_LoaiPhong.Instance.LoadDanhSachLoaiPhong();
         }
 
-        
+
         private void cbLpCu_SelectedIndexChanged(object sender, EventArgs e)
         {
             string id;
@@ -49,7 +51,7 @@ namespace QLKS
             cbPCu.ValueMember = "PHONG_MAPHONG";
         }
 
-        
+
         private void cbLpMoi_SelectedIndexChanged(object sender, EventArgs e)
         {
             string id;
@@ -66,7 +68,7 @@ namespace QLKS
             cbPMoi.ValueMember = "PHONG_MAPHONG";
         }
 
-        public int mpcu=0;
+        public int mpcu = 0;
         public int mpt = 0;
         public string id1;
         private void cbPCu_SelectedIndexChanged(object sender, EventArgs e)
@@ -98,21 +100,23 @@ namespace QLKS
             mpmoi = Convert.ToInt32(id2);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        private void btnLuu_Click(object sender, EventArgs e)
         {
-            if(busHotel.suaPhieuThue(mpmoi, mpt))
+            if (busHotel.suaPhieuThue(mpmoi, mpt))
             {
                 string ttmoi = "1";
                 busPhong.updateTinhTrangPhong(ttmoi, mpmoi);
 
                 string ttcu = "0";
                 busPhong.updateTinhTrangPhong(ttcu, mpcu);
-                
-                
+
+
+                Phong.showPhong(false);
 
                 MessageBox.Show("Đổi phòng thành công!");
+                this.Close();
             }
-
         }
     }
 }
