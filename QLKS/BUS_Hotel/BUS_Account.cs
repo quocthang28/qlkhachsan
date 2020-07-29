@@ -42,5 +42,25 @@ namespace BUS_Hotel
         {
             return dalAccount.getAccountInfo(ten);
         }
+
+        public bool suaAccount(DTO_Account acc, string id)
+        {
+            return dalAccount.suaAccount(acc, id);
+        }
+
+        public bool xoaAccount(string id)
+        {
+            return dalAccount.xoaAccount(id);
+        }
+
+        public bool checkPassword(string tentk, string pass)
+        {
+            return dalAccount.checkPassword(tentk, pass);
+        }
+
+        public bool changePassword(string tentk, string pass)
+        {
+            return dalAccount.changePassword(tentk, pass);
+        }
     }
 }

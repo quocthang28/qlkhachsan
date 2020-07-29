@@ -127,5 +127,14 @@ namespace DTO_Hotel
         {
             this.DANGKI_NAME = row["HOTEN"].ToString();
         }
+
+        public DTO_Account(string name, string tk, string email, string diachi, string sdt)
+        {
+            this.DANGKI_NAME = name;
+            this.DANGKI_TK = tk;
+            this.DANGKI_EMAIL = email;
+            this.DANGKI_DIACHI = diachi;
+            this.DANGKI_PHONENUMBER = sdt;
+        }
     }
 }

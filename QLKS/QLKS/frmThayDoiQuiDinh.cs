@@ -89,5 +89,11 @@ namespace QLKS
                 MessageBox.Show("Tài khoản này không có quyền chỉnh sửa!");
             }
         }
+
+        private void btnDoiMK_Click(object sender, EventArgs e)
+        {
+            var doimk = new frmDoiMK();
+            doimk.ShowDialog();
+        }
     }
 }

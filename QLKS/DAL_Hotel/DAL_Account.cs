@@ -54,6 +54,34 @@ namespace DAL_Hotel
             DataTable result = DBConnect.Instance.ExecuteQuery(query);
             return result;
         }
+
+        public bool suaAccount(DTO_Account acc, string id)
+        {
+            string query = string.Format("UPDATE TAIKHOAN SET HOTEN = N'{0}', TENDANGNHAP = '{1}', EMAIL = '{2}', DIACHI = N'{3}', SDT = '{4}' WHERE ID = {5}", acc.DANGKI_NAME, acc.DANGKI_TK, acc.DANGKI_EMAIL, acc.DANGKI_DIACHI, acc.DANGKI_PHONENUMBER, id);
+            int result = DBConnect.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+
+        public bool xoaAccount(string id)
+        {
+            string query = "DELETE FROM TAIKHOAN WHERE ID = " + id;
+            int reuslt = DBConnect.Instance.ExecuteNonQuery(query);
+            return reuslt > 0;
+        }
+
+        public bool checkPassword(string tentk, string pass)
+        {
+            string query = "SELECT * FROM TAIKHOAN WHERE MATKHAU = '" + pass + "' AND TENDANGNHAP = '" + tentk + "'";
+            DataTable result = DBConnect.Instance.ExecuteQuery(query);
+            return result.Rows.Count == 1;
+        }
+
+        public bool changePassword(string tk, string pass)
+        {
+            string query = "UPDATE TAIKHOAN SET MATKHAU = '" + pass + "' WHERE TENDANGNHAP = '" + tk + "'";
+            int result = DBConnect.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
     }
 
 }

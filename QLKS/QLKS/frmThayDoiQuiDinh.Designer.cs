@@ -33,6 +33,7 @@
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnQLTK = new System.Windows.Forms.Button();
             this.tbPhuThu = new System.Windows.Forms.TextBox();
             this.btnHeSo = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,7 +44,7 @@
             this.lbl = new System.Windows.Forms.Label();
             this.tbSLNguoiTrongPhong = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnQLTK = new System.Windows.Forms.Button();
+            this.btnDoiMK = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -101,6 +102,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnDoiMK);
             this.panel1.Controls.Add(this.btnQLTK);
             this.panel1.Controls.Add(this.tbPhuThu);
             this.panel1.Controls.Add(this.btnHeSo);
@@ -118,6 +120,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(975, 636);
             this.panel1.TabIndex = 6;
+            // 
+            // btnQLTK
+            // 
+            this.btnQLTK.Location = new System.Drawing.Point(363, 63);
+            this.btnQLTK.Name = "btnQLTK";
+            this.btnQLTK.Size = new System.Drawing.Size(146, 37);
+            this.btnQLTK.TabIndex = 65;
+            this.btnQLTK.Text = "Quản lí tài khoản";
+            this.btnQLTK.UseVisualStyleBackColor = true;
+            this.btnQLTK.Click += new System.EventHandler(this.btnQLTK_Click);
             // 
             // tbPhuThu
             // 
@@ -219,15 +231,15 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Thay Đổi";
             // 
-            // btnQLTK
+            // btnDoiMK
             // 
-            this.btnQLTK.Location = new System.Drawing.Point(58, 402);
-            this.btnQLTK.Name = "btnQLTK";
-            this.btnQLTK.Size = new System.Drawing.Size(146, 37);
-            this.btnQLTK.TabIndex = 65;
-            this.btnQLTK.Text = "Quản lí tài khoản";
-            this.btnQLTK.UseVisualStyleBackColor = true;
-            this.btnQLTK.Click += new System.EventHandler(this.btnQLTK_Click);
+            this.btnDoiMK.Location = new System.Drawing.Point(363, 135);
+            this.btnDoiMK.Name = "btnDoiMK";
+            this.btnDoiMK.Size = new System.Drawing.Size(146, 37);
+            this.btnDoiMK.TabIndex = 66;
+            this.btnDoiMK.Text = "Đổi mật khẩu";
+            this.btnDoiMK.UseVisualStyleBackColor = true;
+            this.btnDoiMK.Click += new System.EventHandler(this.btnDoiMK_Click);
             // 
             // frmThayDoiQuiDinh
             // 
@@ -263,5 +275,6 @@
         private System.Windows.Forms.Button btnHeSo;
         private System.Windows.Forms.TextBox tbPhuThu;
         private System.Windows.Forms.Button btnQLTK;
+        private System.Windows.Forms.Button btnDoiMK;
     }
 }
