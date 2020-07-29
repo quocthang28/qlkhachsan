@@ -44,6 +44,8 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.pnlContent = new System.Windows.Forms.Panel();
             this.frmPhong1 = new QLKS.frmPhong();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblTen = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -190,7 +192,7 @@
             this.button1.Margin = new System.Windows.Forms.Padding(134, 125, 134, 125);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(400, 50);
+            this.button1.Size = new System.Drawing.Size(354, 50);
             this.button1.TabIndex = 0;
             this.button1.Text = "Trang Chủ";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -199,6 +201,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.panel2.Controls.Add(this.lblTen);
+            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -210,7 +214,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(96, 26);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 29);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(173, 92);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -225,6 +229,7 @@
             // 
             // pnlContent
             // 
+            this.pnlContent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContent.Location = new System.Drawing.Point(354, 0);
             this.pnlContent.Name = "pnlContent";
@@ -238,6 +243,27 @@
             this.frmPhong1.Name = "frmPhong1";
             this.frmPhong1.Size = new System.Drawing.Size(975, 699);
             this.frmPhong1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(183)))), ((int)(((byte)(57)))));
+            this.label1.Location = new System.Drawing.Point(202, 46);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(96, 24);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Nhân viên";
+            // 
+            // lblTen
+            // 
+            this.lblTen.AutoSize = true;
+            this.lblTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.26957F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblTen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(183)))), ((int)(((byte)(57)))));
+            this.lblTen.Location = new System.Drawing.Point(206, 103);
+            this.lblTen.Name = "lblTen";
+            this.lblTen.Size = new System.Drawing.Size(0, 24);
+            this.lblTen.TabIndex = 2;
             // 
             // GUI_Homepage
             // 
@@ -256,6 +282,7 @@
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -277,6 +304,8 @@
         private System.Windows.Forms.Panel pnlContent;
         private frmPhong frmPhong1;
         public System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Label lblTen;
+        private System.Windows.Forms.Label label1;
     }
 }
 
