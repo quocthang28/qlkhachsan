@@ -64,6 +64,7 @@ namespace QLKS
                 DTO_Account tk = new DTO_Account(cbNameList.Text, tbTK.Text, tbEmail.Text, tbDiachi.Text, tbSDT.Text);
                 if (busAccount.suaAccount(tk, id))
                 {
+                    Session.tk = tbTK.Text;
                     MessageBox.Show("Sửa tài khoản thành công!");
                     showUsername();
                 }

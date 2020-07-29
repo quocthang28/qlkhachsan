@@ -39,6 +39,7 @@ namespace QLKS
                     {
                         if (busAccount.changePassword(tenTK, tbNewPass.Text))
                         {
+                            Session.mk = tbNewPass.Text;
                             MessageBox.Show("Đổi mật khẩu thành công");
                         }
                         else
