@@ -86,7 +86,7 @@ namespace QLKS
             }
             else
             {
-                MessageBox.Show("Bạn không có quyền chỉnh sửa tài khoản!");
+                MessageBox.Show("Tài khoản này không có quyền chỉnh sửa!");
             }
         }
     }

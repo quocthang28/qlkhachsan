@@ -35,8 +35,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cbAD = new System.Windows.Forms.ComboBox();
             this.tbEmail = new System.Windows.Forms.TextBox();
             this.tbDiachi = new System.Windows.Forms.TextBox();
             this.tbSDT = new System.Windows.Forms.TextBox();
@@ -106,26 +104,6 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "Số điện thoại:";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 309);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(96, 17);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Quyền quản lí";
-            // 
-            // cbAD
-            // 
-            this.cbAD.FormattingEnabled = true;
-            this.cbAD.Items.AddRange(new object[] {
-            "Có",
-            "Không"});
-            this.cbAD.Location = new System.Drawing.Point(155, 309);
-            this.cbAD.Name = "cbAD";
-            this.cbAD.Size = new System.Drawing.Size(121, 24);
-            this.cbAD.TabIndex = 8;
-            // 
             // tbEmail
             // 
             this.tbEmail.Location = new System.Drawing.Point(155, 177);
@@ -155,8 +133,6 @@
             this.Controls.Add(this.tbSDT);
             this.Controls.Add(this.tbDiachi);
             this.Controls.Add(this.tbEmail);
-            this.Controls.Add(this.cbAD);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -181,8 +157,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox cbAD;
         private System.Windows.Forms.TextBox tbEmail;
         private System.Windows.Forms.TextBox tbDiachi;
         private System.Windows.Forms.TextBox tbSDT;

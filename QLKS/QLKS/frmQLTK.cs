@@ -38,14 +38,6 @@ namespace QLKS
                 tbDiachi.Text = dr["DIACHI"].ToString();
                 tbEmail.Text = dr["EMAIL"].ToString();
                 tbSDT.Text = dr["SDT"].ToString();
-                if(dr["ISADMIN"].ToString() == "1")
-                {
-                    cbAD.Text = "Có";
-                }
-                else
-                {
-                    cbAD.Text = "Không";
-                }
             }
         }
 
