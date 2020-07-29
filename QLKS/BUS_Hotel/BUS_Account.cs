@@ -11,7 +11,7 @@ namespace BUS_Hotel
 {
     public class BUS_Account
     {
-        DAL_Account dalHotel = new DAL_Account();
+        DAL_Account dalAccount = new DAL_Account();
 
         //public bool themDangKi(DTO_Account dk)
         //{
@@ -20,7 +20,27 @@ namespace BUS_Hotel
 
         public bool DangNhap(DTO_Account dn)
         {
-            return dalHotel.DangNhap(dn);
+            return dalAccount.DangNhap(dn);
+        }
+
+        public bool DangKi(DTO_Account dk)
+        {
+            return dalAccount.DangKi(dk);
+        }
+
+        public bool checkISADMIN(string tk)
+        {
+            return dalAccount.checkISADMIN(tk);
+        }
+
+        public List<DTO_Account> getName()
+        {
+            return dalAccount.getName();
+        }
+
+        public DataTable getAccountInfo(string ten)
+        {
+            return dalAccount.getAccountInfo(ten);
         }
     }
 }

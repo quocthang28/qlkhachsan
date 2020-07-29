@@ -14,7 +14,7 @@ namespace DAL_Hotel
     {
         private static DAL_ChiTietPhieuThue instance;
 
-        public static DAL_ChiTietPhieuThue Instance
+        public static DAL_ChiTietPhieuThue InstanceCTPT
         {
             get { if (instance == null) instance = new DAL_ChiTietPhieuThue(); return DAL_ChiTietPhieuThue.instance; }
             private set { DAL_ChiTietPhieuThue.instance = value; }
@@ -36,7 +36,7 @@ namespace DAL_Hotel
             
                 return Convert.ToString(t);
             }
-            catch (Exception e)
+            catch (Exception)
             {
 
             }

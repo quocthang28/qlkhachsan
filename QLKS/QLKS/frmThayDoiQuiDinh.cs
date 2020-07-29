@@ -76,5 +76,18 @@ namespace QLKS
                 MessageBox.Show("Nhập sai");
             }
         }
+
+        private void btnQLTK_Click(object sender, EventArgs e)
+        {
+            if (Session.isAdmin == true)
+            {
+                var qltk = new frmQLTK();
+                qltk.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền chỉnh sửa tài khoản!");
+            }
+        }
     }
 }

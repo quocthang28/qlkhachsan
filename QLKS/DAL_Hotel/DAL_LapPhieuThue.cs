@@ -44,7 +44,7 @@ namespace DAL_Hotel
                 
                 return Convert.ToString(t);
             }
-            catch(Exception e)
+            catch(Exception)
             {
 
             }
@@ -69,7 +69,7 @@ namespace DAL_Hotel
              
                 return Convert.ToString(t);
             }
-            catch (Exception e)
+            catch (Exception)
             {
 
             }

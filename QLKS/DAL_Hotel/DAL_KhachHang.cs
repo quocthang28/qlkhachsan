@@ -14,7 +14,7 @@ namespace DAL_Hotel
     {
 
         private static DAL_KhachHang instance;
-        public static DAL_KhachHang Instance
+        public static DAL_KhachHang InstanceKH
         {
             get { if (instance == null) instance = new DAL_KhachHang(); return DAL_KhachHang.instance; }
             private set { DAL_KhachHang.instance = value; }
@@ -33,7 +33,7 @@ namespace DAL_Hotel
                 
                 return Convert.ToString(t);
             }
-            catch (Exception e)
+            catch (Exception)
             {
 
             }

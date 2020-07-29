@@ -43,6 +43,7 @@
             this.lbl = new System.Windows.Forms.Label();
             this.tbSLNguoiTrongPhong = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnQLTK = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -100,6 +101,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnQLTK);
             this.panel1.Controls.Add(this.tbPhuThu);
             this.panel1.Controls.Add(this.btnHeSo);
             this.panel1.Controls.Add(this.label3);
@@ -143,7 +145,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(55, 273);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 17);
+            this.label3.Size = new System.Drawing.Size(49, 16);
             this.label3.TabIndex = 58;
             this.label3.Text = "HỆ SỐ";
             // 
@@ -173,7 +175,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(55, 156);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 17);
+            this.label2.Size = new System.Drawing.Size(69, 16);
             this.label2.TabIndex = 53;
             this.label2.Text = "PHỤ THU";
             // 
@@ -194,7 +196,7 @@
             this.lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl.Location = new System.Drawing.Point(55, 52);
             this.lbl.Name = "lbl";
-            this.lbl.Size = new System.Drawing.Size(241, 17);
+            this.lbl.Size = new System.Drawing.Size(227, 16);
             this.lbl.TabIndex = 50;
             this.lbl.Text = "SỐ LƯỢNG NGƯỜI TRONG PHÒNG";
             // 
@@ -216,6 +218,16 @@
             this.label1.Size = new System.Drawing.Size(91, 25);
             this.label1.TabIndex = 8;
             this.label1.Text = "Thay Đổi";
+            // 
+            // btnQLTK
+            // 
+            this.btnQLTK.Location = new System.Drawing.Point(58, 402);
+            this.btnQLTK.Name = "btnQLTK";
+            this.btnQLTK.Size = new System.Drawing.Size(146, 37);
+            this.btnQLTK.TabIndex = 65;
+            this.btnQLTK.Text = "Quản lí tài khoản";
+            this.btnQLTK.UseVisualStyleBackColor = true;
+            this.btnQLTK.Click += new System.EventHandler(this.btnQLTK_Click);
             // 
             // frmThayDoiQuiDinh
             // 
@@ -250,5 +262,6 @@
         private System.Windows.Forms.Button btnSLNguoiTrongPhong;
         private System.Windows.Forms.Button btnHeSo;
         private System.Windows.Forms.TextBox tbPhuThu;
+        private System.Windows.Forms.Button btnQLTK;
     }
 }

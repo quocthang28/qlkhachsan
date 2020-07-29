@@ -71,5 +71,6 @@ namespace QLKS
             laphoadon.BringToFront();
             laphoadon.LoadPhong();
         }
+
     }
 }
