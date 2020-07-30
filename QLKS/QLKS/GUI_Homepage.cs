@@ -18,18 +18,22 @@ namespace QLKS
         frmLapPhieuThue lapphieuthue = new frmLapPhieuThue();
         //frmThayDoiPhuThu thaydoiphuthu = new frmThayDoiPhuThu();
         frmThayDoiQuiDinh thaydoiquydinh = new frmThayDoiQuiDinh();
+        frmBaoCao baocao = new frmBaoCao();
         public GUI_Homepage()
         {
             InitializeComponent();
             //this.WindowState = FormWindowState.Maximized;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
+            if(Session.isAdmin == true)
+            {
+                lblChucVu.Text = "Quản lí";
+            }
+            else if (Session.isAdmin == false)
+            {
+                lblChucVu.Text = "Nhân viên";
+            }
             lblTen.Text = Session.tk;
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void GUI_Homepage_Load(object sender, EventArgs e)
@@ -41,7 +45,7 @@ namespace QLKS
             pnlContent.Controls.Add(laphoadon);
             pnlContent.Controls.Add(lapphieuthue);
             pnlContent.Controls.Add(thaydoiquydinh);
-
+            pnlContent.Controls.Add(baocao);
             dmPhong.BringToFront();
         }
 
@@ -73,7 +77,12 @@ namespace QLKS
         {
             laphoadon.BringToFront();
             laphoadon.LoadPhong();
+            laphoadon.loadCustomerName();
         }
 
+        private void button6_Click(object sender, EventArgs e)
+        {
+            baocao.BringToFront();
+        }
     }
 }

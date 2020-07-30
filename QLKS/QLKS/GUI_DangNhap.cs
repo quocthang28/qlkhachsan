@@ -40,12 +40,12 @@ namespace QLKS
                 }
                 else
                 {
-                    MessageBox.Show("Meo cho vo!");
+                    MessageBox.Show("Sai tài khoản/mật khẩu");
                 }
             }
             else
             {
-                MessageBox.Show("dien day du!");
+                MessageBox.Show("Điền đẩy đủ thông tin");
             }
         }
 

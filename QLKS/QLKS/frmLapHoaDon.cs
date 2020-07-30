@@ -102,7 +102,7 @@ namespace QLKS
         #region METHODS
 
 
-        void loadCustomerName()
+        public void loadCustomerName()
         {
             cbTenKhachHang.DataSource = busKhachHang.layDanhSachTenKhach();
             cbTenKhachHang.DisplayMember = "KHACHHANG_TENKHACHHANG";
@@ -235,12 +235,12 @@ namespace QLKS
         {
             if(BUS_ChiTietHoaDon.Instance.XoaChiTietHoaDon(maChiTietHoaDon,maHoaDon) == true )
             {
-                MessageBox.Show("Xoa thanh cong");
+                MessageBox.Show("Xóa thành công");
                 hienThiHoaDon(makh);
             }
             else
             {
-                MessageBox.Show("Xoa khong thanh cong");
+                MessageBox.Show("Xóa không thành công");
             }
         }
 
@@ -249,10 +249,10 @@ namespace QLKS
         {
             if (BUS_HoaDon.Instance.thanhToanHoaDon(BUS_HoaDon.Instance.getUnCheckIDBillByIDCustomer(makh), Convert.ToInt32(this.tbTongTien.Text)))
             {
-                MessageBox.Show("Thanh toan thanh cong");
+                MessageBox.Show("Thanh toán thành công");
                 hienThiHoaDon(makh);
             }
-            else MessageBox.Show("Thanh toan khong thanh cong");
+            else MessageBox.Show("Thanh toán không thành công");
 
             LoadPhong();
         }
@@ -266,6 +266,11 @@ namespace QLKS
                 return;
             DTO_Phong selected = cb.SelectedItem as DTO_Phong;
             maPhong = selected.PHONG_MAPHONG;
+        }
+
+        private void dgvChiTietHoaDon_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
