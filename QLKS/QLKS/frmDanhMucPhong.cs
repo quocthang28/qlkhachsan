@@ -53,30 +53,37 @@ namespace QLKS
 
         private void button3_Click(object sender, EventArgs e) //insert
         {
-            if (validateData())
+            if (Session.isAdmin == true)
             {
-                MessageBox.Show("Nhập đầy đủ thông tin!");
-            }
-            else
-            {
-                if (!busLoaiPhong.checkMaLoaiPhong(maLoaiPhong.Text))
+                if (validateData())
                 {
-                    MessageBox.Show("Mã loại phòng đã tồn tại!");
+                    MessageBox.Show("Nhập đầy đủ thông tin!");
                 }
                 else
                 {
-                    DTO_LoaiPhong loaiphong = new DTO_LoaiPhong(maLoaiPhong.Text, tenLoaiPhong.Text, Int32.Parse(giaLoaiPhong.Text), ghiChuLoaiPhong.Text);
-                    if (busLoaiPhong.themLoaiPhong(loaiphong))
+                    if (!busLoaiPhong.checkMaLoaiPhong(maLoaiPhong.Text))
                     {
-                        showLoaiPhong();
-                        MessageBox.Show("Thêm loại phòng thành công!");
-                        clearTextBox();
+                        MessageBox.Show("Mã loại phòng đã tồn tại!");
                     }
                     else
                     {
-                        MessageBox.Show("Thêm loại phòng thất bại!");
+                        DTO_LoaiPhong loaiphong = new DTO_LoaiPhong(maLoaiPhong.Text, tenLoaiPhong.Text, Int32.Parse(giaLoaiPhong.Text), ghiChuLoaiPhong.Text);
+                        if (busLoaiPhong.themLoaiPhong(loaiphong))
+                        {
+                            showLoaiPhong();
+                            MessageBox.Show("Thêm loại phòng thành công!");
+                            clearTextBox();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Thêm loại phòng thất bại!");
+                        }
                     }
                 }
+            }
+            else
+            {
+                MessageBox.Show("Tài khoản này không được phép chỉnh sửa!");
             }
         }
         private void button5_Click(object sender, EventArgs e) //edit

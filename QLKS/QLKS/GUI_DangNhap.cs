@@ -27,18 +27,25 @@ namespace QLKS
                 DTO_Account dn = new DTO_Account(txtUsername.Text, txtPass.Text);
                 if (busAccount.DangNhap(dn))
                 {
-                    GUI_Homepage homepage = new GUI_Homepage();
-                    homepage.Show();
-                    this.Hide();
+                    Session.tk = txtUsername.Text;
+                    Session.mk = txtPass.Text;
+                    if (busAccount.checkISADMIN(txtUsername.Text))
+                    {
+                        Session.isAdmin = true;
+                    }
+
+                    var homepage = new GUI_Homepage();
+                    homepage.ShowDialog();
+                    this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Meo cho vo!");
+                    MessageBox.Show("Sai tài khoản/mật khẩu");
                 }
             }
             else
             {
-                MessageBox.Show("dien day du!");
+                MessageBox.Show("Điền đẩy đủ thông tin");
             }
         }
 
@@ -48,6 +55,12 @@ namespace QLKS
             {
                 btnLogin.PerformClick();
             }
+        }
+
+        private void btnDangKi_Click(object sender, EventArgs e)
+        {
+            GUI_DangKi dk = new GUI_DangKi();
+            dk.ShowDialog();
         }
     }
 }

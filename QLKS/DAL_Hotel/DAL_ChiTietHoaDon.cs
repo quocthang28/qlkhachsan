@@ -63,7 +63,7 @@ namespace DAL_Hotel
         //public bool kiemTraTonTaiChiTietHoaDon(int maphong)
         //{
         //    string query = "select machitiethoadon from chitiethoadon,phong where chitiethoadon.maphong=phong.maphong and phong.maphong=" + maphong;
-        //    if (DBConnect.Instance.ExecuteScalar(query) == null) return false;
+        //    if (DBConnect.InstanceKH.ExecuteScalar(query) == null) return false;
         //    return true;
         //}
 

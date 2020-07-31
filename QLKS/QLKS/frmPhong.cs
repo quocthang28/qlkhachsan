@@ -58,7 +58,7 @@ namespace QLKS
 
         private void showChiTietPhong(string mp)
         {
-            using (SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-B182N8G\MSSQLSERVER01;Initial Catalog=QLKS;Integrated Security=True"))
+            using (SqlConnection conn = new SqlConnection(@"Data Source=.;Initial Catalog=QLKS;Integrated Security=True"))
             {
                 try
                 {

@@ -26,12 +26,12 @@ namespace BUS_Hotel
         }
         public List<DTO_KhachHang> layDanhSachTenKhach()
         {
-            return DAL_KhachHang.Instance.layDanhSachTenKhachHang();
+            return DAL_KhachHang.InstanceKH.layDanhSachTenKhachHang();
         }
 
         public DataTable layThongTinKhach(int makh)
         {
-            return DAL_KhachHang.Instance.layThongTinKhach(makh);
+            return DAL_KhachHang.InstanceKH.layThongTinKhach(makh);
         }
         DAL_KhachHang dalHotel = new DAL_KhachHang();
         public bool themKhachHang(DTO_KhachHang kh)
