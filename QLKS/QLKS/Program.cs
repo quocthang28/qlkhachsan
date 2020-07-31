@@ -17,8 +17,8 @@ namespace QLKS
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             GUI_Homepage mainForm = new GUI_Homepage();
-            Application.Run(mainForm);
-            //Application.Run(new GUI_DangNhap());
+            //Application.Run(mainForm);
+            Application.Run(new GUI_DangNhap());
         }
     }
 }

@@ -137,6 +137,7 @@
             // 
             // dgvDoanhThu
             // 
+            this.dgvDoanhThu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDoanhThu.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgvDoanhThu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDoanhThu.GridColor = System.Drawing.SystemColors.AppWorkspace;

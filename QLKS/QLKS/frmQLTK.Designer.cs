@@ -59,7 +59,7 @@
             this.cbNameList.FormattingEnabled = true;
             this.cbNameList.Location = new System.Drawing.Point(198, 71);
             this.cbNameList.Name = "cbNameList";
-            this.cbNameList.Size = new System.Drawing.Size(205, 30);
+            this.cbNameList.Size = new System.Drawing.Size(205, 32);
             this.cbNameList.TabIndex = 1;
             this.cbNameList.SelectedIndexChanged += new System.EventHandler(this.cbNameList_SelectedIndexChanged);
             // 
@@ -78,7 +78,7 @@
             this.tbTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.26957F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.tbTK.Location = new System.Drawing.Point(198, 123);
             this.tbTK.Name = "tbTK";
-            this.tbTK.Size = new System.Drawing.Size(205, 28);
+            this.tbTK.Size = new System.Drawing.Size(205, 29);
             this.tbTK.TabIndex = 3;
             // 
             // label3
@@ -116,7 +116,7 @@
             this.tbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.26957F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.tbEmail.Location = new System.Drawing.Point(198, 175);
             this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(205, 28);
+            this.tbEmail.Size = new System.Drawing.Size(205, 29);
             this.tbEmail.TabIndex = 9;
             // 
             // tbDiachi
@@ -133,7 +133,7 @@
             this.tbSDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.26957F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.tbSDT.Location = new System.Drawing.Point(198, 222);
             this.tbSDT.Name = "tbSDT";
-            this.tbSDT.Size = new System.Drawing.Size(205, 28);
+            this.tbSDT.Size = new System.Drawing.Size(205, 29);
             this.tbSDT.TabIndex = 11;
             // 
             // btnXoa
@@ -177,7 +177,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmQLTK";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmQLTK";
+            this.Text = "Quản lý tài khoản";
             this.ResumeLayout(false);
             this.PerformLayout();
 

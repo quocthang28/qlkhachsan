@@ -70,7 +70,7 @@
             // 
             // tbOldPass
             // 
-            this.tbOldPass.Location = new System.Drawing.Point(212, 74);
+            this.tbOldPass.Location = new System.Drawing.Point(255, 75);
             this.tbOldPass.Name = "tbOldPass";
             this.tbOldPass.Size = new System.Drawing.Size(187, 22);
             this.tbOldPass.TabIndex = 3;
@@ -78,7 +78,7 @@
             // 
             // tbNewPass
             // 
-            this.tbNewPass.Location = new System.Drawing.Point(212, 120);
+            this.tbNewPass.Location = new System.Drawing.Point(255, 122);
             this.tbNewPass.Name = "tbNewPass";
             this.tbNewPass.Size = new System.Drawing.Size(187, 22);
             this.tbNewPass.TabIndex = 4;
@@ -86,7 +86,7 @@
             // 
             // tbReEnter
             // 
-            this.tbReEnter.Location = new System.Drawing.Point(212, 162);
+            this.tbReEnter.Location = new System.Drawing.Point(255, 162);
             this.tbReEnter.Name = "tbReEnter";
             this.tbReEnter.Size = new System.Drawing.Size(187, 22);
             this.tbReEnter.TabIndex = 5;
@@ -120,7 +120,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(411, 253);
+            this.ClientSize = new System.Drawing.Size(482, 253);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tbReEnter);
@@ -131,7 +131,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmDoiMK";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmDoiMK";
+            this.Text = "Đổi mật khẩu";
             this.ResumeLayout(false);
             this.PerformLayout();
 
