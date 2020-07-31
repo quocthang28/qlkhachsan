@@ -49,7 +49,7 @@
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(871, 64);
+            this.panel4.Size = new System.Drawing.Size(980, 64);
             this.panel4.TabIndex = 4;
             // 
             // button9
@@ -97,19 +97,20 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 101);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(196, 25);
+            this.label1.Size = new System.Drawing.Size(138, 25);
             this.label1.TabIndex = 47;
-            this.label1.Text = "Lập danh mục phòng";
+            this.label1.Text = "Báo cáo tháng";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // lbl
             // 
             this.lbl.AutoSize = true;
-            this.lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl.Location = new System.Drawing.Point(207, 190);
             this.lbl.Name = "lbl";
-            this.lbl.Size = new System.Drawing.Size(47, 16);
+            this.lbl.Size = new System.Drawing.Size(60, 20);
             this.lbl.TabIndex = 49;
-            this.lbl.Text = "Tháng";
+            this.lbl.Text = "Tháng:";
             // 
             // cbMonth
             // 
@@ -127,10 +128,10 @@
             "10",
             "11",
             "12"});
-            this.cbMonth.Location = new System.Drawing.Point(270, 190);
+            this.cbMonth.Location = new System.Drawing.Point(273, 186);
             this.cbMonth.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbMonth.Name = "cbMonth";
-            this.cbMonth.Size = new System.Drawing.Size(81, 24);
+            this.cbMonth.Size = new System.Drawing.Size(116, 24);
             this.cbMonth.TabIndex = 48;
             this.cbMonth.SelectedIndexChanged += new System.EventHandler(this.cbMonth_SelectedIndexChanged);
             // 
@@ -139,12 +140,13 @@
             this.dgvDoanhThu.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgvDoanhThu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDoanhThu.GridColor = System.Drawing.SystemColors.AppWorkspace;
-            this.dgvDoanhThu.Location = new System.Drawing.Point(166, 219);
+            this.dgvDoanhThu.Location = new System.Drawing.Point(210, 268);
             this.dgvDoanhThu.Name = "dgvDoanhThu";
             this.dgvDoanhThu.RowHeadersWidth = 49;
             this.dgvDoanhThu.RowTemplate.Height = 24;
             this.dgvDoanhThu.Size = new System.Drawing.Size(502, 327);
             this.dgvDoanhThu.TabIndex = 51;
+            this.dgvDoanhThu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDoanhThu_CellContentClick);
             // 
             // frmBaoCao
             // 
@@ -157,7 +159,7 @@
             this.Controls.Add(this.panel4);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmBaoCao";
-            this.Size = new System.Drawing.Size(871, 560);
+            this.Size = new System.Drawing.Size(980, 700);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDoanhThu)).EndInit();
             this.ResumeLayout(false);

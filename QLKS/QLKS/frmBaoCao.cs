@@ -21,7 +21,7 @@ namespace QLKS
         private void cbMonth_SelectedIndexChanged(object sender, EventArgs e)
         {
             String a = cbMonth.Text;
-            using (SqlConnection conn = new SqlConnection(@"Data Source=.;Initial Catalog=QLKS;Integrated Security=True;MultipleActiveResultSets=True"))
+            using (SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-B182N8G\MSSQLSERVER01;Initial Catalog=QLKS;Integrated Security=True"))
             {
                 try
                 {
@@ -54,6 +54,16 @@ namespace QLKS
                     conn.Close();
                 }
             }
+        }
+
+        private void dgvDoanhThu_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
