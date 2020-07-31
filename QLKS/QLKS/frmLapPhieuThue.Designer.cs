@@ -70,7 +70,7 @@
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(975, 64);
+            this.panel4.Size = new System.Drawing.Size(980, 64);
             this.panel4.TabIndex = 3;
             // 
             // button9
@@ -137,7 +137,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 64);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(975, 636);
+            this.panel1.Size = new System.Drawing.Size(980, 636);
             this.panel1.TabIndex = 4;
             // 
             // btnThoat
@@ -342,7 +342,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 396);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(975, 304);
+            this.panel2.Size = new System.Drawing.Size(980, 304);
             this.panel2.TabIndex = 5;
             // 
             // dgvPT
@@ -362,7 +362,7 @@
             this.dgvPT.Name = "dgvPT";
             this.dgvPT.RowHeadersWidth = 51;
             this.dgvPT.RowTemplate.Height = 24;
-            this.dgvPT.Size = new System.Drawing.Size(969, 298);
+            this.dgvPT.Size = new System.Drawing.Size(974, 298);
             this.dgvPT.TabIndex = 0;
             this.dgvPT.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPT_CellClick);
             // 
@@ -375,7 +375,7 @@
             this.Controls.Add(this.panel4);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmLapPhieuThue";
-            this.Size = new System.Drawing.Size(975, 700);
+            this.Size = new System.Drawing.Size(980, 700);
             this.Load += new System.EventHandler(this.frmLapPhieuThue_Load);
             this.panel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
