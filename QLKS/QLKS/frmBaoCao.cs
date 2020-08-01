@@ -21,7 +21,7 @@ namespace QLKS
         private void cbMonth_SelectedIndexChanged(object sender, EventArgs e)
         {
             String a = cbMonth.Text;
-            using (SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-B182N8G\MSSQLSERVER01;Initial Catalog=QLKS;Integrated Security=True"))
+            using (SqlConnection conn = new SqlConnection(@"Data Source=.;Initial Catalog=QLKS;Integrated Security=True"))
             {
                 try
                 {

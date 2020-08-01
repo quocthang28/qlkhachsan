@@ -173,7 +173,7 @@
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(119, 49);
             this.btnExit.TabIndex = 9;
-            this.btnExit.Text = "Thoát";
+            this.btnExit.Text = "Hủy";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -181,7 +181,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.27826F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label7.Location = new System.Drawing.Point(330, 20);
+            this.label7.Location = new System.Drawing.Point(347, 21);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(107, 30);
             this.label7.TabIndex = 100;

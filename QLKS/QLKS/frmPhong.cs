@@ -58,7 +58,7 @@ namespace QLKS
 
         private void showChiTietPhong(string mp)
         {
-            using (SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-B182N8G\MSSQLSERVER01;Initial Catalog=QLKS;Integrated Security=True"))
+            using (SqlConnection conn = new SqlConnection(@"Data Source=.;Initial Catalog=QLKS;Integrated Security=True"))
             {
                 try
                 {
@@ -148,87 +148,107 @@ namespace QLKS
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (validateData())
+            if (Session.isAdmin)
             {
-                System.Windows.Forms.MessageBox.Show("Nhập đầy đủ thông tin");
-            }
-            else
-            {
-                if (!busPhong.checkTrungTenPhong(tenPhong.Text))
+                if (validateData())
                 {
-                    System.Windows.Forms.MessageBox.Show("Tên phòng không được trùng!");
+                    System.Windows.Forms.MessageBox.Show("Nhập đầy đủ thông tin");
                 }
                 else
                 {
-                    DTO_Phong phong = new DTO_Phong(loaiPhong.SelectedValue.ToString(), tenPhong.Text, ghiChuPhong.Text, 0 ,0);
-                    if (busPhong.addPhong(phong))
+                    if (!busPhong.checkTrungTenPhong(tenPhong.Text))
                     {
-                        showPhong(true);
-                        System.Windows.Forms.MessageBox.Show("Thêm phòng thành công");
+                        System.Windows.Forms.MessageBox.Show("Tên phòng không được trùng!");
                     }
                     else
                     {
-                        System.Windows.Forms.MessageBox.Show("Thêm phòng thất bại");
+                        DTO_Phong phong = new DTO_Phong(loaiPhong.SelectedValue.ToString(), tenPhong.Text, ghiChuPhong.Text, 0, 0);
+                        if (busPhong.addPhong(phong))
+                        {
+                            showPhong(true);
+                            System.Windows.Forms.MessageBox.Show("Thêm phòng thành công");
+                        }
+                        else
+                        {
+                            System.Windows.Forms.MessageBox.Show("Thêm phòng thất bại");
+                        }
                     }
                 }
+            }
+            else
+            {
+                System.Windows.Forms.MessageBox.Show("Tài khoản này không được phép chỉnh sửa");
             }
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            if (validateData())
+            if (Session.isAdmin)
             {
-                System.Windows.Forms.MessageBox.Show("Nhập đầy đủ thông tin");
-            }
-            else
-            {
-                if (!busPhong.checkTrungTenPhong(tenPhong.Text) && (ghiChuPhong.Text == ghiChu))
+                if (validateData())
                 {
-                    System.Windows.Forms.MessageBox.Show("Tên phòng đã tồn tại!");
+                    System.Windows.Forms.MessageBox.Show("Nhập đầy đủ thông tin");
                 }
                 else
                 {
-                    DTO_Phong phong = new DTO_Phong(loaiPhong.SelectedValue.ToString(), tenPhong.Text, ghiChuPhong.Text, 0 ,0);
-                    if (busPhong.suaPhong(phong, maPhong.Text))
+                    if (!busPhong.checkTrungTenPhong(tenPhong.Text) && (ghiChuPhong.Text == ghiChu))
                     {
-                        showPhong(true);
-                        System.Windows.Forms.MessageBox.Show("Sửa phòng thành công");
+                        System.Windows.Forms.MessageBox.Show("Tên phòng đã tồn tại!");
                     }
                     else
                     {
-                        System.Windows.Forms.MessageBox.Show("Sửa phòng thất bại");
+                        DTO_Phong phong = new DTO_Phong(loaiPhong.SelectedValue.ToString(), tenPhong.Text, ghiChuPhong.Text, 0, 0);
+                        if (busPhong.suaPhong(phong, maPhong.Text))
+                        {
+                            showPhong(true);
+                            System.Windows.Forms.MessageBox.Show("Sửa phòng thành công");
+                        }
+                        else
+                        {
+                            System.Windows.Forms.MessageBox.Show("Sửa phòng thất bại");
+                        }
                     }
                 }
+            }
+            else
+            {
+                System.Windows.Forms.MessageBox.Show("Tài khoản này không được phép chỉnh sửa");
             }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (validateData())
+            if (Session.isAdmin)
             {
-                System.Windows.Forms.MessageBox.Show("Nhập đầy đủ thông tin");
-            }
-            else
-            {
-                if (busPhong.checkTinhTrangPhong(maPhong.Text))
+                if (validateData())
                 {
-                    System.Windows.Forms.MessageBox.Show("Phòng đang có người!");
+                    System.Windows.Forms.MessageBox.Show("Nhập đầy đủ thông tin");
                 }
                 else
                 {
-                    DTO_Phong phong = new DTO_Phong(loaiPhong.SelectedValue.ToString(), tenPhong.Text, ghiChuPhong.Text, 0 ,0);
-                    if (busPhong.xoaPhong(phong, maPhong.Text))
+                    if (busPhong.checkTinhTrangPhong(maPhong.Text))
                     {
-                        showPhong(true);
-                        System.Windows.Forms.MessageBox.Show("Xóa phòng thành công");
+                        System.Windows.Forms.MessageBox.Show("Phòng đang có người!");
                     }
                     else
                     {
-                        System.Windows.Forms.MessageBox.Show("Xóa phòng thất bại");
+                        DTO_Phong phong = new DTO_Phong(loaiPhong.SelectedValue.ToString(), tenPhong.Text, ghiChuPhong.Text, 0, 0);
+                        if (busPhong.xoaPhong(phong, maPhong.Text))
+                        {
+                            showPhong(true);
+                            System.Windows.Forms.MessageBox.Show("Xóa phòng thành công");
+                        }
+                        else
+                        {
+                            System.Windows.Forms.MessageBox.Show("Xóa phòng thất bại");
+                        }
                     }
                 }
             }
-
+            else
+            {
+                System.Windows.Forms.MessageBox.Show("Tài khoản này không được phép chỉnh sửa");
+            }
         }
 
         private void btnDoiPhong_Click(object sender, EventArgs e)

@@ -30,7 +30,6 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.dgvLoaiPhong = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,6 +41,7 @@
             this.giaLoaiPhong = new System.Windows.Forms.TextBox();
             this.tenLoaiPhong = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.dgvLoaiPhong = new System.Windows.Forms.DataGridView();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiPhong)).BeginInit();
             this.SuspendLayout();
@@ -75,29 +75,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(980, 700);
             this.panel4.TabIndex = 2;
-            // 
-            // dgvLoaiPhong
-            // 
-            this.dgvLoaiPhong.AllowUserToAddRows = false;
-            this.dgvLoaiPhong.AllowUserToDeleteRows = false;
-            this.dgvLoaiPhong.AllowUserToOrderColumns = true;
-            this.dgvLoaiPhong.AllowUserToResizeColumns = false;
-            this.dgvLoaiPhong.AllowUserToResizeRows = false;
-            this.dgvLoaiPhong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvLoaiPhong.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dgvLoaiPhong.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dgvLoaiPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLoaiPhong.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvLoaiPhong.Location = new System.Drawing.Point(0, 366);
-            this.dgvLoaiPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dgvLoaiPhong.Name = "dgvLoaiPhong";
-            this.dgvLoaiPhong.ReadOnly = true;
-            this.dgvLoaiPhong.RowHeadersWidth = 25;
-            this.dgvLoaiPhong.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvLoaiPhong.RowTemplate.Height = 28;
-            this.dgvLoaiPhong.Size = new System.Drawing.Size(980, 334);
-            this.dgvLoaiPhong.TabIndex = 12;
-            this.dgvLoaiPhong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // label4
             // 
@@ -154,6 +131,7 @@
             this.button4.TabIndex = 24;
             this.button4.Text = "Xoá";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click_1);
             // 
             // button3
             // 
@@ -164,6 +142,7 @@
             this.button3.TabIndex = 22;
             this.button3.Text = "Thêm";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
             // ghiChuLoaiPhong
             // 
@@ -200,6 +179,29 @@
             this.label1.Size = new System.Drawing.Size(196, 25);
             this.label1.TabIndex = 20;
             this.label1.Text = "Lập danh mục phòng";
+            // 
+            // dgvLoaiPhong
+            // 
+            this.dgvLoaiPhong.AllowUserToAddRows = false;
+            this.dgvLoaiPhong.AllowUserToDeleteRows = false;
+            this.dgvLoaiPhong.AllowUserToOrderColumns = true;
+            this.dgvLoaiPhong.AllowUserToResizeColumns = false;
+            this.dgvLoaiPhong.AllowUserToResizeRows = false;
+            this.dgvLoaiPhong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvLoaiPhong.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dgvLoaiPhong.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvLoaiPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLoaiPhong.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvLoaiPhong.Location = new System.Drawing.Point(0, 366);
+            this.dgvLoaiPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvLoaiPhong.Name = "dgvLoaiPhong";
+            this.dgvLoaiPhong.ReadOnly = true;
+            this.dgvLoaiPhong.RowHeadersWidth = 25;
+            this.dgvLoaiPhong.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvLoaiPhong.RowTemplate.Height = 28;
+            this.dgvLoaiPhong.Size = new System.Drawing.Size(980, 334);
+            this.dgvLoaiPhong.TabIndex = 12;
+            this.dgvLoaiPhong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // frmDanhMucPhong
             // 

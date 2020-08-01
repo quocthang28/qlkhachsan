@@ -33,7 +33,6 @@ namespace QLKS
                     {
                         Session.isAdmin = true;
                     }
-
                     var homepage = new GUI_Homepage();
                     homepage.ShowDialog();
                     this.Close();
@@ -61,6 +60,11 @@ namespace QLKS
         {
             GUI_DangKi dk = new GUI_DangKi();
             dk.ShowDialog();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

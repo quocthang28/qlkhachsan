@@ -51,7 +51,82 @@ namespace QLKS
             catch (Exception) { }
         }
 
-        private void button3_Click(object sender, EventArgs e) //insert
+        private void button5_Click(object sender, EventArgs e) //edit
+        {
+            if (Session.isAdmin)
+            {
+                if (validateData())
+                {
+                    MessageBox.Show("Nhập đầy đủ thông tin!");
+                }
+                else
+                {
+                    if (busLoaiPhong.suaLoaiPhong(tenLoaiPhong.Text, Int32.Parse(giaLoaiPhong.Text), ghiChuLoaiPhong.Text, maLoaiPhong.Text))
+                    {
+                        showLoaiPhong();
+                        MessageBox.Show("Sửa loại phòng thành công!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sửa loại phòng thất bại!");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Tài khoản này không được phép chỉnh sửa");
+            }
+        }
+
+        private void button4_Click_1(object sender, EventArgs e) // delete
+        {
+            if (Session.isAdmin)
+            {
+                if (validateData())
+                {
+                    MessageBox.Show("Nhập đầy đủ thông tin!");
+                }
+                else if (busLoaiPhong.checkMaLoaiPhong(maLoaiPhong.Text))
+                {
+                    MessageBox.Show("Mã loại phòng không tồn tại");
+                }
+                else if (busLoaiPhong.checkPhongByMALOAIPHONG(maLoaiPhong.Text))
+                {
+                    if (busLoaiPhong.xoaLoaiPhong(maLoaiPhong.Text))
+                    {
+                        showLoaiPhong();
+                        MessageBox.Show("Xóa loại phòng thành công!");
+                        clearTextBox();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa loại phòng thất bại!");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Xóa thất bại vì còn phòng thuộc loại phòng này");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Tài khoản này không được phép chỉnh sửa");
+            }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                tenLoaiPhong.Text = dgvLoaiPhong.Rows[e.RowIndex].Cells["LOAIPHONG_TENLOAIPHONG"].Value.ToString();
+                maLoaiPhong.Text = dgvLoaiPhong.Rows[e.RowIndex].Cells["LOAIPHONG_MALOAIPHONG"].Value.ToString();
+                giaLoaiPhong.Text = dgvLoaiPhong.Rows[e.RowIndex].Cells["LOAIPHONG_DONGIA"].Value.ToString();
+                ghiChuLoaiPhong.Text = dgvLoaiPhong.Rows[e.RowIndex].Cells["LOAIPHONG_GHICHU"].Value.ToString();
+            }
+            catch (Exception) { }
+        }
+
+        private void button3_Click_1(object sender, EventArgs e) //them
         {
             if (Session.isAdmin == true)
             {
@@ -85,67 +160,6 @@ namespace QLKS
             {
                 MessageBox.Show("Tài khoản này không được phép chỉnh sửa!");
             }
-        }
-        private void button5_Click(object sender, EventArgs e) //edit
-        {
-
-            if (validateData())
-            {
-                MessageBox.Show("Nhập đầy đủ thông tin!");
-            }
-            else
-            {
-                if (busLoaiPhong.suaLoaiPhong(tenLoaiPhong.Text, Int32.Parse(giaLoaiPhong.Text), ghiChuLoaiPhong.Text, maLoaiPhong.Text))
-                {
-                    showLoaiPhong();
-                    MessageBox.Show("Sửa loại phòng thành công!");
-                }
-                else
-                {
-                    MessageBox.Show("Sửa loại phòng thất bại!");
-                }
-            }
-        }
-
-        private void button4_Click(object sender, EventArgs e) //delete
-        {
-            if (validateData())
-            {
-                MessageBox.Show("Nhập đầy đủ thông tin!");
-            }
-            else if (busLoaiPhong.checkMaLoaiPhong(maLoaiPhong.Text))
-            {
-                MessageBox.Show("Mã loại phòng không tồn tại");
-            }
-            else if (busLoaiPhong.checkPhongByMALOAIPHONG(maLoaiPhong.Text))
-            {
-                if (busLoaiPhong.xoaLoaiPhong(maLoaiPhong.Text))
-                {
-                    showLoaiPhong();
-                    MessageBox.Show("Xóa loại phòng thành công!");
-                    clearTextBox();
-                }
-                else
-                {
-                    MessageBox.Show("Xóa loại phòng thất bại!");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Xóa thất bại vì còn phòng thuộc loại phòng này");
-            }
-        }
-
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                tenLoaiPhong.Text = dgvLoaiPhong.Rows[e.RowIndex].Cells["LOAIPHONG_TENLOAIPHONG"].Value.ToString();
-                maLoaiPhong.Text = dgvLoaiPhong.Rows[e.RowIndex].Cells["LOAIPHONG_MALOAIPHONG"].Value.ToString();
-                giaLoaiPhong.Text = dgvLoaiPhong.Rows[e.RowIndex].Cells["LOAIPHONG_DONGIA"].Value.ToString();
-                ghiChuLoaiPhong.Text = dgvLoaiPhong.Rows[e.RowIndex].Cells["LOAIPHONG_GHICHU"].Value.ToString();
-            }
-            catch (Exception) { }
         }
     }
 }

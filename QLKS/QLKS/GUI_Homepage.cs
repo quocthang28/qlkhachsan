@@ -56,7 +56,7 @@ namespace QLKS
         public void ChangeForeColor(Button clicked)
         {
             clicked.ForeColor = Color.FromArgb(248, 183, 57);
-            clicked.BackColor = Color.WhiteSmoke;
+            clicked.BackColor = Color.Gray;
             lastButton.BackColor = Color.FromArgb(29, 25, 25);
             lastButton.ForeColor = Color.White; 
             lastButton = clicked;
